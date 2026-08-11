@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛡️</text></svg>">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사이버 범죄 퀴즈 - 이거 불법일까? | MOGU Guard</title>
+    <meta name="description" content="일상에서 할 수 있는 행동이 사이버 범죄인지 아닌지 퀴즈로 테스트하세요. 의외로 불법인 것들이 많습니다.">
+    <link rel="canonical" href="https://moguguard.com/tools/cyber-crime-quiz.html">
+    <meta property="og:title" content="사이버 범죄 퀴즈 | MOGU Guard">
+    <meta property="og:description" content="이거 불법일까? 사이버 법률 상식 테스트!">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://moguguard.com/tools/cyber-crime-quiz.html">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&display=swap');
+        *{margin:0;padding:0;box-sizing:border-box}body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#0a0a0a;color:#e0e0e0;min-height:100vh}
+        header{background:#111;border-bottom:1px solid #1a3a1a;padding:16px 20px;text-align:center}header a{text-decoration:none;font-size:20px;color:#00ff41;letter-spacing:2px;font-weight:700;font-family:'Fira Code',monospace}
+        .container{max-width:700px;margin:20px auto 40px;padding:0 20px}
+        .page-title{text-align:center;margin-bottom:30px}.page-title h2{font-size:28px;color:#00ff41;margin-bottom:8px}.page-title p{color:#666;font-size:14px}
+        .progress-bar{width:100%;height:6px;background:#1a1a1a;border-radius:3px;margin-bottom:20px;overflow:hidden}.progress-fill{height:100%;background:#00ff41;border-radius:3px;transition:width .4s}
+        .progress-text{text-align:center;font-size:12px;color:#555;margin-bottom:16px;font-family:'Fira Code',monospace}
+        .q-card{background:#111;border:1px solid #00ff4130;border-radius:8px;padding:28px;margin-bottom:20px;text-align:center}
+        .q-num{font-size:12px;color:#00ff41;letter-spacing:2px;margin-bottom:12px;font-family:'Fira Code',monospace}
+        .q-text{font-size:17px;color:#e0e0e0;line-height:1.6;margin-bottom:24px;font-weight:600}
+        .btn-row{display:flex;gap:12px}
+        .btn-legal,.btn-illegal{flex:1;padding:16px;border:2px solid;border-radius:10px;font-size:18px;font-weight:700;cursor:pointer;transition:all .2s;text-align:center}
+        .btn-legal{border-color:#00ff41;color:#00ff41;background:rgba(0,255,65,0.06)}.btn-legal:hover{background:rgba(0,255,65,0.15)}
+        .btn-illegal{border-color:#ff5252;color:#ff5252;background:rgba(255,82,82,0.06)}.btn-illegal:hover{background:rgba(255,82,82,0.15)}
+        .explain{display:none;margin-top:16px;padding:16px;border-radius:10px;font-size:14px;line-height:1.7;text-align:left}
+        .explain.correct{background:rgba(0,255,65,0.1);border:1px solid rgba(0,255,65,0.3);color:#00ff41}
+        .explain.wrong{background:rgba(255,82,82,0.1);border:1px solid rgba(255,82,82,0.3);color:#ff5252}
+        .result-section{display:none;text-align:center}
+        .r-score{font-size:64px;font-weight:900;font-family:'Fira Code',monospace}.r-grade{font-size:24px;margin-top:8px}
+        .r-text{font-size:14px;color:#888;margin:16px 0;line-height:1.8}
+        .retry-btn{padding:14px 40px;background:#00ff41;color:#0a0a0a;border:none;border-radius:8px;font-size:16px;font-weight:700;cursor:pointer;font-family:'Fira Code',monospace}
+        footer{text-align:center;padding:30px;color:#333;font-size:11px}
+    </style>
+</head>
+<body>
+<header><a href="../index.html">MOGU <span style="color:#00ff41;">Guard</span></a></header>
+<div class="container">
+    <div class="page-title">
+        <h2>⚖️ 사이버 범죄 퀴즈</h2>
+        <p>이거 불법일까? 합법일까?</p>
+    </div>
+    <div class="progress-bar"><div class="progress-fill" id="pf" style="width:0%"></div></div>
+    <div class="progress-text" id="pt">1 / 10</div>
+    <div id="quizArea"></div>
+    <div id="resultArea" class="result-section"></div>
+</div>
+<div style="text-align:center;padding:20px 0;border-top:1px solid #1a3a1a;margin-top:30px;"><span style="font-size:12px;color:#333;margin-right:8px;">공유:</span><a href="" onclick="window.open('https://twitter.com/intent/tweet?url='+encodeURIComponent(location.href)+'&text='+encodeURIComponent(document.title),'_blank','width=600,height=400');return false" style="display:inline-block;padding:5px 10px;background:#1da1f2;color:#fff;border-radius:4px;text-decoration:none;font-size:11px;margin:3px;">Twitter</a><a href="" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),'_blank','width=600,height=400');return false" style="display:inline-block;padding:5px 10px;background:#1877f2;color:#fff;border-radius:4px;text-decoration:none;font-size:11px;margin:3px;">Facebook</a><a href="" onclick="navigator.clipboard.writeText(location.href);this.textContent='Copied!';return false" style="display:inline-block;padding:5px 10px;background:#333;color:#0f0;border-radius:4px;text-decoration:none;font-size:11px;margin:3px;font-family:monospace;">URL 복사</a></div>
+<footer>© 2025 MOGU Guard</footer>
+<script>
+const QS=[
+{q:"카페에서 옆 사람의 노트북 화면을 사진 찍어 SNS에 올리기",a:"illegal",e:"초상권 침해 + 개인정보보호법 위반 가능. 타인의 화면에 개인정보가 있을 수 있으며, 동의 없이 촬영/배포는 불법입니다."},
+{q:"공용 와이파이에서 다른 사람의 네트워크 패킷 엿보기",a:"illegal",e:"통신비밀보호법 위반. 다른 사람의 통신 내용을 동의 없이 도청/감청하는 것은 명백한 불법입니다."},
+{q:"친구의 동의를 받고 친구 컴퓨터의 보안 취약점 테스트하기",a:"legal",e:"동의를 받았다면 합법! 실제 펜테스트(모의해킹)도 반드시 서면 동의를 받고 진행합니다."},
+{q:"넷플릭스 계정을 친구와 공유하기",a:"illegal",e:"넷플릭스 이용약관 위반. 2023년부터 계정 공유를 공식 금지했으며, 엄밀히 따지면 서비스 약관 위반입니다."},
+{q:"유튜브 영상을 다운로드받아 개인 소장하기",a:"illegal",e:"유튜브 이용약관 위반 + 저작권법 위반 가능. 개인 소장 목적이라도 무단 다운로드는 저작권 침해에 해당할 수 있습니다."},
+{q:"회사 이메일로 온 피싱 메일을 보안팀에 신고하기",a:"legal",e:"완전 합법이고 권장되는 행동! 피싱 메일 신고는 조직 보안을 강화하는 모범적 행동입니다."},
+{q:"다른 사람의 비밀번호를 추측해서 로그인 시도하기",a:"illegal",e:"정보통신망법 위반. 타인의 계정에 무단 접근을 시도하는 것 자체가 불법이며, 성공 여부와 관계없이 처벌됩니다."},
+{q:"무료 VPN을 사용해서 다른 나라 넷플릭스 보기",a:"illegal",e:"넷플릭스 이용약관 위반. 지역 제한 우회는 서비스 약관에 위반되며, 일부 국가에서는 법적 문제가 될 수 있습니다."},
+{q:"오픈소스 해킹 도구(Kali Linux 등)를 다운로드하기",a:"legal",e:"합법! 해킹 도구 자체를 소유하는 것은 불법이 아닙니다. 하지만 이를 타인의 시스템에 무단으로 사용하면 불법입니다."},
+{q:"쇼핑몰의 가격 오류를 발견하고 대량 구매하기",a:"legal",e:"대부분 합법이지만 민사상 분쟁 가능. 판매자가 '착오에 의한 계약'으로 주문 취소할 수 있으며, 악의적 대량 구매는 문제가 될 수 있습니다."}
+];
+
+let cur=0,score=0;
+
+function show(){
+    if(cur>=QS.length){result();return;}
+    document.getElementById('pf').style.width=(cur/QS.length*100)+'%';
+    document.getElementById('pt').textContent=(cur+1)+' / '+QS.length;
+    const q=QS[cur];
+    document.getElementById('quizArea').innerHTML=`
+        <div class="q-card">
+            <div class="q-num">CASE ${cur+1}</div>
+            <div class="q-text">${q.q}</div>
+            <div class="btn-row">
+                <div class="btn-legal" onclick="ans('legal')">✅ 합법</div>
+                <div class="btn-illegal" onclick="ans('illegal')">🚨 불법</div>
+            </div>
+            <div class="explain" id="exp"></div>
+        </div>`;
+}
+
+function ans(choice){
+    const q=QS[cur];const correct=choice===q.a;if(correct)score++;
+    const el=document.getElementById('exp');
+    el.className='explain '+(correct?'correct':'wrong');
+    el.innerHTML=`<strong>${correct?'✅ 정답!':'❌ 틀렸습니다!'}</strong> (${q.a==='illegal'?'🚨 불법':'✅ 합법'})<br><br>${q.e}`;
+    el.style.display='block';
+    document.querySelectorAll('.btn-legal,.btn-illegal').forEach(b=>{b.style.pointerEvents='none';b.style.opacity='0.5';});
+    setTimeout(()=>{cur++;show();},3000);
+}
+
+function result(){
+    document.getElementById('quizArea').style.display='none';
+    document.getElementById('pf').style.width='100%';
+    document.getElementById('pt').textContent='완료!';
+    let g,c;
+    if(score>=9){g='⚖️ 사이버 법률 전문가';c='#00ff41';}
+    else if(score>=7){g='🟢 법을 잘 아는 시민';c='#00ff41';}
+    else if(score>=5){g='🟡 보통... 좀 더 알아야 해요';c='#ffeb3b';}
+    else{g='🔴 위험! 나도 모르게 범죄자가 될 수 있어요';c='#ff5252';}
+    document.getElementById('resultArea').innerHTML=`
+        <div class="r-score" style="color:${c}">${score} / ${QS.length}</div>
+        <div class="r-grade" style="color:${c}">${g}</div>
+        <div class="r-text">의외로 불법인 것들이 많죠? 사이버 공간에서도 법은 적용됩니다.<br>모르고 한 행동이 범죄가 될 수 있으니 주의하세요!</div>
+        <button class="retry-btn" onclick="location.reload()">🔄 다시 도전</button>`;
+    document.getElementById('resultArea').style.display='block';
+}
+show();
+</script>
+</body>
+</html>
