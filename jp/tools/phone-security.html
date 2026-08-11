@@ -1,19 +1,19 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛡️</text></svg>">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>내 폰 보안 점수 - 스마트폰 보안 체크리스트 | MOGU Guard</title>
-    <meta name="description" content="스마트폰 보안 설정을 체크하고 보안 점수를 확인하세요. 잠금화면, 앱 권한, 와이파이, 업데이트 등 15가지 항목 진단.">
-    <link rel="canonical" href="https://moguguard.com/tools/phone-security.html">
-    <meta property="og:title" content="내 폰 보안 점수 | MOGU Guard">
-    <meta property="og:description" content="스마트폰 보안 점수 확인! 15가지 체크리스트.">
+    <title>Phone Security Score - Smartphone Security Checklist | MOGU Guard</title>
+    <meta name="description" content="Check your smartphone security settings and see your security score. Diagnose 15 items including lock screen, app permissions, Wi-Fi, and updates.">
+    <link rel="canonical" href="https://moguguard.com/en/tools/phone-security.html">
+    <meta property="og:title" content="Phone Security Score | MOGU Guard">
+    <meta property="og:description" content="Check your smartphone security score! 15-item checklist.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://moguguard.com/tools/phone-security.html">
+    <meta property="og:url" content="https://moguguard.com/en/tools/phone-security.html">
     <script type="application/ld+json">
     {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
-    {"@type":"Question","name":"스마트폰 보안이 왜 중요한가요?","acceptedAnswer":{"@type":"Answer","text":"스마트폰에는 은행 앱, SNS, 사진, 연락처 등 모든 개인정보가 들어있습니다. 해킹당하면 금전적 피해와 개인정보 유출이 발생합니다."}}
+    {"@type":"Question","name":"Why is smartphone security important?","acceptedAnswer":{"@type":"Answer","text":"Your smartphone holds all your personal data — banking apps, social media, photos, contacts. If hacked, you risk financial loss and personal data leaks."}}
     ]}
     </script>
     <style>
@@ -52,29 +52,29 @@
 <header><a href="../index.html">MOGU <span style="color:#00ff41;">Guard</span></a></header>
 <div class="container">
     <div class="page-title">
-        <h2>📱 내 폰 보안 점수</h2>
-        <p>해당하는 항목을 체크하세요</p>
+        <h2>📱 Phone Security Score</h2>
+        <p>Check all items that apply to you</p>
     </div>
 
     <div class="checklist">
-        <div class="check-item"><input type="checkbox" id="c1" onchange="calc()"><label for="c1"><strong>화면 잠금</strong>을 PIN/패턴/생체인식으로 설정했다</label><span class="risk risk-high">필수</span></div>
-        <div class="check-item"><input type="checkbox" id="c2" onchange="calc()"><label for="c2"><strong>OS 업데이트</strong>를 최신 버전으로 유지하고 있다</label><span class="risk risk-high">필수</span></div>
-        <div class="check-item"><input type="checkbox" id="c3" onchange="calc()"><label for="c3"><strong>앱 자동 업데이트</strong>가 켜져 있다</label><span class="risk risk-mid">중요</span></div>
-        <div class="check-item"><input type="checkbox" id="c4" onchange="calc()"><label for="c4">공식 앱스토어(구글플레이/앱스토어)에서만 앱을 설치한다</label><span class="risk risk-high">필수</span></div>
-        <div class="check-item"><input type="checkbox" id="c5" onchange="calc()"><label for="c5"><strong>출처를 알 수 없는 앱 설치</strong>가 차단되어 있다 (안드로이드)</label><span class="risk risk-high">필수</span></div>
-        <div class="check-item"><input type="checkbox" id="c6" onchange="calc()"><label for="c6">사용하지 않는 앱의 <strong>카메라/마이크/위치 권한</strong>을 해제했다</label><span class="risk risk-mid">중요</span></div>
-        <div class="check-item"><input type="checkbox" id="c7" onchange="calc()"><label for="c7"><strong>공용 와이파이</strong>에서 은행/결제 앱을 사용하지 않는다</label><span class="risk risk-high">필수</span></div>
-        <div class="check-item"><input type="checkbox" id="c8" onchange="calc()"><label for="c8"><strong>블루투스</strong>를 사용하지 않을 때는 꺼둔다</label><span class="risk risk-low">권장</span></div>
-        <div class="check-item"><input type="checkbox" id="c9" onchange="calc()"><label for="c9"><strong>2단계 인증(2FA)</strong>을 주요 계정에 설정했다</label><span class="risk risk-high">필수</span></div>
-        <div class="check-item"><input type="checkbox" id="c10" onchange="calc()"><label for="c10"><strong>SIM 카드 PIN</strong>을 설정했다</label><span class="risk risk-mid">중요</span></div>
-        <div class="check-item"><input type="checkbox" id="c11" onchange="calc()"><label for="c11"><strong>분실 시 원격 잠금/삭제</strong> 기능(Find My)을 활성화했다</label><span class="risk risk-mid">중요</span></div>
-        <div class="check-item"><input type="checkbox" id="c12" onchange="calc()"><label for="c12">문자/카톡으로 온 <strong>의심스러운 링크</strong>를 클릭하지 않는다</label><span class="risk risk-high">필수</span></div>
-        <div class="check-item"><input type="checkbox" id="c13" onchange="calc()"><label for="c13"><strong>클라우드 백업</strong>을 정기적으로 하고 있다</label><span class="risk risk-low">권장</span></div>
-        <div class="check-item"><input type="checkbox" id="c14" onchange="calc()"><label for="c14">잠금화면에서 <strong>알림 미리보기</strong>를 숨겼다</label><span class="risk risk-low">권장</span></div>
-        <div class="check-item"><input type="checkbox" id="c15" onchange="calc()"><label for="c15"><strong>자동 잠금 시간</strong>을 30초~1분으로 설정했다</label><span class="risk risk-mid">중요</span></div>
+        <div class="check-item"><input type="checkbox" id="c1" onchange="calc()"><label for="c1"><strong>Screen lock</strong> is set with PIN, pattern, or biometrics</label><span class="risk risk-high">Essential</span></div>
+        <div class="check-item"><input type="checkbox" id="c2" onchange="calc()"><label for="c2"><strong>OS updates</strong> are kept up to date</label><span class="risk risk-high">Essential</span></div>
+        <div class="check-item"><input type="checkbox" id="c3" onchange="calc()"><label for="c3"><strong>Automatic app updates</strong> are enabled</label><span class="risk risk-mid">Important</span></div>
+        <div class="check-item"><input type="checkbox" id="c4" onchange="calc()"><label for="c4">Apps are only installed from official stores (Google Play / App Store)</label><span class="risk risk-high">Essential</span></div>
+        <div class="check-item"><input type="checkbox" id="c5" onchange="calc()"><label for="c5"><strong>Installation from unknown sources</strong> is blocked (Android)</label><span class="risk risk-high">Essential</span></div>
+        <div class="check-item"><input type="checkbox" id="c6" onchange="calc()"><label for="c6"><strong>Camera / microphone / location permissions</strong> revoked for unused apps</label><span class="risk risk-mid">Important</span></div>
+        <div class="check-item"><input type="checkbox" id="c7" onchange="calc()"><label for="c7">Banking and payment apps are not used on <strong>public Wi-Fi</strong></label><span class="risk risk-high">Essential</span></div>
+        <div class="check-item"><input type="checkbox" id="c8" onchange="calc()"><label for="c8"><strong>Bluetooth</strong> is turned off when not in use</label><span class="risk risk-low">Recommended</span></div>
+        <div class="check-item"><input type="checkbox" id="c9" onchange="calc()"><label for="c9"><strong>Two-factor authentication (2FA)</strong> is set up on important accounts</label><span class="risk risk-high">Essential</span></div>
+        <div class="check-item"><input type="checkbox" id="c10" onchange="calc()"><label for="c10"><strong>SIM card PIN</strong> is configured</label><span class="risk risk-mid">Important</span></div>
+        <div class="check-item"><input type="checkbox" id="c11" onchange="calc()"><label for="c11"><strong>Remote lock / erase</strong> (Find My / Find My Device) is enabled</label><span class="risk risk-mid">Important</span></div>
+        <div class="check-item"><input type="checkbox" id="c12" onchange="calc()"><label for="c12"><strong>Suspicious links</strong> received via SMS or messaging apps are never clicked</label><span class="risk risk-high">Essential</span></div>
+        <div class="check-item"><input type="checkbox" id="c13" onchange="calc()"><label for="c13"><strong>Cloud backups</strong> are performed regularly</label><span class="risk risk-low">Recommended</span></div>
+        <div class="check-item"><input type="checkbox" id="c14" onchange="calc()"><label for="c14"><strong>Notification previews</strong> on the lock screen are hidden</label><span class="risk risk-low">Recommended</span></div>
+        <div class="check-item"><input type="checkbox" id="c15" onchange="calc()"><label for="c15"><strong>Auto-lock timer</strong> is set to 30 seconds – 1 minute</label><span class="risk risk-mid">Important</span></div>
     </div>
 
-    <button class="calc-btn" onclick="showResult()">📱 보안 점수 확인</button>
+    <button class="calc-btn" onclick="showResult()">📱 Check Security Score</button>
 
     <div class="result-box" id="resultBox">
         <div class="score-num" id="scoreNum">0</div>
@@ -83,32 +83,32 @@
     </div>
 
     <div class="tips" id="tips">
-        <div class="tips-title">⚠️ 체크하지 않은 항목</div>
+        <div class="tips-title">⚠️ Unchecked Items</div>
         <div class="tips-text" id="tipsText"></div>
     </div>
 
-    <div class="disclaimer">📱 자가진단 체크리스트입니다. 실제 보안 상태는 추가 요소에 의해 달라질 수 있습니다.</div>
+    <div class="disclaimer">📱 This is a self-diagnostic checklist. Your actual security status may vary based on additional factors.</div>
 </div>
-<div style="text-align:center;padding:20px 0;border-top:1px solid #1a3a1a;margin-top:30px;"><span style="font-size:12px;color:#333;margin-right:8px;">공유:</span><a href="" onclick="window.open('https://twitter.com/intent/tweet?url='+encodeURIComponent(location.href)+'&text='+encodeURIComponent(document.title),'_blank','width=600,height=400');return false" style="display:inline-block;padding:5px 10px;background:#1da1f2;color:#fff;border-radius:4px;text-decoration:none;font-size:11px;margin:3px;">Twitter</a><a href="" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),'_blank','width=600,height=400');return false" style="display:inline-block;padding:5px 10px;background:#1877f2;color:#fff;border-radius:4px;text-decoration:none;font-size:11px;margin:3px;">Facebook</a><a href="" onclick="window.open('https://api.whatsapp.com/send?text='+encodeURIComponent(document.title+' '+location.href),'_blank');return false" style="display:inline-block;padding:5px 10px;background:#25d366;color:#fff;border-radius:4px;text-decoration:none;font-size:11px;margin:3px;">WhatsApp</a><a href="" onclick="navigator.clipboard.writeText(location.href);this.textContent='Copied!';return false" style="display:inline-block;padding:5px 10px;background:#333;color:#0f0;border-radius:4px;text-decoration:none;font-size:11px;margin:3px;font-family:monospace;">URL 복사</a></div>
+<div style="text-align:center;padding:20px 0;border-top:1px solid #1a3a1a;margin-top:30px;"><span style="font-size:12px;color:#333;margin-right:8px;">Share:</span><a href="" onclick="window.open('https://twitter.com/intent/tweet?url='+encodeURIComponent(location.href)+'&text='+encodeURIComponent(document.title),'_blank','width=600,height=400');return false" style="display:inline-block;padding:5px 10px;background:#1da1f2;color:#fff;border-radius:4px;text-decoration:none;font-size:11px;margin:3px;">Twitter</a><a href="" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),'_blank','width=600,height=400');return false" style="display:inline-block;padding:5px 10px;background:#1877f2;color:#fff;border-radius:4px;text-decoration:none;font-size:11px;margin:3px;">Facebook</a><a href="" onclick="window.open('https://api.whatsapp.com/send?text='+encodeURIComponent(document.title+' '+location.href),'_blank');return false" style="display:inline-block;padding:5px 10px;background:#25d366;color:#fff;border-radius:4px;text-decoration:none;font-size:11px;margin:3px;">WhatsApp</a><a href="" onclick="navigator.clipboard.writeText(location.href);this.textContent='Copied!';return false" style="display:inline-block;padding:5px 10px;background:#333;color:#0f0;border-radius:4px;text-decoration:none;font-size:11px;margin:3px;font-family:monospace;">Copy URL</a></div>
 <footer>© 2025 MOGU Guard</footer>
 
 <script>
 const labels = [
-    "화면 잠금을 PIN/패턴/생체인식으로 설정",
-    "OS를 최신 버전으로 업데이트",
-    "앱 자동 업데이트 활성화",
-    "공식 앱스토어에서만 앱 설치",
-    "출처를 알 수 없는 앱 설치 차단",
-    "불필요한 앱 권한(카메라/마이크/위치) 해제",
-    "공용 와이파이에서 금융 앱 사용 금지",
-    "사용하지 않을 때 블루투스 끄기",
-    "주요 계정에 2단계 인증 설정",
-    "SIM 카드 PIN 설정",
-    "분실 시 원격 잠금/삭제 활성화",
-    "의심스러운 링크 클릭하지 않기",
-    "클라우드 백업 정기적으로 하기",
-    "잠금화면 알림 미리보기 숨기기",
-    "자동 잠금 시간 30초~1분으로 설정"
+    "Screen lock set with PIN / pattern / biometrics",
+    "OS updated to latest version",
+    "Automatic app updates enabled",
+    "Apps installed from official stores only",
+    "Installation from unknown sources blocked",
+    "Camera / microphone / location permissions revoked for unused apps",
+    "Banking apps not used on public Wi-Fi",
+    "Bluetooth turned off when not in use",
+    "Two-factor authentication set on important accounts",
+    "SIM card PIN configured",
+    "Remote lock / erase enabled",
+    "Suspicious links never clicked",
+    "Cloud backups performed regularly",
+    "Lock screen notification previews hidden",
+    "Auto-lock timer set to 30 seconds – 1 minute"
 ];
 
 function calc() {}
@@ -117,32 +117,32 @@ function showResult() {
     let checked = 0;
     let unchecked = [];
     for (let i = 1; i <= 15; i++) {
-        if (document.getElementById('c'+i).checked) checked++;
+        if (document.getElementById("c"+i).checked) checked++;
         else unchecked.push(labels[i-1]);
     }
     const score = Math.round((checked / 15) * 100);
     let grade, color;
-    if (score >= 90) { grade = '🟢 매우 안전! 보안 의식이 뛰어납니다.'; color = '#00ff41'; }
-    else if (score >= 70) { grade = '🟡 양호. 몇 가지 개선하면 더 안전합니다.'; color = '#ffeb3b'; }
-    else if (score >= 50) { grade = '🟠 주의 필요. 중요한 보안 설정이 빠져있습니다.'; color = '#ff9800'; }
-    else { grade = '🔴 위험! 즉시 보안 설정을 강화하세요.'; color = '#ff5252'; }
+    if (score >= 90) { grade = "🟢 Excellent! Your security awareness is outstanding."; color = "#00ff41"; }
+    else if (score >= 70) { grade = "🟡 Good. A few improvements will make you even safer."; color = "#ffeb3b"; }
+    else if (score >= 50) { grade = "🟠 Caution. Important security settings are missing."; color = "#ff9800"; }
+    else { grade = "🔴 Danger! Strengthen your security settings immediately."; color = "#ff5252"; }
 
-    document.getElementById('scoreNum').textContent = score + '점';
-    document.getElementById('scoreNum').style.color = color;
-    document.getElementById('scoreFill').style.width = score + '%';
-    document.getElementById('scoreFill').style.background = color;
-    document.getElementById('scoreGrade').textContent = grade;
-    document.getElementById('scoreGrade').style.color = color;
-    document.getElementById('resultBox').style.display = 'block';
+    document.getElementById("scoreNum").textContent = score + " pts";
+    document.getElementById("scoreNum").style.color = color;
+    document.getElementById("scoreFill").style.width = score + "%";
+    document.getElementById("scoreFill").style.background = color;
+    document.getElementById("scoreGrade").textContent = grade;
+    document.getElementById("scoreGrade").style.color = color;
+    document.getElementById("resultBox").style.display = "block";
 
     if (unchecked.length > 0) {
-        document.getElementById('tipsText').innerHTML = unchecked.map(t => '• <strong>' + t + '</strong>').join('<br>');
-        document.getElementById('tips').style.display = 'block';
+        document.getElementById("tipsText").innerHTML = unchecked.map(t => "• <strong>" + t + "</strong>").join("<br>");
+        document.getElementById("tips").style.display = "block";
     } else {
-        document.getElementById('tips').style.display = 'none';
+        document.getElementById("tips").style.display = "none";
     }
 
-    document.getElementById('resultBox').scrollIntoView({behavior:'smooth'});
+    document.getElementById("resultBox").scrollIntoView({behavior:"smooth"});
 }
 </script>
 </body>

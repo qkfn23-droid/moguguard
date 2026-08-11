@@ -1,20 +1,20 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛡️</text></svg>">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>피싱 메일 판별 퀴즈 - 진짜 vs 가짜 | MOGU Guard</title>
-    <meta name="description" content="피싱 메일을 구별할 수 있나요? 10문제 퀴즈로 당신의 피싱 판별 능력을 테스트하세요. 실제 피싱 사례 기반.">
-    <link rel="canonical" href="https://moguguard.com/tools/phishing-quiz.html">
-    <meta property="og:title" content="피싱 메일 판별 퀴즈 | MOGU Guard">
-    <meta property="og:description" content="피싱 메일을 구별할 수 있나요? 10문제로 테스트!">
+    <title>Phishing Email Quiz - Real vs Fake | MOGU Guard</title>
+    <meta name="description" content="Can you spot a phishing email? Test your phishing detection skills with 10 real-world scenarios.">
+    <link rel="canonical" href="https://moguguard.com/en/tools/phishing-quiz.html">
+    <meta property="og:title" content="Phishing Email Quiz | MOGU Guard">
+    <meta property="og:description" content="Can you spot a phishing email? Take the 10-question test!">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://moguguard.com/tools/phishing-quiz.html">
+    <meta property="og:url" content="https://moguguard.com/en/tools/phishing-quiz.html">
     <script type="application/ld+json">
     {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
-    {"@type":"Question","name":"피싱이란?","acceptedAnswer":{"@type":"Answer","text":"신뢰할 수 있는 기관을 사칭하여 개인정보나 금융정보를 탈취하는 사기 수법입니다."}},
-    {"@type":"Question","name":"피싱 메일을 어떻게 구별하나요?","acceptedAnswer":{"@type":"Answer","text":"발신자 주소 확인, 긴급성 강조 여부, URL 확인, 맞춤법 오류, 개인정보 요구 여부 등을 확인하세요."}}
+    {"@type":"Question","name":"What is phishing?","acceptedAnswer":{"@type":"Answer","text":"Phishing is a scam where attackers impersonate trusted organizations to steal personal or financial information."}},
+    {"@type":"Question","name":"How do I spot a phishing email?","acceptedAnswer":{"@type":"Answer","text":"Check the sender address, look for urgency, verify URLs, watch for spelling errors, and be suspicious of any request for personal data."}}
     ]}
     </script>
     <style>
@@ -50,53 +50,53 @@
 <header><a href="../index.html">MOGU <span style="color:#00e676;">Guard</span></a></header>
 <div class="container">
     <div class="page-title">
-        <h2>🎣 피싱 메일 판별 퀴즈</h2>
-        <p>진짜 메일일까, 피싱일까? 10문제로 테스트하세요</p>
+        <h2>🎣 Phishing Email Quiz</h2>
+        <p>Real email or phishing? Test yourself with 10 scenarios.</p>
     </div>
 
     <div class="progress-bar"><div class="progress-fill" id="progressFill" style="width:0%"></div></div>
-    <div class="progress-text" id="progressText">문제 1 / 10</div>
+    <div class="progress-text" id="progressText">Question 1 / 10</div>
 
     <div id="quizSection"></div>
     <div id="resultSection" class="result-section"></div>
 
-    <div class="disclaimer">🎣 실제 피싱 사례를 참고하여 만들었지만, 교육 목적의 가상 시나리오입니다.</div>
+    <div class="disclaimer">🎣 Inspired by real phishing cases, but all scenarios are fictional and for educational purposes only.</div>
 </div>
-<div style="text-align:center;padding:20px 0;border-top:1px solid #1a3a30;margin-top:30px;"><span style="font-size:13px;color:#888;margin-right:8px;">공유:</span><a href="" onclick="window.open('https://twitter.com/intent/tweet?url='+encodeURIComponent(location.href)+'&text='+encodeURIComponent(document.title),'_blank','width=600,height=400');return false" style="display:inline-block;padding:6px 12px;background:#1da1f2;color:#fff;border-radius:6px;text-decoration:none;font-size:12px;margin:4px;">Twitter</a><a href="" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),'_blank','width=600,height=400');return false" style="display:inline-block;padding:6px 12px;background:#1877f2;color:#fff;border-radius:6px;text-decoration:none;font-size:12px;margin:4px;">Facebook</a><a href="" onclick="window.open('https://api.whatsapp.com/send?text='+encodeURIComponent(document.title+' '+location.href),'_blank');return false" style="display:inline-block;padding:6px 12px;background:#25d366;color:#fff;border-radius:6px;text-decoration:none;font-size:12px;margin:4px;">WhatsApp</a><a href="" onclick="navigator.clipboard.writeText(location.href);this.textContent='Copied!';return false" style="display:inline-block;padding:6px 12px;background:#666;color:#fff;border-radius:6px;text-decoration:none;font-size:12px;margin:4px;">URL 복사</a></div>
+<div style="text-align:center;padding:20px 0;border-top:1px solid #1a3a30;margin-top:30px;"><span style="font-size:13px;color:#888;margin-right:8px;">Share:</span><a href="" onclick="window.open('https://twitter.com/intent/tweet?url='+encodeURIComponent(location.href)+'&text='+encodeURIComponent(document.title),'_blank','width=600,height=400');return false" style="display:inline-block;padding:6px 12px;background:#1da1f2;color:#fff;border-radius:6px;text-decoration:none;font-size:12px;margin:4px;">Twitter</a><a href="" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),'_blank','width=600,height=400');return false" style="display:inline-block;padding:6px 12px;background:#1877f2;color:#fff;border-radius:6px;text-decoration:none;font-size:12px;margin:4px;">Facebook</a><a href="" onclick="window.open('https://api.whatsapp.com/send?text='+encodeURIComponent(document.title+' '+location.href),'_blank');return false" style="display:inline-block;padding:6px 12px;background:#25d366;color:#fff;border-radius:6px;text-decoration:none;font-size:12px;margin:4px;">WhatsApp</a><a href="" onclick="navigator.clipboard.writeText(location.href);this.textContent='Copied!';return false" style="display:inline-block;padding:6px 12px;background:#666;color:#fff;border-radius:6px;text-decoration:none;font-size:12px;margin:4px;">Copy URL</a></div>
 <footer>&copy; 2025 MOGU Guard</footer>
 
 <script>
 const QUESTIONS = [
-    {from:"noreply@amaz0n-security.com",fromName:"Amazon 보안팀",subject:"[긴급] 비정상 로그인 감지 — 계정이 일시 정지되었습니다",to:"나",
-     body:'고객님, 비정상적인 로그인 시도가 감지되어 계정이 <span class="highlight">일시 정지</span>되었습니다.<br><br>24시간 이내에 아래 링크를 통해 본인 확인을 완료해주세요.<br><br><span class="link">https://amaz0n-security.com/verify-account</span><br><br>확인하지 않으면 계정이 <span class="highlight">영구 삭제</span>됩니다.',
-     answer:"phishing",explain:"발신자 주소가 <strong>amaz0n</strong> (숫자 0 사용)이며, 진짜 Amazon은 amazon.com 도메인을 사용합니다. 긴급성을 강조하고 '영구 삭제' 위협은 전형적인 피싱 수법입니다."},
-    {from:"no-reply@google.com",fromName:"Google",subject:"보안 알림: 새로운 기기에서 로그인",to:"나",
-     body:'Google 계정에 새로운 기기에서 로그인이 감지되었습니다.<br><br>기기: Windows PC<br>위치: 서울, 대한민국<br>시간: 2024년 3월 15일 오후 2:30<br><br>본인이 맞다면 이 메일을 무시하셔도 됩니다.<br>본인이 아니라면 <span class="link">계정 보안 설정</span>에서 비밀번호를 변경하세요.',
-     answer:"real",explain:"google.com 공식 도메인, 구체적 정보 제공, <strong>'무시해도 됩니다'</strong>라는 문구가 핵심입니다. 진짜 보안 알림은 긴급하게 링크 클릭을 요구하지 않습니다."},
-    {from:"support@paypa1.com",fromName:"PayPal 고객센터",subject:"계정 확인이 필요합니다 — 결제 제한",to:"나",
-     body:'고객님의 PayPal 계정에서 의심스러운 활동이 감지되었습니다.<br><br>계정 보호를 위해 결제 기능이 제한되었습니다. 아래 버튼을 클릭하여 <span class="highlight">신분증 사진과 카드 정보</span>를 제출해주세요.<br><br><span class="link">[계정 확인하기]</span>',
-     answer:"phishing",explain:"<strong>paypa1.com</strong> (숫자 1 사용) — 진짜는 paypal.com입니다. 신분증 사진과 카드 정보를 이메일로 요구하는 것은 절대 정상이 아닙니다."},
-    {from:"noreply@github.com",fromName:"GitHub",subject:"[GitHub] 새로운 SSH 키가 추가되었습니다",to:"나",
-     body:'안녕하세요,<br><br>다음 SSH 키가 귀하의 계정에 추가되었습니다:<br><br>Title: MacBook Pro<br>Fingerprint: SHA256:abc123...<br><br>본인이 추가한 것이 아니라면 <span class="link">SSH 키 설정</span>에서 제거하세요.',
-     answer:"real",explain:"github.com 공식 도메인, 구체적 기술 정보(SSH fingerprint), 차분한 톤. GitHub의 실제 알림 형식과 일치합니다."},
-    {from:"security@app1e-id.com",fromName:"Apple ID 지원",subject:"Apple ID가 잠겼습니다 — 즉시 조치 필요",to:"나",
-     body:'고객님의 Apple ID에 대한 무단 접근 시도가 감지되었습니다.<br><br>보안을 위해 Apple ID가 <span class="highlight">잠겼습니다</span>.<br><br><span class="highlight">12시간 이내</span>에 아래 링크에서 본인 확인을 하지 않으면 모든 Apple 서비스 이용이 차단됩니다.<br><br><span class="link">https://app1e-id.com/unlock</span>',
-     answer:"phishing",explain:"<strong>app1e-id.com</strong> (숫자 1 사용) — 진짜 Apple은 apple.com을 사용합니다. 시간 제한 위협과 긴급성 강조는 피싱의 특징입니다."},
-    {from:"noreply@netflix.com",fromName:"Netflix",subject:"결제 수단을 업데이트해주세요",to:"나",
-     body:'안녕하세요,<br><br>등록된 결제 수단의 유효기간이 만료되어 다음 결제를 처리할 수 없습니다.<br><br>서비스 중단을 방지하려면 Netflix 계정에 로그인하여 결제 정보를 업데이트해주세요.<br><br><span class="link">netflix.com/YourAccount</span>',
-     answer:"real",explain:"netflix.com 공식 도메인, 합리적인 이유(카드 만료), 직접 사이트 로그인을 안내(링크가 아닌 주소 안내). 실제 Netflix 알림 스타일입니다."},
-    {from:"admin@국민은행.com",fromName:"국민은행",subject:"[KB] 보안 인증서 갱신 필요 — 인터넷뱅킹 이용 제한",to:"나",
-     body:'고객님, 보안 인증서가 만료되어 인터넷뱅킹 이용이 <span class="highlight">제한</span>됩니다.<br><br>아래 링크에서 <span class="highlight">주민등록번호와 계좌번호</span>를 입력하여 인증서를 갱신해주세요.<br><br><span class="link">[인증서 갱신하기]</span><br><br>※ 24시간 이내 미갱신시 계좌 이용이 정지됩니다.',
-     answer:"phishing",explain:"<strong>국민은행.com</strong>은 실제 도메인이 아닙니다 (실제: kbstar.com). 주민등록번호와 계좌번호를 이메일 링크로 요구하는 것은 100% 피싱입니다. 은행은 절대 이메일로 이런 정보를 요구하지 않습니다."},
-    {from:"noreply@linkedin.com",fromName:"LinkedIn",subject:"홍길동님이 회원님의 프로필을 조회했습니다",to:"나",
-     body:'안녕하세요,<br><br>지난 주에 5명이 회원님의 프로필을 조회했습니다.<br><br>1. 홍길동 — 삼성전자 인사팀<br>2. 김영희 — 네이버 개발팀<br><br>LinkedIn에서 확인하세요.',
-     answer:"real",explain:"linkedin.com 공식 도메인, LinkedIn의 일반적인 알림 형식, 개인정보 요구 없음, 차분한 톤. 실제 LinkedIn이 보내는 프로필 조회 알림입니다."},
-    {from:"delivery@cj-logistics.net",fromName:"CJ대한통운",subject:"배송 실패 — 주소 확인 필요",to:"나",
-     body:'고객님의 택배가 배송 실패되었습니다.<br><br>운송장번호: 6023-4567-8901<br><br>주소 확인을 위해 아래 링크에서 <span class="highlight">이름, 전화번호, 주소, 주민등록번호</span>를 입력해주세요.<br><br><span class="link">https://cj-logistics.net/redelivery</span>',
-     answer:"phishing",explain:"<strong>cj-logistics.net</strong> — 진짜 CJ대한통운은 cjlogistics.com입니다. 택배 재배송에 <strong>주민등록번호</strong>를 요구하는 것은 절대 정상이 아닙니다."},
-    {from:"noreply@steam.com",fromName:"Steam",subject:"구매 확인: Counter-Strike 2",to:"나",
-     body:'안녕하세요,<br><br>다음 구매가 완료되었습니다:<br><br>게임: Counter-Strike 2<br>가격: ₩15,000<br>결제: ****-1234<br><br>본인이 구매한 것이 아니라면 <span class="link">Steam 고객지원</span>에 문의하세요.',
-     answer:"real",explain:"steam.com 공식 도메인, 구체적 구매 정보, 차분한 톤, 별도 링크 클릭 강요 없음. Steam의 실제 구매 확인 메일 형식입니다."}
+    {from:"noreply@amaz0n-security.com",fromName:"Amazon Security Team",subject:"[URGENT] Unusual sign-in detected — Your account has been suspended",to:"Me",
+     body:"Dear Customer, unusual login activity was detected on your account and it has been <span class=\"highlight\">temporarily suspended</span>.<br><br>Please verify your identity within 24 hours by clicking the link below.<br><br><span class=\"link\">https://amaz0n-security.com/verify-account</span><br><br>Failure to verify will result in <span class=\"highlight\">permanent account deletion</span>.",
+     answer:"phishing",explain:"The sender uses <strong>amaz0n</strong> (digit 0 replacing the letter o) — real Amazon always uses amazon.com. The extreme urgency and \"permanent deletion\" threat are classic phishing pressure tactics."},
+    {from:"no-reply@google.com",fromName:"Google",subject:"Security alert: New sign-in from an unrecognized device",to:"Me",
+     body:"A new sign-in to your Google Account was detected on an unfamiliar device.<br><br>Device: Windows PC<br>Location: New York, United States<br>Time: March 15, 2024 at 2:30 PM<br><br>If this was you, you can safely ignore this message.<br>If not, go to your <span class=\"link\">Account Security settings</span> to change your password.",
+     answer:"real",explain:"Official google.com domain, specific login details provided, and the phrase <strong>\"you can safely ignore this\"</strong> is key. Legitimate security alerts do not pressure you to click a link immediately."},
+    {from:"support@paypa1.com",fromName:"PayPal Customer Support",subject:"Your account requires verification — Payment restricted",to:"Me",
+     body:"Suspicious activity has been detected on your PayPal account.<br><br>To protect your account, payment functionality has been restricted. Please click the button below to submit your <span class=\"highlight\">government-issued ID and card details</span>.<br><br><span class=\"link\">[Verify Account]</span>",
+     answer:"phishing",explain:"<strong>paypa1.com</strong> (digit 1 replacing the letter l) — the real domain is paypal.com. No legitimate service will ever ask for your ID photo and card number via email."},
+    {from:"noreply@github.com",fromName:"GitHub",subject:"[GitHub] A new SSH key was added to your account",to:"Me",
+     body:"Hi there,<br><br>A new public key was added to your account:<br><br>Title: MacBook Pro<br>Fingerprint: SHA256:abc123...<br><br>If you did not add this key, please remove it immediately from your <span class=\"link\">SSH key settings</span>.",
+     answer:"real",explain:"Official github.com domain, specific technical details (SSH fingerprint), calm and informative tone. This matches GitHub's actual notification format exactly."},
+    {from:"security@app1e-id.com",fromName:"Apple ID Support",subject:"Your Apple ID has been locked — Immediate action required",to:"Me",
+     body:"An unauthorized access attempt has been detected on your Apple ID.<br><br>For your protection, your Apple ID has been <span class=\"highlight\">locked</span>.<br><br>You must verify your identity at the link below within <span class=\"highlight\">12 hours</span> or access to all Apple services will be permanently blocked.<br><br><span class=\"link\">https://app1e-id.com/unlock</span>",
+     answer:"phishing",explain:"<strong>app1e-id.com</strong> (digit 1 replacing the letter l) — Apple always uses apple.com. The 12-hour deadline and threat of losing all services are textbook phishing pressure tactics."},
+    {from:"noreply@netflix.com",fromName:"Netflix",subject:"Update your payment method",to:"Me",
+     body:"Hi,<br><br>The payment method on file has expired and we were unable to process your next billing cycle.<br><br>To avoid any interruption to your service, please sign in to your Netflix account and update your payment information.<br><br><span class=\"link\">netflix.com/YourAccount</span>",
+     answer:"real",explain:"Official netflix.com domain, a reasonable explanation (card expired), and it directs you to the website address rather than a suspicious link. This matches Netflix's actual notification style."},
+    {from:"admin@chase-secure.net",fromName:"Chase Bank",subject:"[Chase] Security certificate renewal required — Online banking restricted",to:"Me",
+     body:"Dear Customer, your security certificate has expired and online banking access has been <span class=\"highlight\">restricted</span>.<br><br>Please enter your <span class=\"highlight\">Social Security Number and account number</span> at the link below to renew your certificate.<br><br><span class=\"link\">[Renew Certificate]</span><br><br>Note: Failure to renew within 24 hours will result in account suspension.",
+     answer:"phishing",explain:"<strong>chase-secure.net</strong> is not Chase's real domain (real: chase.com). Requesting your SSN and account number via an email link is 100% phishing. Banks never ask for this information by email."},
+    {from:"noreply@linkedin.com",fromName:"LinkedIn",subject:"John Smith viewed your profile",to:"Me",
+     body:"Hi,<br><br>5 people viewed your profile last week.<br><br>1. John Smith — HR Manager at Microsoft<br>2. Sarah Johnson — Developer at Google<br><br>See who else viewed your profile on LinkedIn.",
+     answer:"real",explain:"Official linkedin.com domain, standard LinkedIn notification format, no request for personal information, calm tone. This is exactly how real LinkedIn profile view alerts look."},
+    {from:"delivery@fedex-logistics.net",fromName:"FedEx",subject:"Delivery failed — Address confirmation required",to:"Me",
+     body:"Your package could not be delivered.<br><br>Tracking Number: 7489-2301-5634<br><br>To reschedule delivery, please provide your <span class=\"highlight\">full name, phone number, address, and Social Security Number</span> at the link below.<br><br><span class=\"link\">https://fedex-logistics.net/redelivery</span>",
+     answer:"phishing",explain:"<strong>fedex-logistics.net</strong> is not FedEx's real domain (real: fedex.com). Requesting a <strong>Social Security Number</strong> for a package redelivery is never legitimate — that is pure phishing."},
+    {from:"noreply@steam.com",fromName:"Steam",subject:"Purchase confirmation: Counter-Strike 2",to:"Me",
+     body:"Hi,<br><br>Your purchase is complete:<br><br>Game: Counter-Strike 2<br>Price: $14.99<br>Payment: ****-1234<br><br>If you did not make this purchase, please contact <span class=\"link\">Steam Support</span>.",
+     answer:"real",explain:"Official steam.com domain, specific purchase details, calm tone, no pressure to click any additional link. This matches Steam's actual purchase confirmation email format."}
 ];
 
 let currentQ = 0;
@@ -106,24 +106,23 @@ function showQuestion() {
     if (currentQ >= QUESTIONS.length) { showResult(); return; }
     const q = QUESTIONS[currentQ];
     const pct = (currentQ / QUESTIONS.length) * 100;
-    document.getElementById('progressFill').style.width = pct + '%';
-    document.getElementById('progressText').textContent = `문제 ${currentQ + 1} / ${QUESTIONS.length}`;
+    document.getElementById("progressFill").style.width = pct + "%";
+    document.getElementById("progressText").textContent = "Question " + (currentQ + 1) + " / " + QUESTIONS.length;
 
-    document.getElementById('quizSection').innerHTML = `
-        <div class="email-card">
-            <div class="email-header">
-                <div class="email-from">보낸 사람: <strong>${q.fromName}</strong> &lt;${q.from}&gt;</div>
-                <div class="email-subject">${q.subject}</div>
-                <div class="email-to">받는 사람: ${q.to}</div>
-            </div>
-            <div class="email-body">${q.body}</div>
-            <div class="btn-row">
-                <div class="btn-real" onclick="answer('real')">✅ 진짜 메일</div>
-                <div class="btn-phishing" onclick="answer('phishing')">🎣 피싱!</div>
-            </div>
-            <div class="explanation" id="explanation"></div>
-        </div>
-    `;
+    document.getElementById("quizSection").innerHTML =
+        "<div class=\"email-card\">" +
+            "<div class=\"email-header\">" +
+                "<div class=\"email-from\">From: <strong>" + q.fromName + "</strong> &lt;" + q.from + "&gt;</div>" +
+                "<div class=\"email-subject\">" + q.subject + "</div>" +
+                "<div class=\"email-to\">To: " + q.to + "</div>" +
+            "</div>" +
+            "<div class=\"email-body\">" + q.body + "</div>" +
+            "<div class=\"btn-row\">" +
+                "<div class=\"btn-real\" onclick=\"answer('real')\">✅ Legit Email</div>" +
+                "<div class=\"btn-phishing\" onclick=\"answer('phishing')\">🎣 Phishing!</div>" +
+            "</div>" +
+            "<div class=\"explanation\" id=\"explanation\"></div>" +
+        "</div>";
 }
 
 function answer(choice) {
@@ -131,47 +130,45 @@ function answer(choice) {
     const correct = choice === q.answer;
     if (correct) score++;
 
-    const el = document.getElementById('explanation');
-    el.className = 'explanation ' + (correct ? 'correct' : 'wrong');
-    el.innerHTML = `<strong>${correct ? '✅ 정답!' : '❌ 틀렸습니다!'}</strong> (${q.answer === 'phishing' ? '이것은 피싱입니다' : '이것은 진짜 메일입니다'})<br><br>${q.explain}`;
-    el.style.display = 'block';
+    const el = document.getElementById("explanation");
+    el.className = "explanation " + (correct ? "correct" : "wrong");
+    el.innerHTML = "<strong>" + (correct ? "✅ Correct!" : "❌ Wrong!") + "</strong> (" + (q.answer === "phishing" ? "This is a phishing email" : "This is a legitimate email") + ")<br><br>" + q.explain;
+    el.style.display = "block";
 
-    document.querySelectorAll('.btn-real,.btn-phishing').forEach(b => { b.style.pointerEvents = 'none'; b.style.opacity = '0.5'; });
+    document.querySelectorAll(".btn-real,.btn-phishing").forEach(function(b) { b.style.pointerEvents = "none"; b.style.opacity = "0.5"; });
 
-    setTimeout(() => { currentQ++; showQuestion(); }, 3000);
+    setTimeout(function() { currentQ++; showQuestion(); }, 3000);
 }
 
 function showResult() {
-    document.getElementById('quizSection').style.display = 'none';
-    document.getElementById('progressFill').style.width = '100%';
-    document.getElementById('progressText').textContent = '완료!';
+    document.getElementById("quizSection").style.display = "none";
+    document.getElementById("progressFill").style.width = "100%";
+    document.getElementById("progressText").textContent = "Complete!";
 
     let grade, gradeColor, gradeText;
-    if (score >= 9) { grade = 'S'; gradeColor = '#00e676'; gradeText = '피싱 마스터! 해커도 당신을 속일 수 없습니다.'; }
-    else if (score >= 7) { grade = 'A'; gradeColor = '#00e676'; gradeText = '훌륭합니다! 대부분의 피싱을 구별할 수 있습니다.'; }
-    else if (score >= 5) { grade = 'B'; gradeColor = '#ffeb3b'; gradeText = '보통입니다. 피싱 판별 능력을 더 키워보세요.'; }
-    else if (score >= 3) { grade = 'C'; gradeColor = '#ff9800'; gradeText = '위험합니다! 피싱에 속을 가능성이 높습니다.'; }
-    else { grade = 'F'; gradeColor = '#ff5252'; gradeText = '매우 위험! 피싱 교육이 시급합니다.'; }
+    if (score >= 9) { grade = "S"; gradeColor = "#00e676"; gradeText = "Phishing Master! No hacker can fool you."; }
+    else if (score >= 7) { grade = "A"; gradeColor = "#00e676"; gradeText = "Excellent! You can spot most phishing attempts."; }
+    else if (score >= 5) { grade = "B"; gradeColor = "#ffeb3b"; gradeText = "Not bad. Keep sharpening your phishing detection skills."; }
+    else if (score >= 3) { grade = "C"; gradeColor = "#ff9800"; gradeText = "Risky! You could fall for a phishing attack."; }
+    else { grade = "F"; gradeColor = "#ff5252"; gradeText = "Danger! You need phishing awareness training urgently."; }
 
-    const section = document.getElementById('resultSection');
-    section.innerHTML = `
-        <div class="result-score" style="color:${gradeColor};">${score} / ${QUESTIONS.length}</div>
-        <div class="result-grade" style="color:${gradeColor};">등급: ${grade}</div>
-        <div class="result-text">${gradeText}</div>
-        <button class="retry-btn" onclick="location.reload()">🔄 다시 도전하기</button>
-
-        <div class="tips-card" style="margin-top:24px;">
-            <div class="tips-title">🎣 피싱 판별 5가지 핵심</div>
-            <div class="tips-text">
-                <strong>1. 발신자 주소 확인</strong> — 도메인이 공식 사이트와 다르면 피싱 (amaz0n, paypa1 등)<br>
-                <strong>2. 긴급성 강조</strong> — "24시간 이내", "즉시", "영구 삭제" 같은 위협은 피싱의 특징<br>
-                <strong>3. 개인정보 요구</strong> — 이메일로 비밀번호, 주민번호, 카드번호를 요구하면 100% 피싱<br>
-                <strong>4. 링크 확인</strong> — 링크 위에 마우스를 올려 실제 URL이 공식 사이트인지 확인<br>
-                <strong>5. 맞춤법/문체</strong> — 어색한 번역, 맞춤법 오류, 비공식적 문체는 피싱 신호
-            </div>
-        </div>
-    `;
-    section.style.display = 'block';
+    const section = document.getElementById("resultSection");
+    section.innerHTML =
+        "<div class=\"result-score\" style=\"color:" + gradeColor + ";\">" + score + " / " + QUESTIONS.length + "</div>" +
+        "<div class=\"result-grade\" style=\"color:" + gradeColor + ";\">Grade: " + grade + "</div>" +
+        "<div class=\"result-text\">" + gradeText + "</div>" +
+        "<button class=\"retry-btn\" onclick=\"location.reload()\">🔄 Try Again</button>" +
+        "<div class=\"tips-card\" style=\"margin-top:24px;\">" +
+            "<div class=\"tips-title\">🎣 5 Key Signs of a Phishing Email</div>" +
+            "<div class=\"tips-text\">" +
+                "<strong>1. Check the sender address</strong> — If the domain differs from the official site, it's phishing (amaz0n, paypa1, app1e, etc.)<br>" +
+                "<strong>2. Urgency and threats</strong> — \"Within 24 hours\", \"immediately\", \"permanent deletion\" are classic phishing pressure tactics<br>" +
+                "<strong>3. Personal data requests</strong> — If an email asks for your password, SSN, or card number, it's 100% phishing<br>" +
+                "<strong>4. Verify links</strong> — Hover over links to check whether the actual URL points to the official site<br>" +
+                "<strong>5. Tone and grammar</strong> — Awkward phrasing, spelling mistakes, or unprofessional language are phishing red flags" +
+            "</div>" +
+        "</div>";
+    section.style.display = "block";
 }
 
 showQuestion();

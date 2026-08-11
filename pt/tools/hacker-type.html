@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛡️</text></svg>">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>해커 유형 테스트 - 나는 어떤 해커? | MOGU Guard</title>
-    <meta name="description" content="재미있는 해커 유형 테스트! 8가지 질문으로 당신이 어떤 해커 유형인지 알아보세요. 화이트햇? 그레이햇? 스크립트 키디?">
-    <link rel="canonical" href="https://moguguard.com/tools/hacker-type.html">
-    <meta property="og:title" content="해커 유형 테스트 | MOGU Guard">
-    <meta property="og:description" content="나는 어떤 해커 유형? 8가지 질문으로 알아보기!">
+    <title>Hacker Type Test - What Kind of Hacker Are You? | MOGU Guard</title>
+    <meta name="description" content="Fun hacker type test! Answer 8 questions to find out what kind of hacker you are. White hat? Gray hat? Script kiddie?">
+    <link rel="canonical" href="https://moguguard.com/en/tools/hacker-type.html">
+    <meta property="og:title" content="Hacker Type Test | MOGU Guard">
+    <meta property="og:description" content="What type of hacker are you? Find out with 8 questions!">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://moguguard.com/tools/hacker-type.html">
+    <meta property="og:url" content="https://moguguard.com/en/tools/hacker-type.html">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&display=swap');
         *{margin:0;padding:0;box-sizing:border-box}body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#0a0a0a;color:#e0e0e0;min-height:100vh}
@@ -42,75 +42,75 @@
 <header><a href="../index.html">MOGU <span style="color:#00ff41;">Guard</span></a></header>
 <div class="container">
     <div class="page-title">
-        <h2>🎭 해커 유형 테스트</h2>
-        <p>8가지 질문으로 나의 해커 유형을 알아보세요</p>
+        <h2>🎭 Hacker Type Test</h2>
+        <p>Find out what kind of hacker you are with 8 questions</p>
     </div>
     <div class="progress-bar"><div class="progress-fill" id="pf" style="width:0%"></div></div>
     <div class="progress-text" id="pt">Q1 / 8</div>
     <div id="quizSection"><div class="q-card" id="qCard"></div></div>
     <div id="resultSection" class="result-section"></div>
 </div>
-<div style="text-align:center;padding:20px 0;border-top:1px solid #1a3a1a;margin-top:30px;"><span style="font-size:12px;color:#333;margin-right:8px;">공유:</span><a href="" onclick="window.open('https://twitter.com/intent/tweet?url='+encodeURIComponent(location.href)+'&text='+encodeURIComponent(document.title),'_blank','width=600,height=400');return false" style="display:inline-block;padding:5px 10px;background:#1da1f2;color:#fff;border-radius:4px;text-decoration:none;font-size:11px;margin:3px;">Twitter</a><a href="" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),'_blank','width=600,height=400');return false" style="display:inline-block;padding:5px 10px;background:#1877f2;color:#fff;border-radius:4px;text-decoration:none;font-size:11px;margin:3px;">Facebook</a><a href="" onclick="navigator.clipboard.writeText(location.href);this.textContent='Copied!';return false" style="display:inline-block;padding:5px 10px;background:#333;color:#0f0;border-radius:4px;text-decoration:none;font-size:11px;margin:3px;font-family:monospace;">URL 복사</a></div>
+<div style="text-align:center;padding:20px 0;border-top:1px solid #1a3a1a;margin-top:30px;"><span style="font-size:12px;color:#333;margin-right:8px;">Share:</span><a href="" onclick="window.open('https://twitter.com/intent/tweet?url='+encodeURIComponent(location.href)+'&text='+encodeURIComponent(document.title),'_blank','width=600,height=400');return false" style="display:inline-block;padding:5px 10px;background:#1da1f2;color:#fff;border-radius:4px;text-decoration:none;font-size:11px;margin:3px;">Twitter</a><a href="" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),'_blank','width=600,height=400');return false" style="display:inline-block;padding:5px 10px;background:#1877f2;color:#fff;border-radius:4px;text-decoration:none;font-size:11px;margin:3px;">Facebook</a><a href="" onclick="navigator.clipboard.writeText(location.href);this.textContent='Copied!';return false" style="display:inline-block;padding:5px 10px;background:#333;color:#0f0;border-radius:4px;text-decoration:none;font-size:11px;margin:3px;font-family:monospace;">Copy URL</a></div>
 <footer>© 2025 MOGU Guard</footer>
 <script>
 const QS=[
-{q:"누군가의 SNS 계정 비밀번호를 알게 됐다면?",o:[{t:"주인에게 알려주고 비밀번호 바꾸라고 함",c:"white"},{t:"살짝 들어가서 구경만 하고 나옴",c:"gray"},{t:"흥미로운 정보가 있나 찾아봄",c:"black"},{t:"그런 일이 생길 리가 없음. 관심 없음",c:"none"}]},
-{q:"웹사이트에서 버그를 발견하면?",o:[{t:"회사에 바로 신고함",c:"white"},{t:"일단 얼마나 심각한지 더 파봄",c:"gray"},{t:"이걸로 뭘 할 수 있을지 생각함",c:"black"},{t:"그냥 무시하고 다른 사이트 감",c:"none"}]},
-{q:"해킹 기술을 배우는 목적은?",o:[{t:"보안을 강화하고 사람들을 보호하기 위해",c:"white"},{t:"어떻게 작동하는지 궁금해서",c:"gray"},{t:"남들이 모르는 걸 아는 게 좋아서",c:"black"},{t:"해킹? 몰라. 그냥 인터넷이나 씀",c:"none"}]},
-{q:"친구가 유료 소프트웨어 크랙을 구해달라고 하면?",o:[{t:"위험하다고 설득하고 무료 대안을 알려줌",c:"white"},{t:"찾아볼 수는 있지만... 좀 꺼려짐",c:"gray"},{t:"이미 갖고 있음. 바로 줌",c:"black"},{t:"크랙이 뭔데?",c:"none"}]},
-{q:"카페에서 옆 사람이 비밀번호 치는 걸 봤다면?",o:[{t:"일부러 안 봄. 프라이버시니까",c:"white"},{t:"무의식적으로 봤지만 기억하려 하진 않음",c:"gray"},{t:"오 저거 기억해두면 쓸모있겠는데",c:"black"},{t:"관심 없음. 내 폰이나 봄",c:"none"}]},
-{q:"가장 멋있다고 생각하는 영화 캐릭터는?",o:[{t:"아이언맨 (기술로 세상을 구하는 영웅)",c:"white"},{t:"셜록 홈즈 (호기심과 분석의 천재)",c:"gray"},{t:"조커 (규칙을 무시하는 카오스)",c:"black"},{t:"영화에 해커가 나와?",c:"none"}]},
-{q:"보안 취약점을 가진 시스템을 발견하면?",o:[{t:"관리자에게 알리고 패치될 때까지 기다림",c:"white"},{t:"얼마나 위험한지 직접 테스트해봄 (허가 없이)",c:"gray"},{t:"이걸로 뭘 얻을 수 있을지 계산함",c:"black"},{t:"취약점? 그게 뭔데?",c:"none"}]},
-{q:"이상적인 직업은?",o:[{t:"보안 컨설턴트 / 화이트해커",c:"white"},{t:"프리랜서 연구원 / 버그 바운티 헌터",c:"gray"},{t:"자유로운 영혼 (규칙에 얽매이기 싫음)",c:"black"},{t:"IT랑 상관없는 분야",c:"none"}]}
+{q:"You somehow find out someone's social media password. What do you do?",o:[{t:"Tell the owner and advise them to change it immediately",c:"white"},{t:"Peek in just to look around, then leave",c:"gray"},{t:"Dig around to see if there's anything interesting",c:"black"},{t:"That would never happen to me. Not interested",c:"none"}]},
+{q:"You discover a bug on a website. What do you do?",o:[{t:"Report it to the company right away",c:"white"},{t:"Probe a bit further to see how serious it is",c:"gray"},{t:"Start thinking about what you could do with it",c:"black"},{t:"Ignore it and move on to another site",c:"none"}]},
+{q:"Why do you want to learn hacking techniques?",o:[{t:"To strengthen security and protect people",c:"white"},{t:"Because I'm curious how things work",c:"gray"},{t:"I like knowing things others don't",c:"black"},{t:"Hacking? Not my thing. I just use the internet",c:"none"}]},
+{q:"A friend asks you to find cracked software for them. What do you do?",o:[{t:"Warn them about the risks and suggest free alternatives",c:"white"},{t:"I could look, but it feels a bit off...",c:"gray"},{t:"Already have it. Sending it over now",c:"black"},{t:"What's a crack?",c:"none"}]},
+{q:"At a café you accidentally see the person next to you type their password. What do you do?",o:[{t:"Deliberately look away — that's their privacy",c:"white"},{t:"Saw it by accident, but made no effort to remember it",c:"gray"},{t:"Oh, that could be useful to keep in mind",c:"black"},{t:"Not interested. Back to my phone",c:"none"}]},
+{q:"Which fictional character do you find most impressive?",o:[{t:"Iron Man (a hero who uses technology to save the world)",c:"white"},{t:"Sherlock Holmes (a genius driven by curiosity and analysis)",c:"gray"},{t:"The Joker (chaos that ignores all rules)",c:"black"},{t:"Are there hackers in movies?",c:"none"}]},
+{q:"You discover a system with a security vulnerability. What do you do?",o:[{t:"Notify the admin and wait for a patch",c:"white"},{t:"Test it yourself to see how dangerous it really is (without permission)",c:"gray"},{t:"Calculate what you could gain from it",c:"black"},{t:"Vulnerability? What's that?",c:"none"}]},
+{q:"What is your ideal career?",o:[{t:"Security consultant / white-hat hacker",c:"white"},{t:"Freelance researcher / bug bounty hunter",c:"gray"},{t:"Free spirit (I hate being tied to rules)",c:"black"},{t:"Something completely unrelated to IT",c:"none"}]}
 ];
 
 const TYPES={
-white:{name:"화이트햇 해커",emoji:"🤍",title:"White Hat — 정의의 수호자",
-    desc:"당신은 <strong>정의를 위해 기술을 쓰는 화이트햇</strong>입니다. 보안 취약점을 발견하면 신고하고, 사람들을 보호하는 데 기술을 사용합니다. 기업과 정부가 당신 같은 사람을 필요로 합니다.",
-    strength:"윤리의식, 전문성, 신뢰감",career:"보안 컨설턴트, 펜테스터, CISO, 보안 연구원",celeb:"케빈 미트닉 (전환 후), 트로이 헌트"},
-gray:{name:"그레이햇 해커",emoji:"🩶",title:"Gray Hat — 호기심의 탐험가",
-    desc:"당신은 <strong>호기심이 넘치는 그레이햇</strong>입니다. 선과 악의 경계에서 기술을 탐구합니다. '이게 어떻게 작동하지?'가 당신의 원동력. 때때로 규칙을 살짝 넘기도 하지만, 악의는 없습니다.",
-    strength:"호기심, 분석력, 적응력",career:"버그 바운티 헌터, 프리랜서 연구원, CTF 플레이어",celeb:"Geohot (조지 호츠)"},
-black:{name:"블랙햇 해커",emoji:"🖤",title:"Black Hat — 어둠의 천재",
-    desc:"당신은 <strong>규칙을 무시하는 블랙햇</strong> 성향입니다. 시스템의 허점을 찾고 이용하는 데 천부적 재능이 있습니다. 하지만 기억하세요 — 실력이 뛰어날수록 <strong>책임도 커집니다</strong>. 화이트햇으로 전환하면 합법적으로 더 큰 돈을 벌 수 있어요!",
-    strength:"창의성, 대담함, 기술력",career:"(합법 전환 시) 레드팀, 익스플로잇 개발자, 보안 아키텍트",celeb:"케빈 미트닉 (전환 전)"},
-none:{name:"디지털 시민",emoji:"😊",title:"Normal User — 평화로운 인터넷 사용자",
-    desc:"당신은 해킹에 관심이 없는 <strong>평화로운 디지털 시민</strong>입니다. 그것도 괜찮아요! 모든 사람이 해커가 될 필요는 없습니다. 다만 <strong>기본적인 보안 상식</strong>은 꼭 알아두세요.",
-    strength:"평화로움, 균형잡힌 디지털 라이프",career:"IT가 아닌 모든 분야",celeb:"당신!"}
+white:{name:"White Hat Hacker",emoji:"🤍",title:"White Hat — Guardian of Justice",
+    desc:"You use <strong>technology for the right reasons</strong>. When you find a vulnerability, you report it; when you have skills, you use them to protect people. Corporations and governments need people exactly like you.",
+    strength:"Ethics, expertise, trustworthiness",career:"Security consultant, penetration tester, CISO, security researcher",celeb:"Kevin Mitnick (reformed), Troy Hunt"},
+gray:{name:"Gray Hat Hacker",emoji:"🩶",title:"Gray Hat — Explorer of Curiosity",
+    desc:"You are a <strong>curiosity-driven gray hat</strong>. You explore technology on the blurry line between good and bad. 'How does this work?' is your driving force. You occasionally bend the rules, but there's no real malice behind it.",
+    strength:"Curiosity, analytical thinking, adaptability",career:"Bug bounty hunter, freelance researcher, CTF competitor",celeb:"Geohot (George Hotz)"},
+black:{name:"Black Hat Hacker",emoji:"🖤",title:"Black Hat — Genius of Darkness",
+    desc:"You have a natural talent for finding and exploiting loopholes in systems. But remember — <strong>the greater your skill, the greater your responsibility</strong>. Switching to the white-hat side lets you earn even more money — legally!",
+    strength:"Creativity, boldness, technical skill",career:"(If you go legit) Red team operator, exploit developer, security architect",celeb:"Kevin Mitnick (before his reformation)"},
+none:{name:"Digital Citizen",emoji:"😊",title:"Normal User — Peaceful Internet User",
+    desc:"You have no interest in hacking, and that's completely fine! Not everyone needs to be a hacker. That said, make sure you know at least the <strong>basic security essentials</strong>.",
+    strength:"Peacefulness, balanced digital life",career:"Any field outside of IT",celeb:"You!"}
 };
 
 let cur=0;const scores={white:0,gray:0,black:0,none:0};
 
 function show(){
     if(cur>=QS.length){result();return;}
-    document.getElementById('pf').style.width=(cur/QS.length*100)+'%';
-    document.getElementById('pt').textContent=`Q${cur+1} / ${QS.length}`;
+    document.getElementById("pf").style.width=(cur/QS.length*100)+"%";
+    document.getElementById("pt").textContent="Q"+(cur+1)+" / "+QS.length;
     const q=QS[cur];
-    document.getElementById('qCard').innerHTML=`
+    document.getElementById("qCard").innerHTML=`
         <div class="q-num">QUESTION ${cur+1}</div>
         <div class="q-text">${q.q}</div>
-        <div class="options">${q.o.map((o,i)=>`<div class="opt" onclick="ans('${o.c}')">${o.t}</div>`).join('')}</div>`;
+        <div class="options">${q.o.map((o,i)=>`<div class="opt" onclick="ans('${o.c}')">${o.t}</div>`).join("")}</div>`;
 }
 
 function ans(c){scores[c]++;cur++;show();}
 
 function result(){
-    document.getElementById('quizSection').style.display='none';
-    document.getElementById('pf').style.width='100%';
-    document.getElementById('pt').textContent='완료!';
+    document.getElementById("quizSection").style.display="none";
+    document.getElementById("pf").style.width="100%";
+    document.getElementById("pt").textContent="Done!";
     const top=Object.entries(scores).sort((a,b)=>b[1]-a[1])[0][0];
     const t=TYPES[top];
-    document.getElementById('resultSection').innerHTML=`
+    document.getElementById("resultSection").innerHTML=`
         <div class="r-emoji">${t.emoji}</div>
         <div class="r-name">${t.name}</div>
         <div class="r-title">${t.title}</div>
-        <div class="info-card"><div class="info-title">🎭 당신의 유형</div><div class="info-text">${t.desc}</div></div>
-        <div class="info-card"><div class="info-title">💪 강점</div><div class="info-text"><strong>${t.strength}</strong></div></div>
-        <div class="info-card"><div class="info-title">💼 어울리는 직업</div><div class="info-text">${t.career}</div></div>
-        <div class="info-card"><div class="info-title">🌟 유명인</div><div class="info-text">${t.celeb}</div></div>
-        <button class="retry-btn" onclick="location.reload()">🔄 다시 테스트</button>`;
-    document.getElementById('resultSection').style.display='block';
-    document.getElementById('resultSection').scrollIntoView({behavior:'smooth'});
+        <div class="info-card"><div class="info-title">🎭 Your Type</div><div class="info-text">${t.desc}</div></div>
+        <div class="info-card"><div class="info-title">💪 Strengths</div><div class="info-text"><strong>${t.strength}</strong></div></div>
+        <div class="info-card"><div class="info-title">💼 Matching Careers</div><div class="info-text">${t.career}</div></div>
+        <div class="info-card"><div class="info-title">🌟 Famous Examples</div><div class="info-text">${t.celeb}</div></div>
+        <button class="retry-btn" onclick="location.reload()">🔄 Retake Test</button>`;
+    document.getElementById("resultSection").style.display="block";
+    document.getElementById("resultSection").scrollIntoView({behavior:"smooth"});
 }
 show();
 </script>
