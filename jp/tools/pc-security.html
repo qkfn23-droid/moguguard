@@ -1,19 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛡️</text></svg>">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PC Security Score - Computer Security Checklist | MOGU Guard</title>
-    <meta name="description" content="Check your computer security settings and see your security score. Diagnose 15 items including antivirus, firewall, updates, and passwords.">
-    <link rel="canonical" href="https://moguguard.com/en/tools/pc-security.html">
-    <meta property="og:title" content="PC Security Score | MOGU Guard">
-    <meta property="og:description" content="Check your computer security score! 15-item checklist.">
+    <title>PCセキュリティ診断 - パソコンセキュリティチェックリスト | MOGU Guard</title>
+    <meta name="description" content="パソコンのセキュリティ設定を確認してスコアを診断。ウイルス対策・ファイアウォール・アップデート・パスワードなど15項目をチェック。">
+    <link rel="canonical" href="https://moguguard.com/jp/tools/pc-security.html">
+    <meta property="og:title" content="PCセキュリティ診断 | MOGU Guard">
+    <meta property="og:description" content="パソコンのセキュリティスコアを確認！15項目チェックリスト。">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://moguguard.com/en/tools/pc-security.html">
+    <meta property="og:url" content="https://moguguard.com/jp/tools/pc-security.html">
     <script type="application/ld+json">
     {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
-    {"@type":"Question","name":"Why is PC security important?","acceptedAnswer":{"@type":"Answer","text":"Your PC stores documents, photos, and financial information. Infections from ransomware, keyloggers, and other malware can cause data loss and financial damage."}}
+    {"@type":"Question","name":"PCセキュリティが重要な理由は？","acceptedAnswer":{"@type":"Answer","text":"PCにはドキュメント・写真・金融情報が保存されています。ランサムウェア・キーロガーなどのマルウェア感染によりデータ損失や金銭的被害が発生する可能性があります。"}}
     ]}
     </script>
     <style>
@@ -45,29 +45,29 @@
 <header><a href="../index.html">MOGU <span style="color:#00ff41;">Guard</span></a></header>
 <div class="container">
     <div class="page-title">
-        <h2>💻 PC Security Score</h2>
-        <p>Check all items that apply to you</p>
+        <h2>💻 PCセキュリティ診断</h2>
+        <p>当てはまる項目すべてにチェックを入れてください</p>
     </div>
 
     <div class="checklist">
-        <div class="check-item"><input type="checkbox" id="c1" onchange="calc()"><label for="c1"><strong>Antivirus software</strong> is installed and real-time protection is enabled</label><span class="risk risk-high">Essential</span></div>
-        <div class="check-item"><input type="checkbox" id="c2" onchange="calc()"><label for="c2"><strong>Operating system (Windows/Mac)</strong> is updated to the latest version</label><span class="risk risk-high">Essential</span></div>
-        <div class="check-item"><input type="checkbox" id="c3" onchange="calc()"><label for="c3"><strong>Firewall</strong> is enabled</label><span class="risk risk-high">Essential</span></div>
-        <div class="check-item"><input type="checkbox" id="c4" onchange="calc()"><label for="c4"><strong>Login password</strong> is set (not using auto-login)</label><span class="risk risk-high">Essential</span></div>
-        <div class="check-item"><input type="checkbox" id="c5" onchange="calc()"><label for="c5"><strong>Browser</strong> is kept up to date</label><span class="risk risk-mid">Important</span></div>
-        <div class="check-item"><input type="checkbox" id="c6" onchange="calc()"><label for="c6">Suspicious <strong>email attachments</strong> are never opened</label><span class="risk risk-high">Essential</span></div>
-        <div class="check-item"><input type="checkbox" id="c7" onchange="calc()"><label for="c7">Important files are <strong>backed up regularly</strong> (external drive / cloud)</label><span class="risk risk-mid">Important</span></div>
-        <div class="check-item"><input type="checkbox" id="c8" onchange="calc()"><label for="c8">Unused <strong>programs have been uninstalled</strong></label><span class="risk risk-low">Recommended</span></div>
-        <div class="check-item"><input type="checkbox" id="c9" onchange="calc()"><label for="c9">The computer is used with a <strong>standard user account</strong>, not an administrator account</label><span class="risk risk-mid">Important</span></div>
-        <div class="check-item"><input type="checkbox" id="c10" onchange="calc()"><label for="c10"><strong>Files are not downloaded</strong> from untrusted websites</label><span class="risk risk-high">Essential</span></div>
-        <div class="check-item"><input type="checkbox" id="c11" onchange="calc()"><label for="c11"><strong>USB auto-run</strong> is disabled</label><span class="risk risk-mid">Important</span></div>
-        <div class="check-item"><input type="checkbox" id="c12" onchange="calc()"><label for="c12">Browser <strong>password saving</strong> is disabled or a password manager is used</label><span class="risk risk-mid">Important</span></div>
-        <div class="check-item"><input type="checkbox" id="c13" onchange="calc()"><label for="c13"><strong>Screensaver / auto-lock</strong> is configured</label><span class="risk risk-low">Recommended</span></div>
-        <div class="check-item"><input type="checkbox" id="c14" onchange="calc()"><label for="c14"><strong>Remote Desktop</strong> is disabled if not needed</label><span class="risk risk-mid">Important</span></div>
-        <div class="check-item"><input type="checkbox" id="c15" onchange="calc()"><label for="c15"><strong>Disk encryption</strong> (BitLocker / FileVault) is in use</label><span class="risk risk-low">Recommended</span></div>
+        <div class="check-item"><input type="checkbox" id="c1" onchange="calc()"><label for="c1"><strong>ウイルス対策ソフト</strong>がインストールされ、リアルタイム保護が有効になっている</label><span class="risk risk-high">必須</span></div>
+        <div class="check-item"><input type="checkbox" id="c2" onchange="calc()"><label for="c2"><strong>OS（Windows/Mac）</strong>が最新バージョンにアップデートされている</label><span class="risk risk-high">必須</span></div>
+        <div class="check-item"><input type="checkbox" id="c3" onchange="calc()"><label for="c3"><strong>ファイアウォール</strong>が有効になっている</label><span class="risk risk-high">必須</span></div>
+        <div class="check-item"><input type="checkbox" id="c4" onchange="calc()"><label for="c4"><strong>ログインパスワード</strong>が設定されている（自動ログインは使っていない）</label><span class="risk risk-high">必須</span></div>
+        <div class="check-item"><input type="checkbox" id="c5" onchange="calc()"><label for="c5"><strong>ブラウザ</strong>を最新の状態に保っている</label><span class="risk risk-mid">重要</span></div>
+        <div class="check-item"><input type="checkbox" id="c6" onchange="calc()"><label for="c6">不審な<strong>メールの添付ファイル</strong>は絶対に開かない</label><span class="risk risk-high">必須</span></div>
+        <div class="check-item"><input type="checkbox" id="c7" onchange="calc()"><label for="c7">重要なファイルは定期的に<strong>バックアップ</strong>している（外付けドライブ・クラウド）</label><span class="risk risk-mid">重要</span></div>
+        <div class="check-item"><input type="checkbox" id="c8" onchange="calc()"><label for="c8">使っていない<strong>プログラムをアンインストール</strong>済み</label><span class="risk risk-low">推奨</span></div>
+        <div class="check-item"><input type="checkbox" id="c9" onchange="calc()"><label for="c9">管理者アカウントではなく<strong>標準ユーザーアカウント</strong>でPCを使用している</label><span class="risk risk-mid">重要</span></div>
+        <div class="check-item"><input type="checkbox" id="c10" onchange="calc()"><label for="c10">信頼できないウェブサイトからは<strong>ファイルをダウンロードしない</strong></label><span class="risk risk-high">必須</span></div>
+        <div class="check-item"><input type="checkbox" id="c11" onchange="calc()"><label for="c11"><strong>USBの自動実行</strong>が無効になっている</label><span class="risk risk-mid">重要</span></div>
+        <div class="check-item"><input type="checkbox" id="c12" onchange="calc()"><label for="c12">ブラウザの<strong>パスワード保存</strong>が無効、またはパスワードマネージャーを使用している</label><span class="risk risk-mid">重要</span></div>
+        <div class="check-item"><input type="checkbox" id="c13" onchange="calc()"><label for="c13"><strong>スクリーンセーバー・自動ロック</strong>が設定されている</label><span class="risk risk-low">推奨</span></div>
+        <div class="check-item"><input type="checkbox" id="c14" onchange="calc()"><label for="c14">不要な場合は<strong>リモートデスクトップ</strong>を無効にしている</label><span class="risk risk-mid">重要</span></div>
+        <div class="check-item"><input type="checkbox" id="c15" onchange="calc()"><label for="c15"><strong>ディスク暗号化</strong>（BitLocker / FileVault）を使用している</label><span class="risk risk-low">推奨</span></div>
     </div>
 
-    <button class="calc-btn" onclick="showResult()">💻 Check Security Score</button>
+    <button class="calc-btn" onclick="showResult()">💻 セキュリティスコアを確認</button>
 
     <div class="result-box" id="resultBox">
         <div class="score-num" id="scoreNum">0</div>
@@ -76,28 +76,28 @@
     </div>
 
     <div class="tips" id="tips">
-        <div class="tips-title">⚠️ Unchecked Items</div>
+        <div class="tips-title">⚠️ 未チェック項目</div>
         <div class="tips-text" id="tipsText"></div>
     </div>
 
-    <div class="disclaimer">💻 This is a self-diagnostic checklist.</div>
+    <div class="disclaimer">💻 これは自己診断チェックリストです。</div>
 </div>
-<div style="text-align:center;padding:20px 0;border-top:1px solid #1a3a1a;margin-top:30px;"><span style="font-size:12px;color:#333;margin-right:8px;">Share:</span><a href="" onclick="window.open('https://twitter.com/intent/tweet?url='+encodeURIComponent(location.href)+'&text='+encodeURIComponent(document.title),'_blank','width=600,height=400');return false" style="display:inline-block;padding:5px 10px;background:#1da1f2;color:#fff;border-radius:4px;text-decoration:none;font-size:11px;margin:3px;">Twitter</a><a href="" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),'_blank','width=600,height=400');return false" style="display:inline-block;padding:5px 10px;background:#1877f2;color:#fff;border-radius:4px;text-decoration:none;font-size:11px;margin:3px;">Facebook</a><a href="" onclick="window.open('https://api.whatsapp.com/send?text='+encodeURIComponent(document.title+' '+location.href),'_blank');return false" style="display:inline-block;padding:5px 10px;background:#25d366;color:#fff;border-radius:4px;text-decoration:none;font-size:11px;margin:3px;">WhatsApp</a><a href="" onclick="navigator.clipboard.writeText(location.href);this.textContent='Copied!';return false" style="display:inline-block;padding:5px 10px;background:#333;color:#0f0;border-radius:4px;text-decoration:none;font-size:11px;margin:3px;font-family:monospace;">Copy URL</a></div>
+<div style="text-align:center;padding:20px 0;border-top:1px solid #1a3a1a;margin-top:30px;"><span style="font-size:12px;color:#333;margin-right:8px;">共有:</span><a href="" onclick="window.open('https://twitter.com/intent/tweet?url='+encodeURIComponent(location.href)+'&text='+encodeURIComponent(document.title),'_blank','width=600,height=400');return false" style="display:inline-block;padding:5px 10px;background:#1da1f2;color:#fff;border-radius:4px;text-decoration:none;font-size:11px;margin:3px;">Twitter</a><a href="" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),'_blank','width=600,height=400');return false" style="display:inline-block;padding:5px 10px;background:#1877f2;color:#fff;border-radius:4px;text-decoration:none;font-size:11px;margin:3px;">Facebook</a><a href="" onclick="window.open('https://api.whatsapp.com/send?text='+encodeURIComponent(document.title+' '+location.href),'_blank');return false" style="display:inline-block;padding:5px 10px;background:#25d366;color:#fff;border-radius:4px;text-decoration:none;font-size:11px;margin:3px;">WhatsApp</a><a href="" onclick="navigator.clipboard.writeText(location.href);this.textContent='コピー完了!';return false" style="display:inline-block;padding:5px 10px;background:#333;color:#0f0;border-radius:4px;text-decoration:none;font-size:11px;margin:3px;font-family:monospace;">URLコピー</a></div>
 <footer>© 2025 MOGU Guard</footer>
 
 <script>
-const labels = ["Antivirus installed + real-time protection on","OS updated to latest version","Firewall enabled","Login password set","Browser kept up to date","Suspicious email attachments never opened","Important files backed up regularly","Unused programs uninstalled","Using standard user account","No downloads from untrusted sites","USB auto-run disabled","Browser password saving disabled or using password manager","Screensaver / auto-lock configured","Remote Desktop disabled","Disk encryption enabled"];
+const labels = ["ウイルス対策インストール済み＋リアルタイム保護有効","OSを最新バージョンにアップデート済み","ファイアウォールが有効","ログインパスワードを設定済み","ブラウザを最新の状態に保っている","不審なメールの添付ファイルは絶対に開かない","重要なファイルを定期的にバックアップ","使っていないプログラムをアンインストール済み","標準ユーザーアカウントを使用","信頼できないサイトからダウンロードしない","USBの自動実行が無効","ブラウザのパスワード保存が無効またはパスワードマネージャーを使用","スクリーンセーバー・自動ロックを設定済み","リモートデスクトップを無効化","ディスク暗号化を使用"];
 function calc(){}
 function showResult(){
     let checked=0,unchecked=[];
     for(let i=1;i<=15;i++){if(document.getElementById("c"+i).checked)checked++;else unchecked.push(labels[i-1]);}
     const score=Math.round((checked/15)*100);
     let grade,color;
-    if(score>=90){grade="🟢 Ironclad defense! Your PC is very secure.";color="#00ff41";}
-    else if(score>=70){grade="🟡 Good. A few improvements will make it perfect.";color="#ffeb3b";}
-    else if(score>=50){grade="🟠 Caution. Important security settings are missing.";color="#ff9800";}
-    else{grade="🔴 Danger! Your PC is vulnerable to attacks.";color="#ff5252";}
-    document.getElementById("scoreNum").textContent=score+" pts";
+    if(score>=90){grade="🟢 鉄壁の守り！PCのセキュリティは非常に高いです。";color="#00ff41";}
+    else if(score>=70){grade="🟡 良好。少し改善すれば完璧です。";color="#ffeb3b";}
+    else if(score>=50){grade="🟠 注意。重要なセキュリティ設定が不足しています。";color="#ff9800";}
+    else{grade="🔴 危険！PCが攻撃に対して脆弱な状態です。";color="#ff5252";}
+    document.getElementById("scoreNum").textContent=score+" pt";
     document.getElementById("scoreNum").style.color=color;
     document.getElementById("scoreFill").style.width=score+"%";
     document.getElementById("scoreFill").style.background=color;

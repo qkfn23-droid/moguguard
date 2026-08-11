@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛡️</text></svg>">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Smishing Quiz - Spot Fake Text Messages | MOGU Guard</title>
-    <meta name="description" content="Can you spot a smishing text? Test your SMS scam detection skills with 10 real-world scenarios.">
-    <link rel="canonical" href="https://moguguard.com/en/tools/smishing-quiz.html">
-    <meta property="og:title" content="Smishing Quiz | MOGU Guard">
-    <meta property="og:description" content="Can you spot a fake text message? Take the 10-question test!">
+    <title>スミッシング判定クイズ - 偽のSMSを見抜け | MOGU Guard</title>
+    <meta name="description" content="スミッシングSMSを見抜けますか？10問の実践シナリオでSMS詐欺検出スキルをテストしましょう。">
+    <link rel="canonical" href="https://moguguard.com/jp/tools/smishing-quiz.html">
+    <meta property="og:title" content="スミッシング判定クイズ | MOGU Guard">
+    <meta property="og:description" content="偽のSMSを見抜けますか？10問テストに挑戦！">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://moguguard.com/en/tools/smishing-quiz.html">
+    <meta property="og:url" content="https://moguguard.com/jp/tools/smishing-quiz.html">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&display=swap');
         *{margin:0;padding:0;box-sizing:border-box}body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#0a0a0a;color:#e0e0e0;min-height:100vh}
@@ -43,28 +43,28 @@
 <header><a href="../index.html">MOGU <span style="color:#00ff41;">Guard</span></a></header>
 <div class="container">
     <div class="page-title">
-        <h2>💬 Smishing Quiz</h2>
-        <p>Legit text or smishing? Test yourself with 10 scenarios!</p>
+        <h2>💬 スミッシング判定クイズ</h2>
+        <p>本物のSMS？スミッシング？10問のシナリオで腕試し！</p>
     </div>
     <div class="progress-bar"><div class="progress-fill" id="pf" style="width:0%"></div></div>
     <div class="progress-text" id="pt">1 / 10</div>
     <div id="quizArea"></div>
     <div id="resultArea" class="result-section"></div>
 </div>
-<div style="text-align:center;padding:20px 0;border-top:1px solid #1a3a1a;margin-top:30px;"><span style="font-size:12px;color:#333;margin-right:8px;">Share:</span><a href="" onclick="window.open('https://twitter.com/intent/tweet?url='+encodeURIComponent(location.href)+'&text='+encodeURIComponent(document.title),'_blank','width=600,height=400');return false" style="display:inline-block;padding:5px 10px;background:#1da1f2;color:#fff;border-radius:4px;text-decoration:none;font-size:11px;margin:3px;">Twitter</a><a href="" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),'_blank','width=600,height=400');return false" style="display:inline-block;padding:5px 10px;background:#1877f2;color:#fff;border-radius:4px;text-decoration:none;font-size:11px;margin:3px;">Facebook</a><a href="" onclick="navigator.clipboard.writeText(location.href);this.textContent='Copied!';return false" style="display:inline-block;padding:5px 10px;background:#333;color:#0f0;border-radius:4px;text-decoration:none;font-size:11px;margin:3px;font-family:monospace;">Copy URL</a></div>
+<div style="text-align:center;padding:20px 0;border-top:1px solid #1a3a1a;margin-top:30px;"><span style="font-size:12px;color:#333;margin-right:8px;">共有:</span><a href="" onclick="window.open('https://twitter.com/intent/tweet?url='+encodeURIComponent(location.href)+'&text='+encodeURIComponent(document.title),'_blank','width=600,height=400');return false" style="display:inline-block;padding:5px 10px;background:#1da1f2;color:#fff;border-radius:4px;text-decoration:none;font-size:11px;margin:3px;">Twitter</a><a href="" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),'_blank','width=600,height=400');return false" style="display:inline-block;padding:5px 10px;background:#1877f2;color:#fff;border-radius:4px;text-decoration:none;font-size:11px;margin:3px;">Facebook</a><a href="" onclick="navigator.clipboard.writeText(location.href);this.textContent='コピー完了!';return false" style="display:inline-block;padding:5px 10px;background:#333;color:#0f0;border-radius:4px;text-decoration:none;font-size:11px;margin:3px;font-family:monospace;">URLコピー</a></div>
 <footer>© 2025 MOGU Guard</footer>
 <script>
 const QS=[
-{from:"1-800-463-3339",name:"FedEx",body:"[FedEx] Your package could not be delivered due to an incorrect address. Please confirm your address at the link below.<br><span class=\"link\">http://fedex-deli.xyz/track</span>",a:"smishing",e:"<strong>fedex-deli.xyz</strong> is not FedEx's official domain (real: fedex.com). FedEx does not send links asking you to confirm personal details via SMS."},
-{from:"1-800-922-0204",name:"Verizon",body:"[Verizon] Your bill of $87.42 for this month has been successfully processed. View your statement at verizon.com.",a:"real",e:"This is a legitimate billing confirmation from Verizon's official number. It contains no suspicious link and only refers you to the official website — completely safe."},
-{from:"(347) 555-0192",name:"Unknown number",body:"[IRS] We have identified an unpaid tax balance of <span class=\"highlight\">$1,847.00</span>. Failure to pay <span class=\"highlight\">immediately</span> will result in <span class=\"highlight\">asset seizure</span>.<br><span class=\"link\">http://irs-pay.net/pay</span>",a:"smishing",e:"The IRS never contacts taxpayers by text message. Threats of \"immediate\" action and \"asset seizure\" combined with a suspicious domain are classic smishing red flags."},
-{from:"1-877-252-2265",name:"Bank of America",body:"[Bank of America] A transfer of $500.00 was made from your account. If this was not you, please check the Bank of America app immediately.",a:"real",e:"This is a legitimate transaction alert from Bank of America's official number. It directs you to the official app — not a suspicious link — and contains no request for personal information."},
-{from:"(212) 555-0178",name:"Unknown number",body:"[Medicare] You are eligible for your annual wellness checkup. Schedule your appointment at the link below.<br><span class=\"link\">http://medicare-check.net/schedule</span><br>* Failure to schedule may result in a penalty.",a:"smishing",e:"Medicare does not contact beneficiaries by personal cell phone. <strong>medicare-check.net</strong> is not the official domain (real: medicare.gov). The \"penalty\" threat is a classic smishing tactic."},
-{from:"DoorDash",name:"DoorDash",body:"[DoorDash] Your order of Chicken Burrito Bowl has been delivered! 😊 Leave a review and get $3 off your next order.",a:"real",e:"This is a standard delivery confirmation from DoorDash. There is no request for personal data and no suspicious link — completely safe."},
-{from:"(646) 555-0134",name:"Unknown number",body:"[FBI] A bank account has been opened in your name and may be used for fraud. Call our case officer <span class=\"highlight\">immediately</span> to avoid arrest.<br>Officer contact: (917) 555-0199",a:"smishing",e:"The FBI and law enforcement agencies never warn you of fraud or threaten arrest via text message. Asking you to call a personal cell number is a textbook smishing-to-vishing escalation scam."},
-{from:"AMEX",name:"American Express",body:"[Amex] Your statement balance of $1,243.78 is due on 08/25. View your statement in the Amex app or at americanexpress.com.",a:"real",e:"This is a standard billing reminder from American Express. There is no suspicious link and it directs you to official channels — completely safe."},
-{from:"(718) 555-0167",name:"Unknown number",body:"Congratulations! 🎉 You have been selected as the winner of an <span class=\"highlight\">iPhone 16 Pro</span>!<br>To claim your prize, pay the $4.99 shipping fee at the link below.<br><span class=\"link\">http://event-prize.co/claim</span>",a:"smishing",e:"100% smishing. Prize texts that ask for a \"shipping fee\" are one of the most common SMS scam formats. If something is free, you should never have to pay for it."},
-{from:"1-888-280-4331",name:"Amazon",body:"[Amazon] Your return request has been accepted. Reason: Buyer's remorse. Your refund will be processed within 3-5 business days.",a:"real",e:"This is a legitimate return confirmation from Amazon. There is no suspicious link and no request for personal information — completely safe."}
+{from:"0120-01-9625",name:"ヤマト運輸",body:"【ヤマト運輸】ご不在のため、お荷物をお届けできませんでした。下記よりお受け取り方法をご確認ください。<br><span class=\"link\">http://yamato-deli.xyz/track</span>",a:"smishing",e:"<strong>yamato-deli.xyz</strong>はヤマト運輸の正規ドメインではありません（正規：kuronekoyamato.co.jp）。ヤマト運輸がSMSで個人情報の確認を求めるリンクを送ることはありません。"},
+{from:"NTTdocomo",name:"NTTドコモ",body:"【NTTドコモ】今月のご請求額は7,842円です。詳細はMy docomoアプリまたはdocomo.ne.jpでご確認ください。",a:"real",e:"正規のNTTドコモからの請求確認SMSです。不審なリンクがなく、公式サイトへの案内のみです。完全に安全です。"},
+{from:"非通知",name:"不明な番号",body:"【国税庁】未納の税金<span class=\"highlight\">58,000円</span>が確認されました。<span class=\"highlight\">至急</span>お支払いいただかない場合、<span class=\"highlight\">差し押さえ</span>となります。<br><span class=\"link\">http://nta-pay.net/pay</span>",a:"smishing",e:"国税庁がSMSで個人に連絡することはありません。「至急」「差し押さえ」などの脅し文句と不審なドメインは典型的なスミッシングのサインです。"},
+{from:"三菱UFJ銀行",name:"三菱UFJ銀行",body:"【三菱UFJ銀行】50,000円のお振込が完了しました。心当たりのない場合は、三菱UFJダイレクトアプリよりご確認ください。",a:"real",e:"三菱UFJ銀行からの正規の取引通知です。不審なリンクがなく、公式アプリへの案内のみです。個人情報の入力を求めていません。"},
+{from:"非通知",name:"不明な番号",body:"【日本郵便】お荷物の保管期限が近づいております。下記より再配達の手続きをお願いします。<br><span class=\"link\">http://jp-post-check.net/schedule</span><br>※期限内に手続きされない場合、返送となります。",a:"smishing",e:"<strong>jp-post-check.net</strong>は日本郵便の正規ドメインではありません（正規：japanpost.jp）。日本郵便がSMSで個人の携帯番号に直接連絡することはほとんどありません。「返送」の脅しはスミッシングの手口です。"},
+{from:"Uber Eats",name:"Uber Eats",body:"【Uber Eats】ご注文のチーズバーガーセットが届きました！😊 レビューを投稿すると次回の注文が300円オフになります。",a:"real",e:"Uber Eatsからの通常の配達確認SMSです。個人情報の入力を求めていないし、不審なリンクもありません。完全に安全です。"},
+{from:"非通知",name:"不明な番号",body:"【警察庁】あなたの名義で不正な銀行口座が開設され、詐欺に使用されている可能性があります。<span class=\"highlight\">至急</span>担当刑事にご連絡ください。連絡先：090-XXXX-XXXX",a:"smishing",e:"警察庁や警察がSMSで個人に詐欺の警告を送ることは絶対にありません。個人の携帯番号に電話するよう誘導するのはスミッシングからビッシングへのエスカレーション詐欺の典型的な手口です。"},
+{from:"楽天カード",name:"楽天カード",body:"【楽天カード】ご利用明細のお知らせ：前月のご利用残高は43,200円です。詳細は楽天カードアプリまたはrakuten-card.co.jpでご確認ください。",a:"real",e:"楽天カードからの通常の請求リマインダーです。不審なリンクがなく、公式チャンネルへの案内のみです。完全に安全です。"},
+{from:"非通知",name:"不明な番号",body:"おめでとうございます！🎉 あなたがキャンペーンの<span class=\"highlight\">iPhone 16 Pro</span>に当選しました！<br>当選品受け取りには送料550円のお支払いが必要です。<br><span class=\"link\">http://event-prize.co/claim</span>",a:"smishing",e:"100%スミッシングです。「送料のみ」でプレゼントを受け取れるというSMSは最もよくあるSMS詐欺のパターンの一つです。無料のものに対してお金を支払う必要は絶対にありません。"},
+{from:"Amazon",name:"Amazon",body:"【Amazon】返品リクエストが承認されました。理由：心変わり。返金は3〜5営業日以内に処理されます。",a:"real",e:"Amazonからの正規の返品確認SMSです。不審なリンクがなく、個人情報の入力を求めていません。完全に安全です。"}
 ];
 
 let cur=0,score=0;
@@ -79,8 +79,8 @@ function show(){
             "<div class=\"sms-header\"><div class=\"sms-icon\">💬</div><div class=\"sms-from\"><strong>"+q.name+"</strong><br>"+q.from+"</div></div>" +
             "<div class=\"sms-body\">"+q.body+"</div>" +
             "<div class=\"btn-row\">" +
-                "<div class=\"btn-real\" onclick=\"ans('real')\">✅ Legit Text</div>" +
-                "<div class=\"btn-smish\" onclick=\"ans('smishing')\">🚨 Smishing!</div>" +
+                "<div class=\"btn-real\" onclick=\"ans('real')\">✅ 本物のSMS</div>" +
+                "<div class=\"btn-smish\" onclick=\"ans('smishing')\">🚨 スミッシング！</div>" +
             "</div>" +
             "<div class=\"explain\" id=\"exp\"></div>" +
         "</div>";
@@ -90,7 +90,7 @@ function ans(choice){
     const q=QS[cur];const correct=choice===q.a;if(correct)score++;
     const el=document.getElementById("exp");
     el.className="explain "+(correct?"correct":"wrong");
-    el.innerHTML="<strong>"+(correct?"✅ Correct!":"❌ Wrong!")+"</strong> ("+(q.a==="smishing"?"🚨 Smishing":"✅ Legit Text")+")<br><br>"+q.e;
+    el.innerHTML="<strong>"+(correct?"✅ 正解！":"❌ 不正解！")+"</strong> ("+(q.a==="smishing"?"🚨 スミッシング":"✅ 本物のSMS")+")<br><br>"+q.e;
     el.style.display="block";
     document.querySelectorAll(".btn-real,.btn-smish").forEach(function(b){b.style.pointerEvents="none";b.style.opacity="0.5";});
     setTimeout(function(){cur++;show();},3000);
@@ -99,17 +99,17 @@ function ans(choice){
 function result(){
     document.getElementById("quizArea").style.display="none";
     document.getElementById("pf").style.width="100%";
-    document.getElementById("pt").textContent="Complete!";
+    document.getElementById("pt").textContent="完了！";
     let g,c;
-    if(score>=9){g="🛡️ Smishing Master!";c="#00ff41";}
-    else if(score>=7){g="🟢 You're pretty sharp!";c="#00ff41";}
-    else if(score>=5){g="🟡 Room for improvement";c="#ffeb3b";}
-    else{g="🔴 Danger! You could fall for smishing";c="#ff5252";}
+    if(score>=9){g="🛡️ スミッシングマスター！";c="#00ff41";}
+    else if(score>=7){g="🟢 なかなか鋭い！";c="#00ff41";}
+    else if(score>=5){g="🟡 まだ改善の余地あり";c="#ffeb3b";}
+    else{g="🔴 危険！スミッシングに引っかかる可能性があります";c="#ff5252";}
     document.getElementById("resultArea").innerHTML=
         "<div class=\"r-score\" style=\"color:"+c+"\">"+score+" / "+QS.length+"</div>" +
         "<div class=\"r-grade\" style=\"color:"+c+"\">"+g+"</div>" +
-        "<div class=\"r-text\">Key smishing red flags:<br>• Government agencies (IRS, FBI) never contact you by text<br>• If the link domain does not match the official site = smishing<br>• \"Immediately\", \"urgent\", \"seizure\" threats = smishing<br>• Prize + payment request = 100% scam</div>" +
-        "<button class=\"retry-btn\" onclick=\"location.reload()\">🔄 Try Again</button>";
+        "<div class=\"r-text\">スミッシングの主なサイン：<br>• 国税庁・警察などの公的機関がSMSで連絡してくることはない<br>• リンクのドメインが公式サイトと違う = スミッシング<br>• 「至急」「差し押さえ」などの脅し = スミッシング<br>• プレゼント＋支払い要求 = 100%詐欺</div>" +
+        "<button class=\"retry-btn\" onclick=\"location.reload()\">🔄 もう一度挑戦</button>";
     document.getElementById("resultArea").style.display="block";
 }
 show();

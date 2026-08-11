@@ -1,19 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛡️</text></svg>">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Phone Security Score - Smartphone Security Checklist | MOGU Guard</title>
-    <meta name="description" content="Check your smartphone security settings and see your security score. Diagnose 15 items including lock screen, app permissions, Wi-Fi, and updates.">
-    <link rel="canonical" href="https://moguguard.com/en/tools/phone-security.html">
-    <meta property="og:title" content="Phone Security Score | MOGU Guard">
-    <meta property="og:description" content="Check your smartphone security score! 15-item checklist.">
+    <title>スマホセキュリティ診断 - スマートフォンセキュリティチェックリスト | MOGU Guard</title>
+    <meta name="description" content="スマートフォンのセキュリティ設定を確認してスコアを診断。画面ロック・アプリ権限・Wi-Fi・アップデートなど15項目をチェック。">
+    <link rel="canonical" href="https://moguguard.com/jp/tools/phone-security.html">
+    <meta property="og:title" content="スマホセキュリティ診断 | MOGU Guard">
+    <meta property="og:description" content="スマホのセキュリティスコアを確認！15項目チェックリスト。">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://moguguard.com/en/tools/phone-security.html">
+    <meta property="og:url" content="https://moguguard.com/jp/tools/phone-security.html">
     <script type="application/ld+json">
     {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
-    {"@type":"Question","name":"Why is smartphone security important?","acceptedAnswer":{"@type":"Answer","text":"Your smartphone holds all your personal data — banking apps, social media, photos, contacts. If hacked, you risk financial loss and personal data leaks."}}
+    {"@type":"Question","name":"スマートフォンのセキュリティが重要な理由は？","acceptedAnswer":{"@type":"Answer","text":"スマートフォンには銀行アプリ・SNS・写真・連絡先などすべての個人データが入っています。ハッキングされると金銭的損失や個人情報漏洩のリスクがあります。"}}
     ]}
     </script>
     <style>
@@ -52,29 +52,29 @@
 <header><a href="../index.html">MOGU <span style="color:#00ff41;">Guard</span></a></header>
 <div class="container">
     <div class="page-title">
-        <h2>📱 Phone Security Score</h2>
-        <p>Check all items that apply to you</p>
+        <h2>📱 スマホセキュリティ診断</h2>
+        <p>当てはまる項目すべてにチェックを入れてください</p>
     </div>
 
     <div class="checklist">
-        <div class="check-item"><input type="checkbox" id="c1" onchange="calc()"><label for="c1"><strong>Screen lock</strong> is set with PIN, pattern, or biometrics</label><span class="risk risk-high">Essential</span></div>
-        <div class="check-item"><input type="checkbox" id="c2" onchange="calc()"><label for="c2"><strong>OS updates</strong> are kept up to date</label><span class="risk risk-high">Essential</span></div>
-        <div class="check-item"><input type="checkbox" id="c3" onchange="calc()"><label for="c3"><strong>Automatic app updates</strong> are enabled</label><span class="risk risk-mid">Important</span></div>
-        <div class="check-item"><input type="checkbox" id="c4" onchange="calc()"><label for="c4">Apps are only installed from official stores (Google Play / App Store)</label><span class="risk risk-high">Essential</span></div>
-        <div class="check-item"><input type="checkbox" id="c5" onchange="calc()"><label for="c5"><strong>Installation from unknown sources</strong> is blocked (Android)</label><span class="risk risk-high">Essential</span></div>
-        <div class="check-item"><input type="checkbox" id="c6" onchange="calc()"><label for="c6"><strong>Camera / microphone / location permissions</strong> revoked for unused apps</label><span class="risk risk-mid">Important</span></div>
-        <div class="check-item"><input type="checkbox" id="c7" onchange="calc()"><label for="c7">Banking and payment apps are not used on <strong>public Wi-Fi</strong></label><span class="risk risk-high">Essential</span></div>
-        <div class="check-item"><input type="checkbox" id="c8" onchange="calc()"><label for="c8"><strong>Bluetooth</strong> is turned off when not in use</label><span class="risk risk-low">Recommended</span></div>
-        <div class="check-item"><input type="checkbox" id="c9" onchange="calc()"><label for="c9"><strong>Two-factor authentication (2FA)</strong> is set up on important accounts</label><span class="risk risk-high">Essential</span></div>
-        <div class="check-item"><input type="checkbox" id="c10" onchange="calc()"><label for="c10"><strong>SIM card PIN</strong> is configured</label><span class="risk risk-mid">Important</span></div>
-        <div class="check-item"><input type="checkbox" id="c11" onchange="calc()"><label for="c11"><strong>Remote lock / erase</strong> (Find My / Find My Device) is enabled</label><span class="risk risk-mid">Important</span></div>
-        <div class="check-item"><input type="checkbox" id="c12" onchange="calc()"><label for="c12"><strong>Suspicious links</strong> received via SMS or messaging apps are never clicked</label><span class="risk risk-high">Essential</span></div>
-        <div class="check-item"><input type="checkbox" id="c13" onchange="calc()"><label for="c13"><strong>Cloud backups</strong> are performed regularly</label><span class="risk risk-low">Recommended</span></div>
-        <div class="check-item"><input type="checkbox" id="c14" onchange="calc()"><label for="c14"><strong>Notification previews</strong> on the lock screen are hidden</label><span class="risk risk-low">Recommended</span></div>
-        <div class="check-item"><input type="checkbox" id="c15" onchange="calc()"><label for="c15"><strong>Auto-lock timer</strong> is set to 30 seconds – 1 minute</label><span class="risk risk-mid">Important</span></div>
+        <div class="check-item"><input type="checkbox" id="c1" onchange="calc()"><label for="c1"><strong>画面ロック</strong>がPIN・パターン・生体認証で設定されている</label><span class="risk risk-high">必須</span></div>
+        <div class="check-item"><input type="checkbox" id="c2" onchange="calc()"><label for="c2"><strong>OSのアップデート</strong>を最新の状態に保っている</label><span class="risk risk-high">必須</span></div>
+        <div class="check-item"><input type="checkbox" id="c3" onchange="calc()"><label for="c3"><strong>アプリの自動更新</strong>が有効になっている</label><span class="risk risk-mid">重要</span></div>
+        <div class="check-item"><input type="checkbox" id="c4" onchange="calc()"><label for="c4">アプリは公式ストア（Google Play / App Store）からのみインストールしている</label><span class="risk risk-high">必須</span></div>
+        <div class="check-item"><input type="checkbox" id="c5" onchange="calc()"><label for="c5"><strong>不明なソースからのインストール</strong>がブロックされている（Android）</label><span class="risk risk-high">必須</span></div>
+        <div class="check-item"><input type="checkbox" id="c6" onchange="calc()"><label for="c6">使っていないアプリの<strong>カメラ・マイク・位置情報の権限</strong>を取り消している</label><span class="risk risk-mid">重要</span></div>
+        <div class="check-item"><input type="checkbox" id="c7" onchange="calc()"><label for="c7"><strong>公共Wi-Fi</strong>では銀行・決済アプリを使わない</label><span class="risk risk-high">必須</span></div>
+        <div class="check-item"><input type="checkbox" id="c8" onchange="calc()"><label for="c8">使わないときは<strong>Bluetooth</strong>をオフにしている</label><span class="risk risk-low">推奨</span></div>
+        <div class="check-item"><input type="checkbox" id="c9" onchange="calc()"><label for="c9">重要なアカウントに<strong>二段階認証（2FA）</strong>を設定している</label><span class="risk risk-high">必須</span></div>
+        <div class="check-item"><input type="checkbox" id="c10" onchange="calc()"><label for="c10"><strong>SIMカードのPIN</strong>を設定している</label><span class="risk risk-mid">重要</span></div>
+        <div class="check-item"><input type="checkbox" id="c11" onchange="calc()"><label for="c11"><strong>リモートロック・消去</strong>（iPhoneを探す / デバイスを探す）が有効になっている</label><span class="risk risk-mid">重要</span></div>
+        <div class="check-item"><input type="checkbox" id="c12" onchange="calc()"><label for="c12">SMSやメッセージアプリで受け取った<strong>不審なリンク</strong>は絶対にタップしない</label><span class="risk risk-high">必須</span></div>
+        <div class="check-item"><input type="checkbox" id="c13" onchange="calc()"><label for="c13"><strong>クラウドバックアップ</strong>を定期的に行っている</label><span class="risk risk-low">推奨</span></div>
+        <div class="check-item"><input type="checkbox" id="c14" onchange="calc()"><label for="c14">ロック画面の<strong>通知プレビュー</strong>を非表示にしている</label><span class="risk risk-low">推奨</span></div>
+        <div class="check-item"><input type="checkbox" id="c15" onchange="calc()"><label for="c15"><strong>自動ロックのタイマー</strong>を30秒〜1分に設定している</label><span class="risk risk-mid">重要</span></div>
     </div>
 
-    <button class="calc-btn" onclick="showResult()">📱 Check Security Score</button>
+    <button class="calc-btn" onclick="showResult()">📱 セキュリティスコアを確認</button>
 
     <div class="result-box" id="resultBox">
         <div class="score-num" id="scoreNum">0</div>
@@ -83,32 +83,32 @@
     </div>
 
     <div class="tips" id="tips">
-        <div class="tips-title">⚠️ Unchecked Items</div>
+        <div class="tips-title">⚠️ 未チェック項目</div>
         <div class="tips-text" id="tipsText"></div>
     </div>
 
-    <div class="disclaimer">📱 This is a self-diagnostic checklist. Your actual security status may vary based on additional factors.</div>
+    <div class="disclaimer">📱 これは自己診断チェックリストです。実際のセキュリティ状態は追加の要因によって異なる場合があります。</div>
 </div>
-<div style="text-align:center;padding:20px 0;border-top:1px solid #1a3a1a;margin-top:30px;"><span style="font-size:12px;color:#333;margin-right:8px;">Share:</span><a href="" onclick="window.open('https://twitter.com/intent/tweet?url='+encodeURIComponent(location.href)+'&text='+encodeURIComponent(document.title),'_blank','width=600,height=400');return false" style="display:inline-block;padding:5px 10px;background:#1da1f2;color:#fff;border-radius:4px;text-decoration:none;font-size:11px;margin:3px;">Twitter</a><a href="" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),'_blank','width=600,height=400');return false" style="display:inline-block;padding:5px 10px;background:#1877f2;color:#fff;border-radius:4px;text-decoration:none;font-size:11px;margin:3px;">Facebook</a><a href="" onclick="window.open('https://api.whatsapp.com/send?text='+encodeURIComponent(document.title+' '+location.href),'_blank');return false" style="display:inline-block;padding:5px 10px;background:#25d366;color:#fff;border-radius:4px;text-decoration:none;font-size:11px;margin:3px;">WhatsApp</a><a href="" onclick="navigator.clipboard.writeText(location.href);this.textContent='Copied!';return false" style="display:inline-block;padding:5px 10px;background:#333;color:#0f0;border-radius:4px;text-decoration:none;font-size:11px;margin:3px;font-family:monospace;">Copy URL</a></div>
+<div style="text-align:center;padding:20px 0;border-top:1px solid #1a3a1a;margin-top:30px;"><span style="font-size:12px;color:#333;margin-right:8px;">共有:</span><a href="" onclick="window.open('https://twitter.com/intent/tweet?url='+encodeURIComponent(location.href)+'&text='+encodeURIComponent(document.title),'_blank','width=600,height=400');return false" style="display:inline-block;padding:5px 10px;background:#1da1f2;color:#fff;border-radius:4px;text-decoration:none;font-size:11px;margin:3px;">Twitter</a><a href="" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),'_blank','width=600,height=400');return false" style="display:inline-block;padding:5px 10px;background:#1877f2;color:#fff;border-radius:4px;text-decoration:none;font-size:11px;margin:3px;">Facebook</a><a href="" onclick="window.open('https://api.whatsapp.com/send?text='+encodeURIComponent(document.title+' '+location.href),'_blank');return false" style="display:inline-block;padding:5px 10px;background:#25d366;color:#fff;border-radius:4px;text-decoration:none;font-size:11px;margin:3px;">WhatsApp</a><a href="" onclick="navigator.clipboard.writeText(location.href);this.textContent='コピー完了!';return false" style="display:inline-block;padding:5px 10px;background:#333;color:#0f0;border-radius:4px;text-decoration:none;font-size:11px;margin:3px;font-family:monospace;">URLコピー</a></div>
 <footer>© 2025 MOGU Guard</footer>
 
 <script>
 const labels = [
-    "Screen lock set with PIN / pattern / biometrics",
-    "OS updated to latest version",
-    "Automatic app updates enabled",
-    "Apps installed from official stores only",
-    "Installation from unknown sources blocked",
-    "Camera / microphone / location permissions revoked for unused apps",
-    "Banking apps not used on public Wi-Fi",
-    "Bluetooth turned off when not in use",
-    "Two-factor authentication set on important accounts",
-    "SIM card PIN configured",
-    "Remote lock / erase enabled",
-    "Suspicious links never clicked",
-    "Cloud backups performed regularly",
-    "Lock screen notification previews hidden",
-    "Auto-lock timer set to 30 seconds – 1 minute"
+    "PIN・パターン・生体認証での画面ロック設定",
+    "OSを最新バージョンにアップデート済み",
+    "アプリの自動更新が有効",
+    "公式ストアからのみアプリをインストール",
+    "不明なソースからのインストールをブロック",
+    "使っていないアプリのカメラ・マイク・位置情報権限を取り消し済み",
+    "公共Wi-Fiで銀行アプリを使わない",
+    "使わないときはBluetoothをオフ",
+    "重要なアカウントに二段階認証を設定済み",
+    "SIMカードのPINを設定済み",
+    "リモートロック・消去が有効",
+    "不審なリンクは絶対タップしない",
+    "クラウドバックアップを定期的に実施",
+    "ロック画面の通知プレビューを非表示",
+    "自動ロックのタイマーを30秒〜1分に設定"
 ];
 
 function calc() {}
@@ -122,12 +122,12 @@ function showResult() {
     }
     const score = Math.round((checked / 15) * 100);
     let grade, color;
-    if (score >= 90) { grade = "🟢 Excellent! Your security awareness is outstanding."; color = "#00ff41"; }
-    else if (score >= 70) { grade = "🟡 Good. A few improvements will make you even safer."; color = "#ffeb3b"; }
-    else if (score >= 50) { grade = "🟠 Caution. Important security settings are missing."; color = "#ff9800"; }
-    else { grade = "🔴 Danger! Strengthen your security settings immediately."; color = "#ff5252"; }
+    if (score >= 90) { grade = "🟢 優秀！セキュリティ意識が非常に高いです。"; color = "#00ff41"; }
+    else if (score >= 70) { grade = "🟡 良好。少し改善すればさらに安全になります。"; color = "#ffeb3b"; }
+    else if (score >= 50) { grade = "🟠 注意。重要なセキュリティ設定が不足しています。"; color = "#ff9800"; }
+    else { grade = "🔴 危険！今すぐセキュリティ設定を強化してください。"; color = "#ff5252"; }
 
-    document.getElementById("scoreNum").textContent = score + " pts";
+    document.getElementById("scoreNum").textContent = score + " pt";
     document.getElementById("scoreNum").style.color = color;
     document.getElementById("scoreFill").style.width = score + "%";
     document.getElementById("scoreFill").style.background = color;
