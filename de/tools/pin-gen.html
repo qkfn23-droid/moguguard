@@ -4,13 +4,13 @@
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛡️</text></svg>">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>랜덤 PIN 생성기 - 안전한 PIN 번호 만들기 | MOGU Guard</title>
-    <meta name="description" content="카드, 잠금화면, 금고용 안전한 PIN 번호를 Zeichen동 생성합니다. 4Zeichen리, 6Zeichen리, 8Zeichen리 선택 가능.">
-    <link rel="canonical" href="https://moguguard.com/tools/pin-gen.html">
-    <meta property="og:title" content="랜덤 PIN 생성기 | MOGU Guard">
-    <meta property="og:description" content="안전한 PIN 번호 Zeichen동 생성!">
+    <title>Zufalls-PIN-Generator - Sichere PIN-Nummern | MOGU Guard</title>
+    <meta name="description" content="Generieren Sie sichere PINs für Karten, Sperrbildschirme und Tresore. Wählen Sie 4, 6 oder 8 Stellen.">
+    <link rel="canonical" href="https://moguguard.com/de/tools/pin-gen.html">
+    <meta property="og:title" content="Zufalls-PIN-Generator | MOGU Guard">
+    <meta property="og:description" content="Sichere PIN-Nummern generieren!">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://moguguard.com/tools/pin-gen.html">
+    <meta property="og:url" content="https://moguguard.com/de/tools/pin-gen.html">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600;700&display=swap');
         *{margin:0;padding:0;box-sizing:border-box}body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#0a0a0a;color:#e0e0e0;min-height:100vh}
@@ -46,8 +46,8 @@
 <header><a href="../index.html">MOGU <span style="color:#00ff41;">Guard</span></a></header>
 <div class="container">
     <div class="page-title">
-        <h2>🔢 랜덤 PIN 생성기</h2>
-        <p>카드·잠금화면·금고용 안전한 PIN 번호</p>
+        <h2>🔢 Zufalls-PIN-Generator</h2>
+        <p>Sichere PINs für Karten, Sperrbildschirme & Tresore</p>
     </div>
     <div class="pin-display">
         <div class="pin-num" id="pinNum">----</div>
@@ -55,35 +55,35 @@
     </div>
     <div class="controls">
         <div class="control-row">
-            <label>Zeichen릿수</label>
+            <label>Stellen</label>
             <div class="len-btns">
-                <div class="len-btn active" onclick="setLen(4)">4Zeichen리</div>
-                <div class="len-btn" onclick="setLen(6)">6Zeichen리</div>
-                <div class="len-btn" onclick="setLen(8)">8Zeichen리</div>
+                <div class="len-btn active" onclick="setLen(4)">4-stellig</div>
+                <div class="len-btn" onclick="setLen(6)">6-stellig</div>
+                <div class="len-btn" onclick="setLen(8)">8-stellig</div>
             </div>
         </div>
         <div class="control-row">
-            <label>연속 숫Zeichen 제외 (123, 111 등)</label>
+            <label>Sequentielle Zahlen ausschließen (123, 111 usw.)</label>
             <input type="checkbox" id="noSequence" checked>
         </div>
     </div>
-    <button class="gen-btn" onclick="generate()">🔢 PIN 생성</button>
+    <button class="gen-btn" onclick="generate()">🔢 PIN generieren</button>
     <div class="history">
-        <div class="history-title">📋 최근 생성</div>
-        <div id="historyList"><div style="color:#333;font-size:13px;">아직 없음</div></div>
+        <div class="history-title">📋 Verlauf</div>
+        <div id="historyList"><div style="color:#333;font-size:13px;">Noch keine</div></div>
     </div>
     <div class="info">
-        <div class="info-title">💡 안전한 PIN 사용법</div>
+        <div class="info-title">💡 Tipps für sichere PINs</div>
         <div class="info-text">
-            • <strong>생Tage, 전화번호</strong> 기반 PIN은 절대 사용하지 마세요<br>
-            • <strong>1234, 0000, 1111</strong> 같은 단순 패턴은 가장 먼저 시도됩니다<br>
-            • 가능하면 <strong>6Zeichen리 이상</strong>을 사용하세요<br>
-            • 카드와 잠금화면 PIN은 <strong>다르게</strong> 설정하세요
+            &bull; <strong>Geburtstag, Telefonnummer</strong> als PIN — niemals verwenden<br>
+            &bull; <strong>1234, 0000, 1111</strong> — diese Muster werden zuerst versucht<br>
+            &bull; Verwenden Sie wenn möglich <strong>6+ Stellen</strong><br>
+            &bull; Verwenden Sie <strong>verschiedene PINs</strong> für Karten und Sperrbildschirme
         </div>
     </div>
 </div>
-<div style="text-align:center;padding:20px 0;border-top:1px solid #1a3a1a;margin-top:30px;"><span style="font-size:12px;color:#333;margin-right:8px;">Teilen:</span><a href="" onclick="window.open('https://twitter.com/intent/tweet?url='+encodeURIComponent(location.href)+'&text='+encodeURIComponent(document.title),'_blank','width=600,height=400');return false" style="display:inline-block;padding:5px 10px;background:#1da1f2;color:#fff;border-radius:4px;text-decoration:none;font-size:11px;margin:3px;">Twitter</a><a href="" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),'_blank','width=600,height=400');return false" style="display:inline-block;padding:5px 10px;background:#1877f2;color:#fff;border-radius:4px;text-decoration:none;font-size:11px;margin:3px;">Facebook</a><a href="" onclick="navigator.clipboard.writeText(location.href);this.textContent='Copied!';return false" style="display:inline-block;padding:5px 10px;background:#333;color:#0f0;border-radius:4px;text-decoration:none;font-size:11px;margin:3px;font-family:monospace;">URL Kopieren</a></div>
-<footer>© 2025 MOGU Guard</footer>
+<div style="text-align:center;padding:20px 0;border-top:1px solid #1a3a1a;margin-top:30px;"><span style="font-size:12px;color:#333;margin-right:8px;">Teilen:</span><a href="" onclick="window.open('https://twitter.com/intent/tweet?url='+encodeURIComponent(location.href)+'&text='+encodeURIComponent(document.title),'_blank','width=600,height=400');return false" style="display:inline-block;padding:5px 10px;background:#1da1f2;color:#fff;border-radius:4px;text-decoration:none;font-size:11px;margin:3px;">Twitter</a><a href="" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),'_blank','width=600,height=400');return false" style="display:inline-block;padding:5px 10px;background:#1877f2;color:#fff;border-radius:4px;text-decoration:none;font-size:11px;margin:3px;">Facebook</a><a href="" onclick="navigator.clipboard.writeText(location.href);this.textContent='Copied!';return false" style="display:inline-block;padding:5px 10px;background:#333;color:#0f0;border-radius:4px;text-decoration:none;font-size:11px;margin:3px;font-family:monospace;">URL kopieren</a></div>
+<footer>&copy; 2025 MOGU Guard</footer>
 <script>
 let pinLen=4;const hist=[];
 function setLen(n){pinLen=n;document.querySelectorAll('.len-btn').forEach(b=>b.classList.remove('active'));event.target.classList.add('active');}
@@ -112,7 +112,7 @@ function copyPin(){
     const pin=document.getElementById('pinNum').textContent;
     if(pin.includes('-'))return;
     navigator.clipboard.writeText(pin);
-    const btn=document.querySelector('.pin-copy');btn.textContent='✅ Kopieren됨';
+    const btn=document.querySelector('.pin-copy');btn.textContent='✅ Kopiert';
     setTimeout(()=>btn.textContent='Kopieren',2000);
 }
 generate();
