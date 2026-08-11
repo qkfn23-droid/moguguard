@@ -4,300 +4,77 @@
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛡️</text></svg>">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MOGU Guard — 무료 보안 진단 · 피싱 판별 · 비밀번호 체크</title>
-    <meta name="description" content="일반인을 위한 무료 보안 도구. 비밀번호 강도 체크, 피싱 메일 판별, 폰/PC 보안 점수, 개인정보 노출 진단. 누구나 쉽게 보안을 지킬 수 있습니다.">
+    <title>MOGU Guard — 무료 보안 도구 · 비밀번호 생성 · 개인정보 마스킹</title>
+    <meta name="description" content="일반인을 위한 무료 보안 도구. 비밀번호 생성기, 문장→비밀번호 변환, 개인정보 마스킹. 모든 처리는 브라우저에서만.">
     <link rel="canonical" href="https://moguguard.com">
-    <meta property="og:title" content="MOGU Guard — 무료 보안 진단 · 피싱 판별 · 비밀번호 체크">
-    <meta property="og:description" content="일반인을 위한 무료 보안 도구. 비밀번호 강도 체크, 피싱 메일 판별, 보안 점수 진단.">
+    <meta property="og:title" content="MOGU Guard — 무료 보안 도구">
+    <meta property="og:description" content="비밀번호 생성, 문장→비밀번호, 개인정보 마스킹. 서버 전송 없음.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://moguguard.com">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="MOGU Guard — 무료 보안 진단">
-    <meta name="twitter:description" content="일반인을 위한 무료 보안 도구. 비밀번호 강도, 피싱 판별, 보안 점수.">
+    <meta name="twitter:title" content="MOGU Guard — 무료 보안 도구">
+    <meta name="twitter:description" content="비밀번호 생성, 문장→비밀번호, 개인정보 마스킹.">
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "MOGU Guard",
-      "url": "https://moguguard.com",
-      "description": "일반인을 위한 무료 보안 진단 도구."
-    }
+    {"@context":"https://schema.org","@type":"WebSite","name":"MOGU Guard","url":"https://moguguard.com","description":"일반인을 위한 무료 보안 도구."}
     </script>
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
-        {"@type":"Question","name":"무료인가요?","acceptedAnswer":{"@type":"Answer","text":"네, 모든 보안 도구는 100% 무료입니다. 회원가입 없이 바로 사용 가능합니다."}},
-        {"@type":"Question","name":"개인정보가 수집되나요?","acceptedAnswer":{"@type":"Answer","text":"아닙니다. 모든 처리는 브라우저에서 이루어지며, 어떤 데이터도 서버로 전송되지 않습니다."}},
-        {"@type":"Question","name":"보안 전문가가 아닌데 사용할 수 있나요?","acceptedAnswer":{"@type":"Answer","text":"네, 모든 도구는 일반인도 쉽게 사용할 수 있도록 설계되었습니다."}}
-      ]
-    }
+    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"무료인가요?","acceptedAnswer":{"@type":"Answer","text":"네, 모든 보안 도구는 100% 무료입니다."}},
+    {"@type":"Question","name":"개인정보가 수집되나요?","acceptedAnswer":{"@type":"Answer","text":"아닙니다. 모든 처리는 브라우저에서만 이루어집니다."}}
+    ]}
     </script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600;700&display=swap');
-
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: 'Fira Code', 'Courier New', monospace;
-            background: #0a0a0a;
-            color: #00ff41;
-            min-height: 100vh;
-            position: relative;
-            overflow-x: hidden;
-        }
-
-        /* 매트릭스 배경 */
-        #matrixBg {
-            position: fixed;
-            top: 0; left: 0; right: 0; bottom: 0;
-            z-index: 0;
-            opacity: 0.06;
-        }
-
-        .content { position: relative; z-index: 1; }
-
-        /* 터미널 헤더 */
-        .terminal-header {
-            background: #111;
-            border-bottom: 1px solid #1a3a1a;
-            padding: 12px 20px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        .terminal-dot { width: 12px; height: 12px; border-radius: 50%; }
-        .dot-red { background: #ff5f56; }
-        .dot-yellow { background: #ffbd2e; }
-        .dot-green { background: #27c93f; }
-        .terminal-title { color: #666; font-size: 13px; margin-left: 12px; }
-
-        /* 메인 헤더 */
-        .hero {
-            text-align: center;
-            padding: 50px 20px 30px;
-        }
-        .hero-icon { font-size: 48px; margin-bottom: 12px; }
-        .hero h1 {
-            font-size: 28px;
-            color: #00ff41;
-            letter-spacing: 4px;
-            margin-bottom: 8px;
-            text-shadow: 0 0 20px rgba(0,255,65,0.3);
-        }
-        .hero .prompt {
-            color: #0a0;
-            font-size: 14px;
-            margin-bottom: 6px;
-        }
-        .hero .desc {
-            color: #555;
-            font-size: 13px;
-            max-width: 500px;
-            margin: 0 auto;
-            line-height: 1.6;
-            font-family: -apple-system, sans-serif;
-        }
-        .cursor-blink::after {
-            content: '█';
-            animation: blink 1s step-end infinite;
-        }
-        @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
-
-        .lang-switch {
-            margin-top: 16px;
-            display: flex;
-            gap: 6px;
-            justify-content: center;
-        }
-        .lang-switch a {
-            color: #00ff41;
-            text-decoration: none;
-            font-size: 12px;
-            padding: 3px 10px;
-            border: 1px solid #1a3a1a;
-            border-radius: 4px;
-            transition: all 0.2s;
-        }
-        .lang-switch a:hover {
-            background: #00ff41;
-            color: #0a0a0a;
-        }
-
-        /* 카테고리 탭 */
-        .tabs {
-            display: flex;
-            gap: 0;
-            justify-content: center;
-            margin: 20px 20px 0;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        .tab {
-            padding: 10px 20px;
-            background: #111;
-            border: 1px solid #1a3a1a;
-            color: #555;
-            font-size: 12px;
-            cursor: pointer;
-            transition: all 0.2s;
-            font-family: 'Fira Code', monospace;
-        }
-        .tab:first-child { border-radius: 6px 0 0 6px; }
-        .tab:last-child { border-radius: 0 6px 6px 0; }
-        .tab.active {
-            background: #1a3a1a;
-            color: #00ff41;
-            border-color: #00ff41;
-        }
-        .tab:hover { color: #00ff41; }
-
-        /* 그리드 */
-        .container {
-            max-width: 820px;
-            margin: 20px auto 40px;
-            padding: 0 20px;
-        }
-
-        .tool-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 12px;
-        }
-
-        .tool-card {
-            background: #131a13;
-            border: 1px solid #00ff4140;
-            border-radius: 8px;
-            padding: 20px 16px;
-            text-decoration: none;
-            color: inherit;
-            transition: all 0.3s;
-            cursor: pointer;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-        .tool-card::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0;
-            width: 100%; height: 2px;
-            background: #00ff41;
-            transform: scaleX(0);
-            transition: transform 0.3s;
-        }
-        .tool-card:hover::before { transform: scaleX(1); }
-        .tool-card:hover {
-            border-color: #00ff41;
-            box-shadow: 0 0 20px rgba(0,255,65,0.1);
-            transform: translateY(-3px);
-        }
-
-        .tool-card .emoji { font-size: 32px; margin-bottom: 10px; display: block; }
-        .tool-card .name {
-            font-size: 13px;
-            color: #00ff41;
-            font-weight: 700;
-            margin-bottom: 6px;
-            font-family: -apple-system, sans-serif;
-        }
-        .tool-card .desc {
-            font-size: 11px;
-            color: #555;
-            font-family: -apple-system, sans-serif;
-            line-height: 1.4;
-        }
-        .tool-card .tag {
-            display: inline-block;
-            font-size: 9px;
-            padding: 2px 6px;
-            border-radius: 3px;
-            margin-top: 8px;
-            font-family: 'Fira Code', monospace;
-        }
-        .tag-check { background: rgba(0,255,65,0.1); color: #00ff41; border: 1px solid #1a3a1a; }
-        .tag-quiz { background: rgba(255,193,7,0.1); color: #ffc107; border: 1px solid #3a3a1a; }
-        .tag-guide { background: rgba(33,150,243,0.1); color: #2196f3; border: 1px solid #1a2a3a; }
-        .tag-fun { background: rgba(233,30,99,0.1); color: #e91e63; border: 1px solid #3a1a2a; }
-
-        /* 하단 터미널 */
-        .terminal-footer {
-            max-width: 820px;
-            margin: 0 auto 30px;
-            padding: 0 20px;
-        }
-        .terminal-box {
-            background: #111;
-            border: 1px solid #1a3a1a;
-            border-radius: 8px;
-            padding: 16px 20px;
-            font-size: 12px;
-            color: #555;
-            line-height: 1.8;
-        }
-        .terminal-box .cmd { color: #00ff41; }
-        .terminal-box .output { color: #0a0; }
-
-        .bottom-links {
-            text-align: center;
-            padding: 20px;
-            margin-top: 10px;
-        }
-        .bottom-links a {
-            display: inline-block;
-            padding: 10px 20px;
-            border-radius: 6px;
-            text-decoration: none;
-            font-size: 12px;
-            font-weight: 600;
-            margin: 4px;
-            font-family: -apple-system, sans-serif;
-        }
-
-        .share-bar {
-            text-align: center;
-            padding: 20px 0;
-            border-top: 1px solid #1a3a1a;
-            margin-top: 20px;
-        }
-
-        footer {
-            text-align: center;
-            padding: 20px;
-            color: #333;
-            font-size: 11px;
-        }
-
-        @media (max-width: 600px) {
-            .tool-grid { grid-template-columns: repeat(2, 1fr); }
-            .hero h1 { font-size: 22px; }
-            .tabs { flex-wrap: wrap; }
-        }
-        @media (max-width: 400px) {
-            .tool-grid { grid-template-columns: 1fr; }
-        }
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:'Fira Code','Courier New',monospace;background:#0a0a0a;color:#00ff41;min-height:100vh;position:relative;overflow-x:hidden}
+        #matrixBg{position:fixed;top:0;left:0;right:0;bottom:0;z-index:0;opacity:0.06}
+        .content{position:relative;z-index:1}
+        .terminal-header{background:#111;border-bottom:1px solid #1a3a1a;padding:12px 20px;display:flex;align-items:center;gap:8px}
+        .terminal-dot{width:12px;height:12px;border-radius:50%}.dot-red{background:#ff5f56}.dot-yellow{background:#ffbd2e}.dot-green{background:#27c93f}
+        .terminal-title{color:#666;font-size:13px;margin-left:12px}
+        .hero{text-align:center;padding:60px 20px 40px}
+        .hero-icon{font-size:48px;margin-bottom:12px}
+        .hero h1{font-size:28px;color:#00ff41;letter-spacing:4px;margin-bottom:8px;text-shadow:0 0 20px rgba(0,255,65,0.3)}
+        .hero .prompt{color:#0a0;font-size:14px;margin-bottom:6px}
+        .hero .desc{color:#555;font-size:13px;max-width:500px;margin:0 auto;line-height:1.6;font-family:-apple-system,sans-serif}
+        .cursor-blink::after{content:'█';animation:blink 1s step-end infinite}
+        @keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+        .lang-switch{margin-top:16px;display:flex;gap:6px;justify-content:center}
+        .lang-switch a{color:#00ff41;text-decoration:none;font-size:12px;padding:3px 10px;border:1px solid #1a3a1a;border-radius:4px;transition:all .2s}
+        .lang-switch a:hover{background:#00ff41;color:#0a0a0a}
+        .container{max-width:820px;margin:30px auto 40px;padding:0 20px}
+        .tool-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+        .tool-card{background:#131a13;border:1px solid #00ff4140;border-radius:10px;padding:28px 20px;text-decoration:none;color:inherit;transition:all .3s;cursor:pointer;text-align:center;position:relative;overflow:hidden}
+        .tool-card::before{content:'';position:absolute;top:0;left:0;width:100%;height:2px;background:#00ff41;transform:scaleX(0);transition:transform .3s}
+        .tool-card:hover::before{transform:scaleX(1)}
+        .tool-card:hover{border-color:#00ff41;box-shadow:0 0 25px rgba(0,255,65,0.15);transform:translateY(-4px)}
+        .tool-card .emoji{font-size:40px;margin-bottom:12px;display:block}
+        .tool-card .name{font-size:15px;color:#00ff41;font-weight:700;margin-bottom:8px;font-family:-apple-system,sans-serif}
+        .tool-card .desc{font-size:12px;color:#666;font-family:-apple-system,sans-serif;line-height:1.5}
+        .terminal-footer{max-width:820px;margin:0 auto 30px;padding:0 20px}
+        .terminal-box{background:#111;border:1px solid #1a3a1a;border-radius:8px;padding:16px 20px;font-size:12px;color:#555;line-height:1.8}
+        .terminal-box .cmd{color:#00ff41}.terminal-box .output{color:#0a0}
+        .bottom-links{text-align:center;padding:20px;margin-top:10px}
+        .bottom-links a{display:inline-block;padding:10px 20px;border-radius:6px;text-decoration:none;font-size:12px;font-weight:600;margin:4px;font-family:-apple-system,sans-serif}
+        .share-bar{text-align:center;padding:20px 0;border-top:1px solid #1a3a1a;margin-top:20px}
+        footer{text-align:center;padding:20px;color:#333;font-size:11px}
+        @media(max-width:600px){.tool-grid{grid-template-columns:1fr}.hero h1{font-size:22px}}
     </style>
 </head>
 <body>
-
 <canvas id="matrixBg"></canvas>
-
 <div class="content">
-
 <div class="terminal-header">
     <div class="terminal-dot dot-red"></div>
     <div class="terminal-dot dot-yellow"></div>
     <div class="terminal-dot dot-green"></div>
-    <span class="terminal-title">mogu@guard:~$ security-scan --all</span>
+    <span class="terminal-title">mogu@guard:~$ security-tools --list</span>
 </div>
-
 <div class="hero">
     <div class="hero-icon">🛡️</div>
     <h1>MOGU Guard</h1>
-    <div class="prompt">> <span class="cursor-blink">일반인을 위한 무료 보안 진단 도구</span></div>
-    <div class="desc">내 비밀번호, 내 폰, 내 개인정보 — 안전한지 지금 확인하세요.<br>모든 처리는 브라우저에서만. 서버 전송 없음.</div>
+    <div class="prompt">> <span class="cursor-blink">일반인을 위한 무료 보안 도구</span></div>
+    <div class="desc">비밀번호 생성, 개인정보 마스킹 — 모든 처리는 브라우저에서만.<br>서버 전송 없음. 회원가입 없음. 100% 무료.</div>
     <div class="lang-switch">
         <a href="/en/">EN</a>
         <a href="/jp/">JP</a>
@@ -307,181 +84,52 @@
         <a href="/pt/">PT</a>
     </div>
 </div>
-
-<div class="tabs">
-    <div class="tab active" onclick="filterTools('all')">ALL</div>
-    <div class="tab" onclick="filterTools('check')">진단</div>
-    <div class="tab" onclick="filterTools('quiz')">퀴즈</div>
-    <div class="tab" onclick="filterTools('fun')">재미</div>
-</div>
-
 <div class="container">
-    <div class="tool-grid" id="toolGrid">
-
-        <a href="tools/password-check.html" class="tool-card" data-cat="check">
-            <span class="emoji">🔐</span>
-            <div class="name">비밀번호 강도 체커</div>
-            <div class="desc">안전도 점수 + 개선법</div>
-            <span class="tag tag-check">진단</span>
-        </a>
-
-        <a href="tools/hack-time.html" class="tool-card" data-cat="fun">
-            <span class="emoji">⏱️</span>
-            <div class="name">해킹 시간 계산</div>
-            <div class="desc">몇 초만에 뚫릴까?</div>
-            <span class="tag tag-fun">재미</span>
-        </a>
-
-        <a href="tools/phishing-quiz.html" class="tool-card" data-cat="quiz">
-            <span class="emoji">🎣</span>
-            <div class="name">피싱 메일 판별</div>
-            <div class="desc">진짜 vs 가짜 10문제</div>
-            <span class="tag tag-quiz">퀴즈</span>
-        </a>
-
-        <a href="tools/phone-security.html" class="tool-card" data-cat="check">
-            <span class="emoji">📱</span>
-            <div class="name">폰 보안 점수</div>
-            <div class="desc">스마트폰 보안 체크</div>
-            <span class="tag tag-check">진단</span>
-        </a>
-
-        <a href="tools/pc-security.html" class="tool-card" data-cat="check">
-            <span class="emoji">💻</span>
-            <div class="name">PC 보안 점수</div>
-            <div class="desc">컴퓨터 보안 체크</div>
-            <span class="tag tag-check">진단</span>
-        </a>
-
-        <a href="tools/privacy-check.html" class="tool-card" data-cat="check">
-            <span class="emoji">👤</span>
-            <div class="name">SNS 개인정보 진단</div>
-            <div class="desc">노출 위험도 확인</div>
-            <span class="tag tag-check">진단</span>
-        </a>
-
-        <a href="tools/security-quiz.html" class="tool-card" data-cat="quiz">
-            <span class="emoji">🧠</span>
-            <div class="name">보안 상식 퀴즈</div>
-            <div class="desc">20문제 등급 테스트</div>
-            <span class="tag tag-quiz">퀴즈</span>
-        </a>
-
-        <a href="tools/hacker-type.html" class="tool-card" data-cat="fun">
-            <span class="emoji">🎭</span>
-            <div class="name">해커 유형 테스트</div>
-            <div class="desc">나는 어떤 해커?</div>
-            <span class="tag tag-fun">재미</span>
-        </a>
-
-        <a href="tools/cyber-crime-quiz.html" class="tool-card" data-cat="quiz">
-            <span class="emoji">⚖️</span>
-            <div class="name">사이버 범죄 퀴즈</div>
-            <div class="desc">이거 불법일까?</div>
-            <span class="tag tag-quiz">퀴즈</span>
-        </a>
-
-        
-        <a href="tools/password-gen.html" class="tool-card" data-cat="check">
+    <div class="tool-grid">
+        <a href="tools/password-gen.html" class="tool-card">
             <span class="emoji">🎲</span>
             <div class="name">비밀번호 생성기</div>
-            <div class="desc">안전한 PW 자동 생성</div>
-            <span class="tag tag-check">진단</span>
+            <div class="desc">해킹 불가능한 안전한 비밀번호를 자동 생성</div>
         </a>
-
-        <a href="tools/smishing-quiz.html" class="tool-card" data-cat="quiz">
-            <span class="emoji">💬</span>
-            <div class="name">스미싱 판별 퀴즈</div>
-            <div class="desc">가짜 문자 구별하기</div>
-            <span class="tag tag-quiz">퀴즈</span>
+        <a href="tools/sentence-password.html" class="tool-card">
+            <span class="emoji">🔑</span>
+            <div class="name">문장 → 비밀번호</div>
+            <div class="desc">기억하기 쉬운 문장을 강력한 비밀번호로 변환</div>
         </a>
-
-        <a href="tools/security-mbti.html" class="tool-card" data-cat="fun">
-            <span class="emoji">🧬</span>
-            <div class="name">보안 성격 유형</div>
-            <div class="desc">나의 보안 MBTI는?</div>
-            <span class="tag tag-fun">재미</span>
+        <a href="tools/privacy-mask.html" class="tool-card">
+            <span class="emoji">🙈</span>
+            <div class="name">개인정보 마스킹</div>
+            <div class="desc">이름·전화번호·이메일·카드번호 자동 가리기</div>
         </a>
-
-        <a href="tools/email-score.html" class="tool-card" data-cat="check">
-            <span class="emoji">📧</span>
-            <div class="name">이메일 안전 점수</div>
-            <div class="desc">내 이메일 보안 진단</div>
-            <span class="tag tag-check">진단</span>
-        </a>
-
+    </div>
 </div>
-</div>
-
 <div class="terminal-footer">
     <div class="terminal-box">
         <span class="cmd">$ scan --status</span><br>
-        <span class="output">[+] 도구 19개 로드 완료</span><br>
+        <span class="output">[+] 도구 3개 로드 완료</span><br>
         <span class="output">[+] 서버 전송: 없음 (100% 클라이언트)</span><br>
         <span class="output">[+] 비용: 무료</span><br>
         <span class="output">[+] 회원가입: 불필요</span><br>
         <span class="cmd">$ _</span>
     </div>
 </div>
-
 <div class="bottom-links">
-    <a href="https://mogutool.com" target="_blank" style="background:#111;border:1px solid #1a2a3a;color:#4fc3f7;">
-        🛠️ MOGU Tools →
-    </a>
-    <a href="https://mogumoon.com" target="_blank" style="background:#111;border:1px solid #3a2a1a;color:#c9a84c;">
-        🔮 MOGU Moon →
-    </a>
+    <a href="https://mogutool.com" target="_blank" style="background:#111;border:1px solid #1a2a3a;color:#4fc3f7;">🛠️ MOGU Tools →</a>
+    <a href="https://mogumoon.com" target="_blank" style="background:#111;border:1px solid #3a2a1a;color:#c9a84c;">🔮 MOGU Moon →</a>
 </div>
-
 <div class="share-bar">
     <span style="font-size:12px;color:#333;margin-right:8px;">공유:</span>
     <a href="" onclick="window.open('https://twitter.com/intent/tweet?url='+encodeURIComponent(location.href)+'&text='+encodeURIComponent(document.title),'_blank','width=600,height=400');return false" style="display:inline-block;padding:5px 10px;background:#1da1f2;color:#fff;border-radius:4px;text-decoration:none;font-size:11px;margin:3px;font-family:sans-serif;">Twitter</a>
     <a href="" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),'_blank','width=600,height=400');return false" style="display:inline-block;padding:5px 10px;background:#1877f2;color:#fff;border-radius:4px;text-decoration:none;font-size:11px;margin:3px;font-family:sans-serif;">Facebook</a>
-    <a href="" onclick="window.open('https://api.whatsapp.com/send?text='+encodeURIComponent(document.title+' '+location.href),'_blank');return false" style="display:inline-block;padding:5px 10px;background:#25d366;color:#fff;border-radius:4px;text-decoration:none;font-size:11px;margin:3px;font-family:sans-serif;">WhatsApp</a>
     <a href="" onclick="navigator.clipboard.writeText(location.href);this.textContent='Copied!';return false" style="display:inline-block;padding:5px 10px;background:#333;color:#0f0;border-radius:4px;text-decoration:none;font-size:11px;margin:3px;font-family:monospace;">URL 복사</a>
 </div>
-
-<footer>© 2025 MOGU Guard — All scans run locally. No data transmitted.</footer>
-
+<footer>© 2025 MOGU Guard — All processing happens locally. No data transmitted.</footer>
 </div>
-
 <script>
-// 매트릭스 배경
-const canvas = document.getElementById('matrixBg');
-const ctx = canvas.getContext('2d');
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
-
-const chars = 'アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン0123456789ABCDEF';
-const fontSize = 14;
-const columns = Math.floor(canvas.width / fontSize);
-const drops = Array(columns).fill(1);
-
-function drawMatrix() {
-    ctx.fillStyle = 'rgba(10,10,10,0.05)';
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
-    ctx.fillStyle = '#00ff41';
-    ctx.font = fontSize + 'px monospace';
-
-    for (let i = 0; i < drops.length; i++) {
-        const text = chars[Math.floor(Math.random() * chars.length)];
-        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
-        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) drops[i] = 0;
-        drops[i]++;
-    }
-}
-setInterval(drawMatrix, 50);
-window.addEventListener('resize', () => { canvas.width = window.innerWidth; canvas.height = window.innerHeight; });
-
-// 카테고리 필터
-function filterTools(cat) {
-    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-    event.target.classList.add('active');
-    document.querySelectorAll('.tool-card').forEach(card => {
-        card.style.display = (cat === 'all' || card.dataset.cat === cat) ? '' : 'none';
-    });
-}
+const canvas=document.getElementById('matrixBg');const ctx=canvas.getContext('2d');canvas.width=window.innerWidth;canvas.height=window.innerHeight;
+const chars='アイウエオカキクケコ0123456789ABCDEF';const fontSize=14;const columns=Math.floor(canvas.width/fontSize);const drops=Array(columns).fill(1);
+function drawMatrix(){ctx.fillStyle='rgba(10,10,10,0.05)';ctx.fillRect(0,0,canvas.width,canvas.height);ctx.fillStyle='#00ff41';ctx.font=fontSize+'px monospace';for(let i=0;i<drops.length;i++){const text=chars[Math.floor(Math.random()*chars.length)];ctx.fillText(text,i*fontSize,drops[i]*fontSize);if(drops[i]*fontSize>canvas.height&&Math.random()>0.975)drops[i]=0;drops[i]++;}}
+setInterval(drawMatrix,50);window.addEventListener('resize',()=>{canvas.width=window.innerWidth;canvas.height=window.innerHeight;});
 </script>
-
 </body>
 </html>
