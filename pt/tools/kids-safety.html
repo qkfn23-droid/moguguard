@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛡️</text></svg>">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>아이 인터넷 안전 퀴즈 - 우리 아이는 안전할까? | MOGU Guard</title>
+    <meta name="description" content="자녀의 인터넷 안전 수준을 퀴즈로 확인하세요. 부모가 알아야 할 10가지 온라인 안전 상식.">
+    <link rel="canonical" href="https://moguguard.com/tools/kids-safety.html">
+    <meta property="og:title" content="아이 인터넷 안전 퀴즈 | MOGU Guard">
+    <meta property="og:description" content="우리 아이 인터넷 안전 수준을 확인하세요!">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://moguguard.com/tools/kids-safety.html">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&display=swap');
+        *{margin:0;padding:0;box-sizing:border-box}body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#0a0a0a;color:#e0e0e0;min-height:100vh}
+        header{background:#111;border-bottom:1px solid #1a3a1a;padding:16px 20px;text-align:center}header a{text-decoration:none;font-size:20px;color:#00ff41;letter-spacing:2px;font-weight:700;font-family:'Fira Code',monospace}
+        .container{max-width:700px;margin:20px auto 40px;padding:0 20px}
+        .page-title{text-align:center;margin-bottom:30px}.page-title h2{font-size:28px;color:#00ff41;margin-bottom:8px}.page-title p{color:#666;font-size:14px}
+        .checklist{background:#111;border:1px solid #00ff4130;border-radius:8px;padding:24px;margin-bottom:24px}
+        .section-label{font-size:15px;color:#00ff41;font-weight:700;margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid #1a3a1a}
+        .check-item{display:flex;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid #0f0f0f;cursor:pointer}
+        .check-item:last-child{border-bottom:none}.check-item:hover{background:rgba(0,255,65,0.03)}
+        .check-item input{width:20px;height:20px;accent-color:#00ff41;cursor:pointer}
+        .check-item label{flex:1;cursor:pointer;font-size:14px;line-height:1.5}.check-item label strong{color:#00ff41}
+        .risk{font-size:11px;padding:2px 8px;border-radius:3px}.risk-high{background:rgba(255,82,82,0.15);color:#ff5252}.risk-mid{background:rgba(255,152,0,0.15);color:#ff9800}.risk-low{background:rgba(0,255,65,0.15);color:#00ff41}
+        .result-box{display:none;text-align:center;background:#111;border:1px solid #00ff4130;border-radius:8px;padding:30px;margin-bottom:20px}
+        .score-num{font-size:64px;font-weight:900;font-family:'Fira Code',monospace}.score-grade{font-size:20px;margin-top:8px}
+        .score-bar{height:12px;background:#1a1a1a;border-radius:6px;overflow:hidden;margin:16px 0}.score-fill{height:100%;border-radius:6px;transition:width .5s}
+        .tips{background:#111;border:1px solid #00ff4130;border-radius:8px;padding:20px;margin-top:16px;display:none}
+        .tips-title{font-size:16px;color:#00ff41;font-weight:600;margin-bottom:10px}
+        .tips-text{font-size:14px;color:#888;line-height:1.8}.tips-text strong{color:#ff5252}
+        .calc-btn{width:100%;padding:14px;background:#00ff41;color:#0a0a0a;border:none;border-radius:8px;font-size:16px;font-weight:700;cursor:pointer;font-family:'Fira Code',monospace}
+        footer{text-align:center;padding:30px;color:#333;font-size:11px}
+    </style>
+</head>
+<body>
+<header><a href="../index.html">MOGU <span style="color:#00ff41;">Guard</span></a></header>
+<div class="container">
+    <div class="page-title">
+        <h2>👧 아이 인터넷 안전 퀴즈</h2>
+        <p>부모님이 체크하세요 — 우리 아이는 온라인에서 안전할까?</p>
+    </div>
+
+    <div class="checklist">
+        <div class="section-label">📱 기기 & 앱 관리</div>
+        <div class="check-item"><input type="checkbox" id="c1"><label for="c1">아이 기기에 <strong>자녀 보호 모드</strong>(Family Link/스크린타임)를 설정했다</label><span class="risk risk-high">필수</span></div>
+        <div class="check-item"><input type="checkbox" id="c2"><label for="c2">앱 설치 시 <strong>부모 승인</strong>이 필요하도록 설정했다</label><span class="risk risk-high">필수</span></div>
+        <div class="check-item"><input type="checkbox" id="c3"><label for="c3"><strong>사용 시간 제한</strong>을 설정했다</label><span class="risk risk-mid">중요</span></div>
+        <div class="check-item"><input type="checkbox" id="c4"><label for="c4"><strong>부적절한 콘텐츠 필터</strong>를 활성화했다</label><span class="risk risk-high">필수</span></div>
+
+        <div class="section-label" style="margin-top:20px">💬 소통 & 교육</div>
+        <div class="check-item"><input type="checkbox" id="c5"><label for="c5">아이와 <strong>온라인 안전</strong>에 대해 대화한 적이 있다</label><span class="risk risk-high">필수</span></div>
+        <div class="check-item"><input type="checkbox" id="c6"><label for="c6"><strong>모르는 사람과 대화하지 말라</strong>고 교육했다</label><span class="risk risk-high">필수</span></div>
+        <div class="check-item"><input type="checkbox" id="c7"><label for="c7"><strong>개인정보(이름/학교/주소)</strong>를 온라인에 올리지 말라고 교육했다</label><span class="risk risk-high">필수</span></div>
+        <div class="check-item"><input type="checkbox" id="c8"><label for="c8">불편한 일이 생기면 <strong>바로 부모에게 말하라</strong>고 교육했다</label><span class="risk risk-high">필수</span></div>
+
+        <div class="section-label" style="margin-top:20px">🔒 계정 & 보안</div>
+        <div class="check-item"><input type="checkbox" id="c9"><label for="c9">아이 계정의 <strong>비밀번호를 부모가 알고 있다</strong></label><span class="risk risk-mid">중요</span></div>
+        <div class="check-item"><input type="checkbox" id="c10"><label for="c10">아이 SNS 계정을 <strong>비공개</strong>로 설정했다</label><span class="risk risk-high">필수</span></div>
+        <div class="check-item"><input type="checkbox" id="c11"><label for="c11"><strong>위치 공유</strong> 기능을 확인/관리하고 있다</label><span class="risk risk-mid">중요</span></div>
+        <div class="check-item"><input type="checkbox" id="c12"><label for="c12"><strong>인앱 결제</strong>를 차단하거나 승인제로 설정했다</label><span class="risk risk-mid">중요</span></div>
+
+        <div class="section-label" style="margin-top:20px">👀 모니터링</div>
+        <div class="check-item"><input type="checkbox" id="c13"><label for="c13">아이가 <strong>어떤 앱/사이트</strong>를 사용하는지 알고 있다</label><span class="risk risk-mid">중요</span></div>
+        <div class="check-item"><input type="checkbox" id="c14"><label for="c14">정기적으로 아이와 <strong>온라인 활동에 대해 대화</strong>한다</label><span class="risk risk-low">권장</span></div>
+        <div class="check-item"><input type="checkbox" id="c15"><label for="c15"><strong>사이버 불링(온라인 왕따)</strong> 징후를 알고 있다</label><span class="risk risk-mid">중요</span></div>
+    </div>
+
+    <button class="calc-btn" onclick="showResult()">👧 안전 점수 확인</button>
+
+    <div class="result-box" id="resultBox">
+        <div class="score-num" id="scoreNum">0</div>
+        <div class="score-bar"><div class="score-fill" id="scoreFill"></div></div>
+        <div class="score-grade" id="scoreGrade"></div>
+    </div>
+    <div class="tips" id="tips"><div class="tips-title">⚠️ 아직 안 한 것들</div><div class="tips-text" id="tipsText"></div></div>
+
+    <div class="disclaimer">👧 자녀 보호는 감시가 아니라 교육입니다. 아이와 함께 인터넷 안전을 배우세요.</div>
+</div>
+<div style="text-align:center;padding:20px 0;border-top:1px solid #1a3a1a;margin-top:30px;"><span style="font-size:12px;color:#333;margin-right:8px;">공유:</span><a href="" onclick="window.open('https://twitter.com/intent/tweet?url='+encodeURIComponent(location.href)+'&text='+encodeURIComponent(document.title),'_blank','width=600,height=400');return false" style="display:inline-block;padding:5px 10px;background:#1da1f2;color:#fff;border-radius:4px;text-decoration:none;font-size:11px;margin:3px;">Twitter</a><a href="" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),'_blank','width=600,height=400');return false" style="display:inline-block;padding:5px 10px;background:#1877f2;color:#fff;border-radius:4px;text-decoration:none;font-size:11px;margin:3px;">Facebook</a><a href="" onclick="navigator.clipboard.writeText(location.href);this.textContent='Copied!';return false" style="display:inline-block;padding:5px 10px;background:#333;color:#0f0;border-radius:4px;text-decoration:none;font-size:11px;margin:3px;font-family:monospace;">URL 복사</a></div>
+<footer>© 2025 MOGU Guard</footer>
+<script>
+const labels=["자녀 보호 모드 설정","앱 설치 부모 승인","사용 시간 제한","부적절한 콘텐츠 필터","온라인 안전 대화","모르는 사람 대화 금지 교육","개인정보 공개 금지 교육","불편한 일 부모에게 말하기 교육","아이 비밀번호 파악","아이 SNS 비공개","위치 공유 관리","인앱 결제 차단","사용 앱/사이트 파악","정기적 온라인 활동 대화","사이버 불링 징후 인지"];
+function showResult(){
+    let checked=0,unchecked=[];
+    for(let i=1;i<=15;i++){if(document.getElementById('c'+i).checked)checked++;else unchecked.push(labels[i-1]);}
+    const score=Math.round((checked/15)*100);
+    let grade,color;
+    if(score>=90){grade='🟢 훌륭한 부모! 아이가 안전하게 인터넷을 사용하고 있습니다.';color='#00ff41';}
+    else if(score>=70){grade='🟡 양호. 몇 가지만 보강하면 더 안전합니다.';color='#ffeb3b';}
+    else if(score>=50){grade='🟠 주의! 아이의 온라인 안전에 빈틈이 있습니다.';color='#ff9800';}
+    else{grade='🔴 위험! 아이가 온라인 위험에 노출되어 있을 수 있습니다.';color='#ff5252';}
+    document.getElementById('scoreNum').textContent=score+'점';document.getElementById('scoreNum').style.color=color;
+    document.getElementById('scoreFill').style.width=score+'%';document.getElementById('scoreFill').style.background=color;
+    document.getElementById('scoreGrade').textContent=grade;document.getElementById('scoreGrade').style.color=color;
+    document.getElementById('resultBox').style.display='block';
+    if(unchecked.length>0){document.getElementById('tipsText').innerHTML=unchecked.map(t=>'• <strong>'+t+'</strong>').join('<br>');document.getElementById('tips').style.display='block';}
+    else document.getElementById('tips').style.display='none';
+    document.getElementById('resultBox').scrollIntoView({behavior:'smooth'});
+}
+</script>
+</body>
+</html>
