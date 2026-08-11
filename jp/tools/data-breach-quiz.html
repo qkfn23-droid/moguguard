@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ja">
 <head>
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛡️</text></svg>">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>데이터 유출 상식 퀴즈 - 개인정보 유출 대처법 | MOGU Guard</title>
-    <meta name="description" content="개인정보 유출에 대해 얼마나 알고 있나요? 10문제로 데이터 유출 상식과 대처법을 테스트하세요.">
+    <title>Data Breach Quiz - Personal Data Breach Response | MOGU Guard</title>
+    <meta name="description" content="How much do you know about data breaches? 10문제로 데이터 유출 상식과 대처법을 테스트하years old요.">
     <link rel="canonical" href="https://moguguard.com/tools/data-breach-quiz.html">
-    <meta property="og:title" content="데이터 유출 상식 퀴즈 | MOGU Guard">
+    <meta property="og:title" content="Data Breach Quiz | MOGU Guard">
     <meta property="og:description" content="데이터 유출 상식 10문제!">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://moguguard.com/tools/data-breach-quiz.html">
@@ -39,15 +39,15 @@
 <header><a href="../index.html">MOGU <span style="color:#00ff41;">Guard</span></a></header>
 <div class="container">
     <div class="page-title">
-        <h2>💾 데이터 유출 상식 퀴즈</h2>
-        <p>개인정보 유출에 대해 얼마나 알고 있나요?</p>
+        <h2>💾 Data Breach Quiz</h2>
+        <p>How much do you know about data breaches?</p>
     </div>
     <div class="progress-bar"><div class="progress-fill" id="pf" style="width:0%"></div></div>
     <div class="progress-text" id="pt">1 / 10</div>
     <div id="quizArea"></div>
     <div id="resultArea" class="result-section"></div>
 </div>
-<div style="text-align:center;padding:20px 0;border-top:1px solid #1a3a1a;margin-top:30px;"><span style="font-size:12px;color:#333;margin-right:8px;">공유:</span><a href="" onclick="window.open('https://twitter.com/intent/tweet?url='+encodeURIComponent(location.href)+'&text='+encodeURIComponent(document.title),'_blank','width=600,height=400');return false" style="display:inline-block;padding:5px 10px;background:#1da1f2;color:#fff;border-radius:4px;text-decoration:none;font-size:11px;margin:3px;">Twitter</a><a href="" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),'_blank','width=600,height=400');return false" style="display:inline-block;padding:5px 10px;background:#1877f2;color:#fff;border-radius:4px;text-decoration:none;font-size:11px;margin:3px;">Facebook</a><a href="" onclick="navigator.clipboard.writeText(location.href);this.textContent='Copied!';return false" style="display:inline-block;padding:5px 10px;background:#333;color:#0f0;border-radius:4px;text-decoration:none;font-size:11px;margin:3px;font-family:monospace;">URL 복사</a></div>
+<div style="text-align:center;padding:20px 0;border-top:1px solid #1a3a1a;margin-top:30px;"><span style="font-size:12px;color:#333;margin-right:8px;">共有:</span><a href="" onclick="window.open('https://twitter.com/intent/tweet?url='+encodeURIComponent(location.href)+'&text='+encodeURIComponent(document.title),'_blank','width=600,height=400');return false" style="display:inline-block;padding:5px 10px;background:#1da1f2;color:#fff;border-radius:4px;text-decoration:none;font-size:11px;margin:3px;">Twitter</a><a href="" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),'_blank','width=600,height=400');return false" style="display:inline-block;padding:5px 10px;background:#1877f2;color:#fff;border-radius:4px;text-decoration:none;font-size:11px;margin:3px;">Facebook</a><a href="" onclick="navigator.clipboard.writeText(location.href);this.textContent='Copied!';return false" style="display:inline-block;padding:5px 10px;background:#333;color:#0f0;border-radius:4px;text-decoration:none;font-size:11px;margin:3px;font-family:monospace;">URLコピー</a></div>
 <footer>© 2025 MOGU Guard</footer>
 <script>
 const Q=[
@@ -55,7 +55,7 @@ const Q=[
 {q:"개인정보가 유출된 후 가장 먼저 해야 할 일은?",o:["경찰에 신고","해당 사이트 비밀번호 변경","컴퓨터 포맷","아무것도 안 함"],a:1,e:"가장 먼저 유출된 사이트와 같은 비밀번호를 쓰는 모든 계정의 비밀번호를 변경해야 합니다."},
 {q:"다크웹에서 유출된 신용카드 정보의 평균 가격은?",o:["$1~$5","$10~$20","$100~$200","$1,000 이상"],a:1,e:"다크웹에서 신용카드 정보는 $5~$20 정도에 거래됩니다. 대량 유출되면 가격은 더 낮아집니다."},
 {q:"기업이 데이터 유출 사실을 발견하고 공개하기까지 평균 기간은?",o:["1일","1주","약 6개월","1년 이상"],a:2,e:"IBM 보고서에 따르면, 데이터 유출 발견까지 평균 약 200일, 대응까지 약 70일이 걸립니다. 총 약 9개월."},
-{q:"개인정보 유출 시 기업이 부과받을 수 있는 GDPR 벌금은?",o:["최대 100만원","최대 1억원","전체 매출의 4%까지","벌금 없음"],a:2,e:"GDPR에 따르면 전 세계 연간 매출의 최대 4% 또는 2,000만 유로(약 280억원) 중 큰 금액이 부과될 수 있습니다."},
+{q:"개인정보 유출 시 기업이 부과받을 수 있는 GDPR 벌금은?",o:["최대 100만원","최대 1억원","전체 매출의 4%까지","벌금 없음"],a:2,e:"GDPR에 따르면 전 years old계 연간 매출의 최대 4% 또는 2,000만 유로(약 280억원) 중 큰 금액이 부과될 수 있습니다."},
 {q:"이메일 주소가 유출되면 어떤 위험이 있나요?",o:["스팸 메일만 좀 늘어남","피싱 공격 대상이 됨","별 위험 없음","이메일이 삭제됨"],a:1,e:"유출된 이메일로 맞춤형 피싱 공격이 올 수 있습니다. 비밀번호까지 유출되면 계정 탈취 위험도 있습니다."},
 {q:"'해시된 비밀번호'가 유출되면 안전한가요?",o:["완전 안전","단순 해시는 금방 풀릴 수 있음","해커가 절대 풀 수 없음","해시가 뭔데?"],a:1,e:"MD5 같은 단순 해시는 레인보우 테이블로 금방 풀립니다. bcrypt 같은 강력한 해시라면 상대적으로 안전합니다."},
 {q:"내 개인정보가 유출됐는지 확인하는 방법은?",o:["경찰서에 문의","Have I Been Pwned 사이트","할 수 없음","점쟁이한테 물어봄"],a:1,e:"haveibeenpwned.com에서 이메일을 입력하면 유출 여부를 무료로 확인할 수 있습니다."},
@@ -85,7 +85,7 @@ function ans(i){
         else if(j===i&&!correct)o.className='opt wrong';
     });
     document.getElementById('exp').style.display='block';
-    document.getElementById('exp').innerHTML=(correct?'✅ 정답! ':'❌ 오답! ')+q.e;
+    document.getElementById('exp').innerHTML=(correct?'✅ Correct! ':'❌ Wrong! ')+q.e;
     setTimeout(()=>{cur++;show();},2500);
 }
 function result(){
@@ -93,15 +93,15 @@ function result(){
     document.getElementById('pf').style.width='100%';
     document.getElementById('pt').textContent='완료!';
     let g,c;
-    if(score>=9){g='💾 데이터 유출 전문가!';c='#00ff41';}
-    else if(score>=7){g='🟢 잘 알고 있어요!';c='#00ff41';}
-    else if(score>=5){g='🟡 기본은 아는 수준';c='#ffeb3b';}
-    else{g='🔴 데이터 유출 교육이 필요합니다!';c='#ff5252';}
+    if(score>=9){g='💾 Data Breach Expert!';c='#00ff41';}
+    else if(score>=7){g='🟢 You know well!';c='#00ff41';}
+    else if(score>=5){g='🟡 Basic knowledge level';c='#ffeb3b';}
+    else{g='🔴 Need data breach education!';c='#ff5252';}
     document.getElementById('resultArea').innerHTML=`
         <div class="r-score" style="color:${c}">${score} / ${Q.length}</div>
         <div class="r-grade" style="color:${c}">${g}</div>
-        <div class="r-text">데이터 유출은 남의 일이 아닙니다.<br>전 세계 인구의 절반 이상이 이미 개인정보가 유출된 적이 있습니다.</div>
-        <button class="retry-btn" onclick="location.reload()">🔄 다시 도전</button>`;
+        <div class="r-text">Data breaches are not someone else's problem.<br>전 years old계 인구의 절반 이상이 이미 개인정보가 유출된 적이 있습니다.</div>
+        <button class="retry-btn" onclick="location.reload()">🔄 Try Again</button>`;
     document.getElementById('resultArea').style.display='block';
 }
 show();

@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="es">
 <head>
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛡️</text></svg>">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>내 디지털 나이 테스트 - 보안 세대 진단 | MOGU Guard</title>
-    <meta name="description" content="당신의 디지털 보안 나이는 몇 살? 10가지 질문으로 당신이 디지털 원주민인지 이민자인지 알아보세요.">
+    <title>Digital Age Test - Security Generation Check | MOGU Guard</title>
+    <meta name="description" content="What is your digital security age? 10가지 질문으로 당신이 디지털 원주민인지 이민자인지 알아보years old요.">
     <link rel="canonical" href="https://moguguard.com/tools/digital-age.html">
-    <meta property="og:title" content="내 디지털 나이 테스트 | MOGU Guard">
+    <meta property="og:title" content="Digital Age Test | MOGU Guard">
     <meta property="og:description" content="당신의 디지털 보안 나이는?">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://moguguard.com/tools/digital-age.html">
@@ -41,28 +41,28 @@
 <header><a href="../index.html">MOGU <span style="color:#00ff41;">Guard</span></a></header>
 <div class="container">
     <div class="page-title">
-        <h2>🎂 내 디지털 나이 테스트</h2>
-        <p>당신의 디지털 보안 나이는 몇 살?</p>
+        <h2>🎂 Digital Age Test</h2>
+        <p>What is your digital security age?</p>
     </div>
     <div class="progress-bar"><div class="progress-fill" id="pf" style="width:0%"></div></div>
     <div class="progress-text" id="pt">Q1 / 10</div>
     <div id="quizArea"></div>
     <div id="resultArea" class="result-section"></div>
 </div>
-<div style="text-align:center;padding:20px 0;border-top:1px solid #1a3a1a;margin-top:30px;"><span style="font-size:12px;color:#333;margin-right:8px;">공유:</span><a href="" onclick="window.open('https://twitter.com/intent/tweet?url='+encodeURIComponent(location.href)+'&text='+encodeURIComponent(document.title),'_blank','width=600,height=400');return false" style="display:inline-block;padding:5px 10px;background:#1da1f2;color:#fff;border-radius:4px;text-decoration:none;font-size:11px;margin:3px;">Twitter</a><a href="" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),'_blank','width=600,height=400');return false" style="display:inline-block;padding:5px 10px;background:#1877f2;color:#fff;border-radius:4px;text-decoration:none;font-size:11px;margin:3px;">Facebook</a><a href="" onclick="navigator.clipboard.writeText(location.href);this.textContent='Copied!';return false" style="display:inline-block;padding:5px 10px;background:#333;color:#0f0;border-radius:4px;text-decoration:none;font-size:11px;margin:3px;font-family:monospace;">URL 복사</a></div>
+<div style="text-align:center;padding:20px 0;border-top:1px solid #1a3a1a;margin-top:30px;"><span style="font-size:12px;color:#333;margin-right:8px;">Compartir:</span><a href="" onclick="window.open('https://twitter.com/intent/tweet?url='+encodeURIComponent(location.href)+'&text='+encodeURIComponent(document.title),'_blank','width=600,height=400');return false" style="display:inline-block;padding:5px 10px;background:#1da1f2;color:#fff;border-radius:4px;text-decoration:none;font-size:11px;margin:3px;">Twitter</a><a href="" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),'_blank','width=600,height=400');return false" style="display:inline-block;padding:5px 10px;background:#1877f2;color:#fff;border-radius:4px;text-decoration:none;font-size:11px;margin:3px;">Facebook</a><a href="" onclick="navigator.clipboard.writeText(location.href);this.textContent='Copied!';return false" style="display:inline-block;padding:5px 10px;background:#333;color:#0f0;border-radius:4px;text-decoration:none;font-size:11px;margin:3px;font-family:monospace;">Copiar URL</a></div>
 <footer>© 2025 MOGU Guard</footer>
 <script>
 const QS=[
-{q:"새 앱을 깔 때 '약관 동의'를?",o:[{t:"전부 읽고 동의한다",s:10},{t:"대충 훑어보고 동의",s:30},{t:"바로 '전체 동의' 누른다",s:60},{t:"약관이 뭐야?",s:80}]},
-{q:"비밀번호를 어떻게 관리해?",o:[{t:"비밀번호 관리자 앱 사용",s:10},{t:"머릿속에 다 기억",s:30},{t:"폰 메모장에 적어둠",s:50},{t:"전부 같은 비밀번호",s:70}]},
-{q:"공용 와이파이에서 뭘 해?",o:[{t:"VPN 켜고 사용",s:10},{t:"인터넷 서핑만",s:30},{t:"뱅킹도 함",s:60},{t:"와이파이 보이면 무조건 접속",s:70}]},
-{q:"소프트웨어 업데이트 알림이 뜨면?",o:[{t:"바로 업데이트",s:10},{t:"나중에... (계속 미룸)",s:40},{t:"알림을 꺼버림",s:60},{t:"업데이트가 뭔데?",s:80}]},
-{q:"SNS에 사진 올릴 때?",o:[{t:"위치·개인정보 전부 확인 후 올림",s:10},{t:"공개 범위 정도만 설정",s:30},{t:"찍으면 바로 올림",s:50},{t:"실시간 위치까지 공유",s:70}]},
-{q:"모르는 번호에서 '택배 확인' 문자가 오면?",o:[{t:"100% 스미싱. 삭제+신고",s:10},{t:"일단 의심하고 검색",s:20},{t:"링크 눌러봄",s:60},{t:"뭐가 왔나 궁금해서 바로 클릭",s:80}]},
-{q:"2단계 인증(2FA) 사용해?",o:[{t:"주요 계정 전부 설정",s:10},{t:"몇 개만 설정",s:30},{t:"귀찮아서 안 함",s:50},{t:"2단계 인증이 뭐야?",s:80}]},
-{q:"USB를 주웠을 때?",o:[{t:"절대 꽂지 않음",s:10},{t:"뭔지 궁금하지만 참음",s:20},{t:"컴퓨터에 꽂아봄",s:60},{t:"USB가 공짜다! 쓴다",s:80}]},
-{q:"브라우저에 비밀번호 저장?",o:[{t:"안 함. 비밀번호 관리자 사용",s:10},{t:"편의상 몇 개만 저장",s:30},{t:"전부 저장. 편하니까",s:50},{t:"자동 로그인 만세",s:70}]},
-{q:"'축하합니다! 100만원 당첨!' 팝업이 뜨면?",o:[{t:"닫기. 100% 사기",s:10},{t:"의심하면서도 살짝 궁금",s:30},{t:"어? 진짜? 클릭",s:60},{t:"바로 개인정보 입력",s:90}]}
+{q:"When installing a new app, 'terms agreement'를?",o:[{t:"Read everything and agree",s:10},{t:"Skim and agree",s:30},{t:"Immediately tap "Agree All"",s:60},{t:"What are terms?",s:80}]},
+{q:"How do you manage passwords?",o:[{t:"Use password manager app",s:10},{t:"Remember everything in my head",s:30},{t:"Written in phone notes",s:50},{t:"All same password",s:70}]},
+{q:"공용 WiFi에서 뭘 해?",o:[{t:"Use with VPN on",s:10},{t:"Just browse",s:30},{t:"Banking too",s:60},{t:"WiFi 보이면 무조건 접속",s:70}]},
+{q:"When software update pops up?",o:[{t:"Update immediately",s:10},{t:"Later... (keep postponing)",s:40},{t:"Turn off notifications",s:60},{t:"What is update?",s:80}]},
+{q:"When posting photos on SNS?",o:[{t:"Check location/privacy before posting",s:10},{t:"Just set visibility",s:30},{t:"Post right after taking",s:50},{t:"Share real-time location too",s:70}]},
+{q:"Unknown number texts "package confirmation"?",o:[{t:"100% smishing. Delete + report",s:10},{t:"Suspicious, search first",s:20},{t:"Click the link",s:60},{t:"Curious, click immediately",s:80}]},
+{q:"Do you use 2FA?",o:[{t:"Set on all major accounts",s:10},{t:"Only a few accounts",s:30},{t:"Too lazy",s:50},{t:"What is 2FA?",s:80}]},
+{q:"When you find a USB?",o:[{t:"Never plug it in",s:10},{t:"Curious but resist",s:20},{t:"Plug it into computer",s:60},{t:"Free USB! Use it",s:80}]},
+{q:"Save passwords in browser?",o:[{t:"No. Use password manager",s:10},{t:"Save just a few for convenience",s:30},{t:"Save all. Convenient",s:50},{t:"Auto-login forever",s:70}]},
+{q:""Congratulations! You won $1000!" popup?",o:[{t:"Close. 100% scam",s:10},{t:"Suspicious but slightly curious",s:30},{t:"Huh? Really? Click",s:60},{t:"Enter personal info immediately",s:90}]}
 ];
 
 let cur=0,total=0;
@@ -85,29 +85,29 @@ function result(){
     document.getElementById('pt').textContent='완료!';
     const age=Math.round(total/QS.length);
     let emoji,title,desc;
-    if(age<=15){emoji='👶';title='디지털 아기 (0~15세)';desc='농담이죠? 당신은 <strong>보안 천재</strong>입니다! 디지털 보안의 모든 것을 알고 실천하는 사이버 전사. 이 수준을 유지하세요.';}
-    else if(age<=30){emoji='🧑';title='디지털 청년 (16~30세)';desc='<strong>디지털 네이티브!</strong> 보안 의식이 높고 대부분의 위험을 잘 피합니다. 몇 가지만 보강하면 완벽합니다.';}
-    else if(age<=50){emoji='👨';title='디지털 중년 (31~50세)';desc:'기본적인 보안 상식은 있지만, <strong>귀찮아서 실천을 안 하는</strong> 타입. 아는 것과 하는 것은 다릅니다!';}
-    else if(age<=70){emoji='👴';title='디지털 어르신 (51~70세)';desc:'<strong>보안 의식이 많이 부족</strong>합니다. 피싱, 스미싱에 당할 위험이 높아요. 기본적인 보안 교육이 필요합니다.';}
-    else{emoji='🦕';title='디지털 공룡 (71세+)';desc:'<strong>매우 위험한 상태!</strong> 디지털 세상에서 거의 무방비. 지금 바로 기본 보안부터 시작하세요. 이 사이트의 다른 도구들을 활용해보세요!';}
+    if(age<=15){emoji='👶';title='Digital Baby (0~15years old)';desc='농담이죠? 당신은 <strong>security genius</strong>입니다! 디지털 보안의 모든 것을 알고 실천하는 사이버 전사. 이 수준을 유지하years old요.';}
+    else if(age<=30){emoji='🧑';title='Digital Youth (16~30years old)';desc='<strong>Digital Native!</strong> High security awareness 대부분의 위험을 잘 피합니다. 몇 가지만 보강하면 완벽합니다.';}
+    else if(age<=50){emoji='👨';title='Digital Middle-Age (31~50years old)';desc:'기본적인 보안 상식은 있지만, <strong>too lazy to practice</strong> 타입. 아는 것과 하는 것은 다릅니다!';}
+    else if(age<=70){emoji='👴';title='Digital Senior (51~70years old)';desc:'<strong>Seriously lacking security awareness</strong>합니다. High risk of falling for phishing/smishing. 기본적인 보안 교육이 필요합니다.';}
+    else{emoji='🦕';title='Digital Dinosaur (71years old+)';desc:'<strong>Very dangerous state!</strong> 디지털 years old상에서 거의 무방비. 지금 바로 기본 보안부터 시작하years old요. 이 사이트의 다른 도구들을 활용해보years old요!';}
 
     document.getElementById('resultArea').innerHTML=`
         <div class="r-emoji">${emoji}</div>
-        <div class="r-age">디지털 나이: ${age}세</div>
+        <div class="r-age">Digital Age: ${age}years old</div>
         <div class="r-title">${title}</div>
-        <div class="r-sub">실제 나이와 다를 수 있습니다 — 이것은 보안 습관 기반입니다</div>
-        <div class="info-card"><div class="info-title">📊 진단 결과</div><div class="info-text">${desc}</div></div>
+        <div class="r-sub">May differ from actual age — 이것은 based on security habits</div>
+        <div class="info-card"><div class="info-title">📊 Diagnosis Result</div><div class="info-text">${desc}</div></div>
         <div class="info-card">
-            <div class="info-title">📏 디지털 나이 기준</div>
+            <div class="info-title">📏 Digital Age Scale</div>
             <div class="info-text">
-                <strong>0~15세:</strong> 보안 천재. 해커도 못 뚫음<br>
-                <strong>16~30세:</strong> 디지털 네이티브. 대부분 안전<br>
-                <strong>31~50세:</strong> 알지만 안 함. 위험 시작<br>
-                <strong>51~70세:</strong> 보안 교육 필요. 피싱 취약<br>
-                <strong>71세+:</strong> 디지털 공룡. 즉시 보안 강화 필요
+                <strong>0~15years old:</strong> security genius. 해커도 못 뚫음<br>
+                <strong>16~30years old:</strong> 디지털 네이티브. 대부분 안전<br>
+                <strong>31~50years old:</strong> 알지만 안 함. 위험 시작<br>
+                <strong>51~70years old:</strong> 보안 교육 필요. 피싱 취약<br>
+                <strong>71years old+:</strong> Digital Dinosaur. 즉시 보안 강화 필요
             </div>
         </div>
-        <button class="retry-btn" onclick="location.reload()">🔄 다시 테스트</button>`;
+        <button class="retry-btn" onclick="location.reload()">🔄 Try Again</button>`;
     document.getElementById('resultArea').style.display='block';
     document.getElementById('resultArea').scrollIntoView({behavior:'smooth'});
 }
