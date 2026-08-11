@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora de Tempo de Hack - How Long to Crack My Password? | MOGU Guard</title>
-    <meta name="description" content="Enter your password to calculate how long it would take a hacker to crack it via brute force. 1 second? 100 years? The age of the universe? Find out.">
+    <meta name="description" content="Digite sua senha to calculate how long it would take a hacker to crack it via brute force. 1 second? 100 anos? The age of the universe? Find out.">
     <link rel="canonical" href="https://moguguard.com/en/tools/hack-time.html">
     <meta property="og:title" content="Calculadora de Tempo de Hack | MOGU Guard">
     <meta property="og:description" content="How long would it take a hacker to crack your password?">
@@ -84,14 +84,14 @@
         </div>
 
         <div class="info-card">
-            <div class="info-title">📏 Crack Time by Length</div>
+            <div class="info-title">📏 Crack Time by Comprimento</div>
             <div class="info-text">
-                <strong>Digits only (0-9):</strong><br>
-                4 chars: instant · 6 chars: 1 second · 8 chars: 1 minute · 10 chars: 2 hours<br><br>
-                <strong>Lowercase + digits (a-z, 0-9):</strong><br>
-                4 chars: instant · 6 chars: 30 seconds · 8 chars: 8 hours · 10 chars: 1 year<br><br>
+                <strong>Digitos only (0-9):</strong><br>
+                4 chars: instant · 6 chars: 1 second · 8 chars: 1 minute · 10 chars: 2 horas<br><br>
+                <strong>Minusculas + digits (a-z, 0-9):</strong><br>
+                4 chars: instant · 6 chars: 30 segundos · 8 chars: 8 horas · 10 chars: 1 year<br><br>
                 <strong>Upper + lower + digits + special chars:</strong><br>
-                4 chars: instant · 8 chars: 8 hours · 12 chars: <strong>34,000 years</strong> · 16 chars: <strong>1 billion years</strong>
+                4 chars: instant · 8 chars: 8 horas · 12 chars: <strong>34,000 anos</strong> · 16 chars: <strong>1 billion anos</strong>
             </div>
         </div>
     </div>
@@ -154,25 +154,25 @@ function analyze() {
     if (hasSpecial) types.push("special chars");
 
     document.getElementById("analysisText").innerHTML = `
-        <strong>Length:</strong> ${len} characters<br>
+        <strong>Comprimento:</strong> ${len} characters<br>
         <strong>Character types:</strong> ${types.join(" + ")} (${charsetSize} possible)<br>
         <strong>Total combinations:</strong> ${combinations.toExponential(2)}<br><br>
-        ${mainTime < 86400 ? "<strong style=\"color:#ff5252;\">⚠️ This password can be cracked within a day!</strong>" : mainTime < 86400*365 ? "<strong style=\"color:#ff9800;\">⚠️ Can be cracked within a year. Strengthen it.</strong>" : "<strong style=\"color:#00e676;\">✅ Safe against current technology.</strong>"}
+        ${mainTime < 86400 ? "<strong style=\"color:#ff5252;\">⚠️ This password can be cracked within a day!</strong>" : mainTime < 86400*365 ? "<strong style=\"color:#ff9800;\">⚠️ Can be cracked within a year. Strengthen it.</strong>" : "<strong style=\"color:#00e676;\">✅ Seguro against current technology.</strong>"}
     `;
 }
 
-function formatTime(seconds) {
-    if (seconds < 0.001) return "Instantly";
-    if (seconds < 1) return "Less than 1 second";
-    if (seconds < 60) return Math.round(seconds) + " seconds";
-    if (seconds < 3600) return Math.round(seconds / 60) + " minutes";
-    if (seconds < 86400) return Math.round(seconds / 3600) + " hours";
-    if (seconds < 86400 * 30) return Math.round(seconds / 86400) + " days";
-    if (seconds < 86400 * 365) return Math.round(seconds / (86400 * 30)) + " months";
-    if (seconds < 86400 * 365 * 1000) return Math.round(seconds / (86400 * 365)).toLocaleString() + " years";
-    if (seconds < 86400 * 365 * 1e6) return Math.round(seconds / (86400 * 365 * 1000)).toLocaleString() + " thousand years";
-    if (seconds < 86400 * 365 * 1e9) return Math.round(seconds / (86400 * 365 * 1e6)).toLocaleString() + " million years";
-    if (seconds < 86400 * 365 * 1e12) return Math.round(seconds / (86400 * 365 * 1e9)).toLocaleString() + " billion years";
+function formatTime(segundos) {
+    if (segundos < 0.001) return "Instantly";
+    if (segundos < 1) return "Menos de 1 segundo";
+    if (segundos < 60) return Math.round(segundos) + " segundos";
+    if (segundos < 3600) return Math.round(segundos / 60) + " minutos";
+    if (segundos < 86400) return Math.round(segundos / 3600) + " horas";
+    if (segundos < 86400 * 30) return Math.round(segundos / 86400) + " dias";
+    if (segundos < 86400 * 365) return Math.round(segundos / (86400 * 30)) + " meses";
+    if (segundos < 86400 * 365 * 1000) return Math.round(segundos / (86400 * 365)).toLocaleString() + " anos";
+    if (segundos < 86400 * 365 * 1e6) return Math.round(segundos / (86400 * 365 * 1000)).toLocaleString() + " thousand anos";
+    if (segundos < 86400 * 365 * 1e9) return Math.round(segundos / (86400 * 365 * 1e6)).toLocaleString() + " million anos";
+    if (segundos < 86400 * 365 * 1e12) return Math.round(segundos / (86400 * 365 * 1e9)).toLocaleString() + " billion anos";
     return "Longer than the age of the universe ♾️";
 }
 </script>

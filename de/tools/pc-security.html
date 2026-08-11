@@ -97,7 +97,7 @@ function showResult(){
     else if(score>=70){grade="🟡 Good. A few improvements will make it perfect.";color="#ffeb3b";}
     else if(score>=50){grade="🟠 Caution. Important security settings are missing.";color="#ff9800";}
     else{grade="🔴 Danger! Your PC is vulnerable to attacks.";color="#ff5252";}
-    document.getElementById("scoreNum").textContent=score+" pts";
+    document.getElementById("scoreNum").textContent=score+" Pkt";
     document.getElementById("scoreNum").style.color=color;
     document.getElementById("scoreFill").style.width=score+"%";
     document.getElementById("scoreFill").style.background=color;

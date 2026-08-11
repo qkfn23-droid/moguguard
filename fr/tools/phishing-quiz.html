@@ -68,7 +68,7 @@
 <script>
 const QUESTIONS = [
     {from:"noreply@amaz0n-security.com",fromName:"Amazon Security Team",subject:"[URGENT] Unusual sign-in detected — Your account has been suspended",to:"Me",
-     body:"Dear Customer, unusual login activity was detected on your account and it has been <span class=\"highlight\">temporarily suspended</span>.<br><br>Please verify your identity within 24 hours by clicking the link below.<br><br><span class=\"link\">https://amaz0n-security.com/verify-account</span><br><br>Failure to verify will result in <span class=\"highlight\">permanent account deletion</span>.",
+     body:"Dear Customer, unusual login activity was detected on your account and it has been <span class=\"highlight\">temporarily suspended</span>.<br><br>Please verify your identity within 24 heures by clicking the link below.<br><br><span class=\"link\">https://amaz0n-security.com/verify-account</span><br><br>Failure to verify will result in <span class=\"highlight\">permanent account deletion</span>.",
      answer:"phishing",explain:"The sender uses <strong>amaz0n</strong> (digit 0 replacing the letter o) — real Amazon always uses amazon.com. The extreme urgency and \"permanent deletion\" threat are classic phishing pressure tactics."},
     {from:"no-reply@google.com",fromName:"Google",subject:"Security alert: New sign-in from an unrecognized device",to:"Me",
      body:"A new sign-in to your Google Account was detected on an unfamiliar device.<br><br>Device: Windows PC<br>Location: New York, United States<br>Time: March 15, 2024 at 2:30 PM<br><br>If this was you, you can safely ignore this message.<br>If not, go to your <span class=\"link\">Account Security settings</span> to change your password.",
@@ -80,13 +80,13 @@ const QUESTIONS = [
      body:"Hi there,<br><br>A new public key was added to your account:<br><br>Title: MacBook Pro<br>Fingerprint: SHA256:abc123...<br><br>If you did not add this key, please remove it immediately from your <span class=\"link\">SSH key settings</span>.",
      answer:"real",explain:"Official github.com domain, specific technical details (SSH fingerprint), calm and informative tone. This matches GitHub's actual notification format exactly."},
     {from:"security@app1e-id.com",fromName:"Apple ID Support",subject:"Your Apple ID has been locked — Immediate action required",to:"Me",
-     body:"An unauthorized access attempt has been detected on your Apple ID.<br><br>For your protection, your Apple ID has been <span class=\"highlight\">locked</span>.<br><br>You must verify your identity at the link below within <span class=\"highlight\">12 hours</span> or access to all Apple services will be permanently blocked.<br><br><span class=\"link\">https://app1e-id.com/unlock</span>",
+     body:"An unauthorized access attempt has been detected on your Apple ID.<br><br>For your protection, your Apple ID has been <span class=\"highlight\">locked</span>.<br><br>You must verify your identity at the link below within <span class=\"highlight\">12 heures</span> or access to all Apple services will be permanently blocked.<br><br><span class=\"link\">https://app1e-id.com/unlock</span>",
      answer:"phishing",explain:"<strong>app1e-id.com</strong> (digit 1 replacing the letter l) — Apple always uses apple.com. The 12-hour deadline and threat of losing all services are textbook phishing pressure tactics."},
     {from:"noreply@netflix.com",fromName:"Netflix",subject:"Update your payment method",to:"Me",
      body:"Hi,<br><br>The payment method on file has expired and we were unable to process your next billing cycle.<br><br>To avoid any interruption to your service, please sign in to your Netflix account and update your payment information.<br><br><span class=\"link\">netflix.com/YourAccount</span>",
      answer:"real",explain:"Official netflix.com domain, a reasonable explanation (card expired), and it directs you to the website address rather than a suspicious link. This matches Netflix's actual notification style."},
     {from:"admin@chase-secure.net",fromName:"Chase Bank",subject:"[Chase] Security certificate renewal required — Online banking restricted",to:"Me",
-     body:"Dear Customer, your security certificate has expired and online banking access has been <span class=\"highlight\">restricted</span>.<br><br>Please enter your <span class=\"highlight\">Social Security Number and account number</span> at the link below to renew your certificate.<br><br><span class=\"link\">[Renew Certificate]</span><br><br>Note: Failure to renew within 24 hours will result in account suspension.",
+     body:"Dear Customer, your security certificate has expired and online banking access has been <span class=\"highlight\">restricted</span>.<br><br>Please enter your <span class=\"highlight\">Social Security Number and account number</span> at the link below to renew your certificate.<br><br><span class=\"link\">[Renew Certificate]</span><br><br>Note: Failure to renew within 24 heures will result in account suspension.",
      answer:"phishing",explain:"<strong>chase-secure.net</strong> is not Chase's real domain (real: chase.com). Requesting your SSN and account number via an email link is 100% phishing. Banks never ask for this information by email."},
     {from:"noreply@linkedin.com",fromName:"LinkedIn",subject:"John Smith viewed your profile",to:"Me",
      body:"Hi,<br><br>5 people viewed your profile last week.<br><br>1. John Smith — HR Manager at Microsoft<br>2. Sarah Johnson — Developer at Google<br><br>See who else viewed your profile on LinkedIn.",
@@ -162,7 +162,7 @@ function showResult() {
             "<div class=\"tips-title\">🎣 5 Key Signs of a Phishing Email</div>" +
             "<div class=\"tips-text\">" +
                 "<strong>1. Check the sender address</strong> — If the domain differs from the official site, it's phishing (amaz0n, paypa1, app1e, etc.)<br>" +
-                "<strong>2. Urgency and threats</strong> — \"Within 24 hours\", \"immediately\", \"permanent deletion\" are classic phishing pressure tactics<br>" +
+                "<strong>2. Urgency and threats</strong> — \"Within 24 heures\", \"immediately\", \"permanent deletion\" are classic phishing pressure tactics<br>" +
                 "<strong>3. Personal data requests</strong> — If an email asks for your password, SSN, or card number, it's 100% phishing<br>" +
                 "<strong>4. Verify links</strong> — Hover over links to check whether the actual URL points to the official site<br>" +
                 "<strong>5. Tone and grammar</strong> — Awkward phrasing, spelling mistakes, or unprofessional language are phishing red flags" +

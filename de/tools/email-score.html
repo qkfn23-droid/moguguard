@@ -4,10 +4,10 @@
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛡️</text></svg>">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Email Safety Score - Email Security Check | MOGU Guard</title>
+    <title>Email Sicherty Score - Email Security Check | MOGU Guard</title>
     <meta name="description" content="Diagnose your email account's security level with a checklist. 12 items including password, 2FA, spam, and connected apps.">
     <link rel="canonical" href="https://moguguard.com/en/tools/email-score.html">
-    <meta property="og:title" content="Email Safety Score | MOGU Guard">
+    <meta property="og:title" content="Email Sicherty Score | MOGU Guard">
     <meta property="og:description" content="Check your email security level!">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://moguguard.com/en/tools/email-score.html">
@@ -37,7 +37,7 @@
 <header><a href="../index.html">MOGU <span style="color:#00ff41;">Guard</span></a></header>
 <div class="container">
     <div class="page-title">
-        <h2>📧 Email Safety Score</h2>
+        <h2>📧 Email Sicherty Score</h2>
         <p>Check all items that apply to you</p>
     </div>
 
@@ -53,10 +53,10 @@
         <div class="check-item"><input type="checkbox" id="c9"><label for="c9"><strong>Notification alerts</strong> are enabled for important accounts</label><span class="risk risk-low">Recommended</span></div>
         <div class="check-item"><input type="checkbox" id="c10"><label for="c10">Always <strong>log out</strong> of email on shared / public computers</label><span class="risk risk-high">Essential</span></div>
         <div class="check-item"><input type="checkbox" id="c11"><label for="c11">Email address is <strong>not shared indiscriminately</strong></label><span class="risk risk-mid">Important</span></div>
-        <div class="check-item"><input type="checkbox" id="c12"><label for="c12"><strong>Password has been changed within the last 6 months</strong></label><span class="risk risk-low">Recommended</span></div>
+        <div class="check-item"><input type="checkbox" id="c12"><label for="c12"><strong>Password has been changed within the last 6 Monate</strong></label><span class="risk risk-low">Recommended</span></div>
     </div>
 
-    <button class="calc-btn" onclick="showResult()">📧 Check Safety Score</button>
+    <button class="calc-btn" onclick="showResult()">📧 Check Sicherty Score</button>
 
     <div class="result-box" id="resultBox">
         <div class="score-num" id="scoreNum">0</div>
@@ -68,7 +68,7 @@
 <div style="text-align:center;padding:20px 0;border-top:1px solid #1a3a1a;margin-top:30px;"><span style="font-size:12px;color:#333;margin-right:8px;">Teilen:</span><a href="" onclick="window.open('https://twitter.com/intent/tweet?url='+encodeURIComponent(location.href)+'&text='+encodeURIComponent(document.title),'_blank','width=600,height=400');return false" style="display:inline-block;padding:5px 10px;background:#1da1f2;color:#fff;border-radius:4px;text-decoration:none;font-size:11px;margin:3px;">Twitter</a><a href="" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),'_blank','width=600,height=400');return false" style="display:inline-block;padding:5px 10px;background:#1877f2;color:#fff;border-radius:4px;text-decoration:none;font-size:11px;margin:3px;">Facebook</a><a href="" onclick="navigator.clipboard.writeText(location.href);this.textContent='Copied!';return false" style="display:inline-block;padding:5px 10px;background:#333;color:#0f0;border-radius:4px;text-decoration:none;font-size:11px;margin:3px;font-family:monospace;">URL kopieren</a></div>
 <footer>© 2025 MOGU Guard</footer>
 <script>
-const labels=["Password 12+ characters","Two-factor authentication enabled","Unique password (not reused)","Recovery email / phone up to date","Suspicious links / attachments never opened","Spam folder checked regularly","Unused connected apps revoked","Login history reviewed","Notification alerts enabled","Always log out on shared computers","Email address not shared indiscriminately","Password changed within the last 6 months"];
+const labels=["Password 12+ characters","Two-factor authentication enabled","Unique password (not reused)","Recovery email / phone up to date","Suspicious links / attachments never opened","Spam folder checked regularly","Unused connected apps revoked","Login history reviewed","Notification alerts enabled","Always log out on shared computers","Email address not shared indiscriminately","Password changed within the last 6 Monate"];
 function showResult(){
     let checked=0,unchecked=[];
     for(let i=1;i<=12;i++){if(document.getElementById("c"+i).checked)checked++;else unchecked.push(labels[i-1]);}
@@ -78,7 +78,7 @@ function showResult(){
     else if(score>=70){grade="🟡 Good. A few improvements and you'll be secure.";color="#ffeb3b";}
     else if(score>=50){grade="🟠 Caution! Your email account may be at risk.";color="#ff9800";}
     else{grade="🔴 Very dangerous! Your email could be hacked.";color="#ff5252";}
-    document.getElementById("scoreNum").textContent=score+" pts";document.getElementById("scoreNum").style.color=color;
+    document.getElementById("scoreNum").textContent=score+" Pkt";document.getElementById("scoreNum").style.color=color;
     document.getElementById("scoreFill").style.width=score+"%";document.getElementById("scoreFill").style.background=color;
     document.getElementById("scoreGrade").textContent=grade;document.getElementById("scoreGrade").style.color=color;
     document.getElementById("resultBox").style.display="block";
