@@ -51,15 +51,15 @@
     </div>
     <div class="pin-display">
         <div class="pin-num" id="pinNum">----</div>
-        <button class="pin-copy" onclick="copyPin()">Copy</button>
+        <button class="pin-copy" onclick="copyPin()">Kopieren</button>
     </div>
     <div class="controls">
         <div class="control-row">
             <label>Digits</label>
             <div class="len-btns">
-                <div class="len-btn active" onclick="setLen(4)">4 digits</div>
-                <div class="len-btn" onclick="setLen(6)">6 digits</div>
-                <div class="len-btn" onclick="setLen(8)">8 digits</div>
+                <div class="len-btn active" onclick="setLen(4)">4 Ziffern</div>
+                <div class="len-btn" onclick="setLen(6)">6 Ziffern</div>
+                <div class="len-btn" onclick="setLen(8)">8 Ziffern</div>
             </div>
         </div>
         <div class="control-row">
@@ -97,7 +97,7 @@ function generate(){
     }while(noSeq&&hasPattern(pin));
     document.getElementById('pinNum').textContent=pin;
     hist.unshift(pin);if(hist.length>8)hist.pop();
-    document.getElementById('historyList').innerHTML=hist.map(p=>`<div class="history-item"><span>${p}</span><button onclick="navigator.clipboard.writeText('${p}');this.textContent='✅'">Copy</button></div>`).join('');
+    document.getElementById('historyList').innerHTML=hist.map(p=>`<div class="history-item"><span>${p}</span><button onclick="navigator.clipboard.writeText('${p}');this.textContent='✅'">Kopieren</button></div>`).join('');
 }
 function hasPattern(p){
     for(let i=0;i<p.length-2;i++){
@@ -113,7 +113,7 @@ function copyPin(){
     if(pin.includes('-'))return;
     navigator.clipboard.writeText(pin);
     const btn=document.querySelector('.pin-copy');btn.textContent='✅ Copy됨';
-    setTimeout(()=>btn.textContent='Copy',2000);
+    setTimeout(()=>btn.textContent='Kopieren',2000);
 }
 generate();
 </script>

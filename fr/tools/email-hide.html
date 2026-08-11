@@ -49,27 +49,27 @@
         <div class="result-card">
             <div class="result-label">1️⃣ Text Replacement</div>
             <div class="result-desc">@Replace @ and . with text — humans can read, bots cannot collect</div>
-            <div class="result-value" id="r1"><button onclick="cp('r1')">Copy</button></div>
+            <div class="result-value" id="r1"><button onclick="cp('r1')">Copier</button></div>
         </div>
         <div class="result-card">
             <div class="result-label">2️⃣ HTML Entities</div>
             <div class="result-desc">Convert to HTML codes. Browser renders normally when inserted in webpage</div>
-            <div class="result-value" id="r2"><button onclick="cp('r2')">Copy</button></div>
+            <div class="result-value" id="r2"><button onclick="cp('r2')">Copier</button></div>
         </div>
         <div class="result-card">
             <div class="result-label">3️⃣ JavaScript Method</div>
             <div class="result-desc">JS로 Email을 조립. 소스코드에 Email이 직접 노출되지 않음</div>
-            <div class="result-value" id="r3"><button onclick="cp('r3')">Copy</button></div>
+            <div class="result-value" id="r3"><button onclick="cp('r3')">Copier</button></div>
         </div>
         <div class="result-card">
             <div class="result-label">4️⃣ Reverse + CSS</div>
             <div class="result-desc">CSS direction reversal. Displays normally, reversed in source</div>
-            <div class="result-value" id="r4"><button onclick="cp('r4')">Copy</button></div>
+            <div class="result-value" id="r4"><button onclick="cp('r4')">Copier</button></div>
         </div>
         <div class="result-card">
             <div class="result-label">5️⃣ Image Alternative</div>
             <div class="result-desc">그냥 이렇게 쓰years old요 (Copy 불가 = 봇 수집 불가)</div>
-            <div class="result-value" id="r5"><button onclick="cp('r5')">Copy</button></div>
+            <div class="result-value" id="r5"><button onclick="cp('r5')">Copier</button></div>
         </div>
     </div>
     <div class="info">
@@ -92,26 +92,26 @@ function convert(){
     const[user,domain]=email.split('@');
     const[domName,ext]=domain.split('.');
     // 1. Text Replacement
-    document.getElementById('r1').innerHTML=`${user} [at] ${domName} [dot] ${ext}<button onclick="cp('r1')">Copy</button>`;
+    document.getElementById('r1').innerHTML=`${user} [at] ${domName} [dot] ${ext}<button onclick="cp('r1')">Copier</button>`;
     // 2. HTML Entities
     const entities=email.split('').map(c=>'&#'+c.charCodeAt(0)+';').join('');
-    document.getElementById('r2').innerHTML=`${entities}<button onclick="cp('r2')">Copy</button>`;
+    document.getElementById('r2').innerHTML=`${entities}<button onclick="cp('r2')">Copier</button>`;
     // 3. JS 방식
     const js=`&lt;script&gt;document.write('${user}'+'@'+'${domain}')&lt;/script&gt;`;
-    document.getElementById('r3').innerHTML=`${js}<button onclick="cp('r3')">Copy</button>`;
+    document.getElementById('r3').innerHTML=`${js}<button onclick="cp('r3')">Copier</button>`;
     // 4. Reverse + CSS
     const rev=email.split('').reverse().join('');
     const css=`&lt;span style="unicode-bidi:bidi-override;direction:rtl;"&gt;${rev}&lt;/span&gt;`;
-    document.getElementById('r4').innerHTML=`${css}<button onclick="cp('r4')">Copy</button>`;
+    document.getElementById('r4').innerHTML=`${css}<button onclick="cp('r4')">Copier</button>`;
     // 5. 단순 텍스트
-    document.getElementById('r5').innerHTML=`${user} ⓐ ${domName}˙${ext}<button onclick="cp('r5')">Copy</button>`;
+    document.getElementById('r5').innerHTML=`${user} ⓐ ${domName}˙${ext}<button onclick="cp('r5')">Copier</button>`;
 }
 function cp(id){
     const el=document.getElementById(id);
-    const text=el.textContent.replace('Copy','').trim();
+    const text=el.textContent.replace('Copier','').trim();
     navigator.clipboard.writeText(text);
     const btn=el.querySelector('button');btn.textContent='✅';
-    setTimeout(()=>btn.textContent='Copy',2000);
+    setTimeout(()=>btn.textContent='Copier',2000);
 }
 </script>
 </body>

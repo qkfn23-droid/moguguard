@@ -59,12 +59,12 @@
     </div>
 
     <div class="input-box">
-        <label>Paste your text here</label>
+        <label>テキストを貼り付けてください</label>
         <textarea id="textInput" placeholder="예: 안녕하세요 김철수입니다. 연락처는 010-1234-5678이고 이메days은 chulsu@gmail.com입니다."></textarea>
     </div>
 
     <div style="margin-bottom:16px;">
-        <div style="font-size:13px;color:#888;margin-bottom:8px;">Select masking targets</div>
+        <div style="font-size:13px;color:#888;margin-bottom:8px;">マスキング対象を選択</div>
         <div class="options">
             <div class="opt-btn active" id="opt-phone" onclick="toggleOpt('phone')">📱 Phone</div>
             <div class="opt-btn active" id="opt-email" onclick="toggleOpt('email')">📧 이메days</div>
@@ -78,7 +78,7 @@
     <button class="mask-btn" onclick="maskText()">🙈 Mask It</button>
 
     <div class="result-box" id="resultBox">
-        <div class="result-label">Masking Result</div>
+        <div class="result-label">マスキング結果</div>
         <div class="result-text" id="resultText"></div>
         <div class="result-actions">
             <button onclick="copyResult()">📋 Copy</button>
@@ -86,8 +86,8 @@
         </div>
         <input type="hidden" id="resultRaw">
         <div class="stats">
-            <div class="stat"><div class="stat-num" id="statTotal">0</div><div class="stat-label">Found</div></div>
-            <div class="stat"><div class="stat-num" id="statMasked">0</div><div class="stat-label">Masked</div></div>
+            <div class="stat"><div class="stat-num" id="statTotal">0</div><div class="stat-label">発見</div></div>
+            <div class="stat"><div class="stat-num" id="statMasked">0</div><div class="stat-label">マスキング済</div></div>
         </div>
     </div>
 

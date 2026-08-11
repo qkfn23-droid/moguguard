@@ -94,7 +94,7 @@ function generate(){
     document.getElementById('resultList').innerHTML=names.map(n=>`
         <div class="result-item">
             <span class="result-name">${n}</span>
-            <button class="result-copy" onclick="navigator.clipboard.writeText('${n}');this.textContent='✅'">Copy</button>
+            <button class="result-copy" onclick="navigator.clipboard.writeText('${n}');this.textContent='✅'">Copier</button>
         </div>
     `).join('');
 }

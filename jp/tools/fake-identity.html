@@ -51,26 +51,26 @@
     <div id="result">
         <div class="card">
             <div class="card-title">👤 Basic Info</div>
-            <div class="field"><span class="field-label">Name</span><span class="field-value" id="fName" onclick="copy(this)">-</span></div>
+            <div class="field"><span class="field-label">名前</span><span class="field-value" id="fName" onclick="copy(this)">-</span></div>
             <div class="field"><span class="field-label">영문 Name</span><span class="field-value" id="fNameEn" onclick="copy(this)">-</span></div>
-            <div class="field"><span class="field-label">Gender</span><span class="field-value" id="fGender" onclick="copy(this)">-</span></div>
-            <div class="field"><span class="field-label">Date of Birth</span><span class="field-value" id="fBirth" onclick="copy(this)">-</span></div>
-            <div class="field"><span class="field-label">Age</span><span class="field-value" id="fAge" onclick="copy(this)">-</span></div>
+            <div class="field"><span class="field-label">性別</span><span class="field-value" id="fGender" onclick="copy(this)">-</span></div>
+            <div class="field"><span class="field-label">生年月日</span><span class="field-value" id="fBirth" onclick="copy(this)">-</span></div>
+            <div class="field"><span class="field-label">年齢</span><span class="field-value" id="fAge" onclick="copy(this)">-</span></div>
         </div>
         <div class="card">
             <div class="card-title">📱 Contact</div>
-            <div class="field"><span class="field-label">Phone</span><span class="field-value" id="fPhone" onclick="copy(this)">-</span></div>
-            <div class="field"><span class="field-label">Email</span><span class="field-value" id="fEmail" onclick="copy(this)">-</span></div>
+            <div class="field"><span class="field-label">電話</span><span class="field-value" id="fPhone" onclick="copy(this)">-</span></div>
+            <div class="field"><span class="field-label">メール</span><span class="field-value" id="fEmail" onclick="copy(this)">-</span></div>
         </div>
         <div class="card">
             <div class="card-title">🏠 Address</div>
-            <div class="field"><span class="field-label">Address</span><span class="field-value" id="fAddr" onclick="copy(this)">-</span></div>
-            <div class="field"><span class="field-label">Zip Code</span><span class="field-value" id="fZip" onclick="copy(this)">-</span></div>
+            <div class="field"><span class="field-label">住所</span><span class="field-value" id="fAddr" onclick="copy(this)">-</span></div>
+            <div class="field"><span class="field-label">郵便番号</span><span class="field-value" id="fZip" onclick="copy(this)">-</span></div>
         </div>
         <div class="card">
             <div class="card-title">🔐 Account</div>
-            <div class="field"><span class="field-label">Username</span><span class="field-value" id="fId" onclick="copy(this)">-</span></div>
-            <div class="field"><span class="field-label">Password</span><span class="field-value" id="fPw" onclick="copy(this)">-</span></div>
+            <div class="field"><span class="field-label">ユーザー名</span><span class="field-value" id="fId" onclick="copy(this)">-</span></div>
+            <div class="field"><span class="field-label">パスワード</span><span class="field-value" id="fPw" onclick="copy(this)">-</span></div>
         </div>
     </div>
 
@@ -110,7 +110,7 @@ function generate(){
     const firstEn=isMale?r(firstNamesEnM):r(firstNamesEnF);
     const name=last+first;
     const nameEn=firstEn+' '+lastEn;
-    const gender=isMale?'Male':'Female';
+    const gender=isMale?'男性':'女性';
     const year=rn(1970,2005);const month=rn(1,12);const day=rn(1,28);
     const birth=`${year}-${String(month).padStart(2,'0')}-${String(day).padStart(2,'0')}`;
     const age=new Date().getFullYear()-year;
@@ -127,7 +127,7 @@ function generate(){
     document.getElementById('fNameEn').textContent=nameEn;
     document.getElementById('fGender').textContent=gender;
     document.getElementById('fBirth').textContent=birth;
-    document.getElementById('fAge').textContent=age+'years old';
+    document.getElementById('fAge').textContent=age+'歳';
     document.getElementById('fPhone').textContent=phone;
     document.getElementById('fEmail').textContent=email;
     document.getElementById('fAddr').textContent=addr;
@@ -146,7 +146,7 @@ function copy(el){
 
 function copyAll(){
     const fields=['fName','fNameEn','fGender','fBirth','fAge','fPhone','fEmail','fAddr','fZip','fId','fPw'];
-    const labels=['Name','영문Name','Gender','Date of Birth','Age','Phone','Email','Address','Zip Code','Username','Password'];
+    const labels=['名前','영문Name','性別','生年月日','年齢','電話','メール','住所','郵便番号','ユーザー名','パスワード'];
     const text=fields.map((f,i)=>labels[i]+': '+document.getElementById(f).textContent).join('\n');
     navigator.clipboard.writeText(text);
     const btn=document.querySelector('.copy-all');btn.textContent='✅ 전체 Copy됨';

@@ -47,19 +47,19 @@
 <div class="container">
     <div class="page-title">
         <h2>🔢 Random PIN Generator</h2>
-        <p>Secure PIN for cards, lock screens, safes</p>
+        <p>カード・ロック画面・金庫用の安全なPIN</p>
     </div>
     <div class="pin-display">
         <div class="pin-num" id="pinNum">----</div>
-        <button class="pin-copy" onclick="copyPin()">Copy</button>
+        <button class="pin-copy" onclick="copyPin()">コピー</button>
     </div>
     <div class="controls">
         <div class="control-row">
             <label>Digits</label>
             <div class="len-btns">
-                <div class="len-btn active" onclick="setLen(4)">4 digits</div>
-                <div class="len-btn" onclick="setLen(6)">6 digits</div>
-                <div class="len-btn" onclick="setLen(8)">8 digits</div>
+                <div class="len-btn active" onclick="setLen(4)">4桁</div>
+                <div class="len-btn" onclick="setLen(6)">6桁</div>
+                <div class="len-btn" onclick="setLen(8)">8桁</div>
             </div>
         </div>
         <div class="control-row">
@@ -70,7 +70,7 @@
     <button class="gen-btn" onclick="generate()">🔢 Generate PIN</button>
     <div class="history">
         <div class="history-title">📋 Recent</div>
-        <div id="historyList"><div style="color:#333;font-size:13px;">None yet</div></div>
+        <div id="historyList"><div style="color:#333;font-size:13px;">まだなし</div></div>
     </div>
     <div class="info">
         <div class="info-title">💡 Safe PIN Tips</div>
@@ -97,7 +97,7 @@ function generate(){
     }while(noSeq&&hasPattern(pin));
     document.getElementById('pinNum').textContent=pin;
     hist.unshift(pin);if(hist.length>8)hist.pop();
-    document.getElementById('historyList').innerHTML=hist.map(p=>`<div class="history-item"><span>${p}</span><button onclick="navigator.clipboard.writeText('${p}');this.textContent='✅'">Copy</button></div>`).join('');
+    document.getElementById('historyList').innerHTML=hist.map(p=>`<div class="history-item"><span>${p}</span><button onclick="navigator.clipboard.writeText('${p}');this.textContent='✅'">コピー</button></div>`).join('');
 }
 function hasPattern(p){
     for(let i=0;i<p.length-2;i++){
@@ -113,7 +113,7 @@ function copyPin(){
     if(pin.includes('-'))return;
     navigator.clipboard.writeText(pin);
     const btn=document.querySelector('.pin-copy');btn.textContent='✅ Copy됨';
-    setTimeout(()=>btn.textContent='Copy',2000);
+    setTimeout(()=>btn.textContent='コピー',2000);
 }
 generate();
 </script>

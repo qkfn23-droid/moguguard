@@ -42,7 +42,7 @@
         <h2>👤 사용자명 생성기</h2>
         <p>개인정보 없는 안전한 Username를 만들어보years old요</p>
     </div>
-    <div style="text-align:center;margin-bottom:16px;font-size:13px;color:#888;">Select Style</div>
+    <div style="text-align:center;margin-bottom:16px;font-size:13px;color:#888;">スタイル選択</div>
     <div class="style-select">
         <div class="style-btn active" onclick="setStyle('cool')" id="s1">😎 Cool</div>
         <div class="style-btn" onclick="setStyle('cute')" id="s2">🐱 Cute</div>
@@ -52,7 +52,7 @@
     </div>
     <button class="gen-btn" onclick="generate()">👤 Generate 10</button>
     <div class="results">
-        <div class="results-title">Generated Usernames</div>
+        <div class="results-title">生成されたユーザー名</div>
         <div id="resultList"></div>
     </div>
     <div class="info">
@@ -94,7 +94,7 @@ function generate(){
     document.getElementById('resultList').innerHTML=names.map(n=>`
         <div class="result-item">
             <span class="result-name">${n}</span>
-            <button class="result-copy" onclick="navigator.clipboard.writeText('${n}');this.textContent='✅'">Copy</button>
+            <button class="result-copy" onclick="navigator.clipboard.writeText('${n}');this.textContent='✅'">コピー</button>
         </div>
     `).join('');
 }
