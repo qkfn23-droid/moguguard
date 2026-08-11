@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛡️</text></svg>">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOGU Guard — 무료 보안 진단 · 피싱 판별 · 비밀번호 체크</title>
+    <meta name="description" content="일반인을 위한 무료 보안 도구. 비밀번호 강도 체크, 피싱 메일 판별, 폰/PC 보안 점수, 개인정보 노출 진단. 누구나 쉽게 보안을 지킬 수 있습니다.">
+    <link rel="canonical" href="https://moguguard.com">
+    <meta property="og:title" content="MOGU Guard — 무료 보안 진단 · 피싱 판별 · 비밀번호 체크">
+    <meta property="og:description" content="일반인을 위한 무료 보안 도구. 비밀번호 강도 체크, 피싱 메일 판별, 보안 점수 진단.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://moguguard.com">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="MOGU Guard — 무료 보안 진단">
+    <meta name="twitter:description" content="일반인을 위한 무료 보안 도구. 비밀번호 강도, 피싱 판별, 보안 점수.">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "MOGU Guard",
+      "url": "https://moguguard.com",
+      "description": "일반인을 위한 무료 보안 진단 도구. 비밀번호 체크, 피싱 판별, 보안 점수."
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type":"Question","name":"무료인가요?","acceptedAnswer":{"@type":"Answer","text":"네, 모든 보안 도구는 100% 무료입니다. 회원가입 없이 바로 사용 가능합니다."}},
+        {"@type":"Question","name":"개인정보가 수집되나요?","acceptedAnswer":{"@type":"Answer","text":"아닙니다. 모든 처리는 브라우저에서 이루어지며, 어떤 데이터도 서버로 전송되지 않습니다."}},
+        {"@type":"Question","name":"보안 전문가가 아닌데 사용할 수 있나요?","acceptedAnswer":{"@type":"Answer","text":"네, 모든 도구는 일반인도 쉽게 사용할 수 있도록 설계되었습니다."}}
+      ]
+    }
+    </script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: #0a0f1a;
+            color: #e0e0e0;
+            min-height: 100vh;
+        }
+
+        header {
+            text-align: center;
+            padding: 60px 20px 30px;
+            position: relative;
+        }
+
+        header h1 {
+            font-size: 32px;
+            color: #00e676;
+            letter-spacing: 4px;
+            margin-bottom: 8px;
+        }
+
+        header p {
+            color: #8888aa;
+            font-size: 15px;
+            max-width: 500px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .lang-switch {
+            margin-top: 16px;
+            display: flex;
+            gap: 8px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .lang-switch a {
+            color: #00e676;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 600;
+            padding: 4px 12px;
+            border: 1px solid #00e676;
+            border-radius: 20px;
+            transition: all 0.2s;
+        }
+        .lang-switch a:hover {
+            background: #00e676;
+            color: #0a0f1a;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 40px auto 60px;
+            padding: 0 20px;
+        }
+
+        .section-label {
+            text-align: center;
+            font-size: 13px;
+            color: #666;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 24px;
+        }
+
+        .tool-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 16px;
+        }
+
+        .tool-card {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            background: linear-gradient(135deg, #0f1a2e, #1a2540);
+            border: 1px solid #1a3a30;
+            border-left: 4px solid #00e676;
+            border-radius: 16px;
+            padding: 24px;
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .tool-card:hover {
+            border-color: #00e676;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(0,230,118,0.1);
+        }
+
+        .tool-emoji {
+            font-size: 48px;
+            flex-shrink: 0;
+            width: 64px;
+            text-align: center;
+        }
+
+        .tool-info { flex: 1; }
+
+        .tool-name {
+            font-size: 20px;
+            font-weight: 700;
+            color: #00e676;
+            margin-bottom: 4px;
+        }
+
+        .tool-sub {
+            font-size: 13px;
+            color: #999;
+        }
+
+        .tool-arrow {
+            font-size: 20px;
+            color: #444;
+            flex-shrink: 0;
+            transition: all 0.3s;
+        }
+
+        .tool-card:hover .tool-arrow {
+            color: #00e676;
+            transform: translateX(4px);
+        }
+
+        .badge {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            font-size: 10px;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-weight: 700;
+            background: rgba(0,230,118,0.2);
+            color: #00e676;
+            border: 1px solid rgba(0,230,118,0.3);
+        }
+
+        .bottom-links {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+        }
+        .bottom-links a {
+            display: inline-block;
+            padding: 12px 24px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            margin: 6px;
+            transition: all 0.2s;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #888;
+            font-size: 12px;
+        }
+
+        @media (max-width: 480px) {
+            header h1 { font-size: 24px; }
+            .tool-emoji { font-size: 36px; width: 48px; }
+            .tool-name { font-size: 17px; }
+            .tool-card { padding: 18px; gap: 14px; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div style="font-size:64px;margin-bottom:16px;">🛡️</div>
+    <h1>MOGU Guard</h1>
+    <p>일반인을 위한 무료 보안 진단 도구<br>내 비밀번호, 내 폰, 내 개인정보 — 안전한지 지금 확인하세요</p>
+    <div class="lang-switch">
+        <a href="/en/">EN</a>
+        <a href="/jp/">JP</a>
+        <a href="/es/">ES</a>
+        <a href="/de/">DE</a>
+        <a href="/fr/">FR</a>
+        <a href="/pt/">PT</a>
+    </div>
+</header>
+
+<div class="container">
+    <div class="section-label">🛡️ Security Tools</div>
+
+    <div class="tool-grid">
+
+        <a href="tools/password-check.html" class="tool-card" style="position:relative;">
+            <span class="badge">LIVE</span>
+            <div class="tool-emoji">🔐</div>
+            <div class="tool-info">
+                <div class="tool-name">비밀번호 강도 체커</div>
+                <div class="tool-sub">내 비밀번호가 얼마나 안전한지 · 해킹까지 걸리는 시간 · 개선 방법</div>
+            </div>
+            <span class="tool-arrow">→</span>
+        </a>
+
+        <a href="tools/phishing-quiz.html" class="tool-card" style="position:relative;">
+            <span class="badge">LIVE</span>
+            <div class="tool-emoji">🎣</div>
+            <div class="tool-info">
+                <div class="tool-name">피싱 메일 판별 퀴즈</div>
+                <div class="tool-sub">진짜 vs 가짜 메일 10문제 · 피싱 구별법 · 점수 확인</div>
+            </div>
+            <span class="tool-arrow">→</span>
+        </a>
+
+        <a href="tools/phone-security.html" class="tool-card" style="position:relative;">
+            <span class="badge">LIVE</span>
+            <div class="tool-emoji">📱</div>
+            <div class="tool-info">
+                <div class="tool-name">내 폰 보안 점수</div>
+                <div class="tool-sub">스마트폰 보안 설정 체크리스트 · 점수 · 개선 가이드</div>
+            </div>
+            <span class="tool-arrow">→</span>
+        </a>
+
+        <a href="tools/pc-security.html" class="tool-card" style="position:relative;">
+            <span class="badge">LIVE</span>
+            <div class="tool-emoji">💻</div>
+            <div class="tool-info">
+                <div class="tool-name">내 PC 보안 점수</div>
+                <div class="tool-sub">컴퓨터 보안 설정 체크리스트 · 점수 · 위험 요소 확인</div>
+            </div>
+            <span class="tool-arrow">→</span>
+        </a>
+
+        <a href="tools/privacy-check.html" class="tool-card" style="position:relative;">
+            <span class="badge">LIVE</span>
+            <div class="tool-emoji">👤</div>
+            <div class="tool-info">
+                <div class="tool-name">SNS 개인정보 노출 진단</div>
+                <div class="tool-sub">SNS별 개인정보 노출 체크 · 위험도 점수 · 설정 가이드</div>
+            </div>
+            <span class="tool-arrow">→</span>
+        </a>
+
+        <a href="tools/wifi-check.html" class="tool-card" style="position:relative;">
+            <span class="badge">LIVE</span>
+            <div class="tool-emoji">📶</div>
+            <div class="tool-info">
+                <div class="tool-name">와이파이 보안 진단</div>
+                <div class="tool-sub">공유기 보안 설정 체크 · 안전한 와이파이 사용법</div>
+            </div>
+            <span class="tool-arrow">→</span>
+        </a>
+
+        <a href="tools/hack-time.html" class="tool-card" style="position:relative;">
+            <span class="badge">LIVE</span>
+            <div class="tool-emoji">⏱️</div>
+            <div class="tool-info">
+                <div class="tool-name">내 비밀번호 해킹 시간</div>
+                <div class="tool-sub">브루트포스로 뚫리는 시간 계산 · 실시간 분석</div>
+            </div>
+            <span class="tool-arrow">→</span>
+        </a>
+
+        <a href="tools/security-quiz.html" class="tool-card" style="position:relative;">
+            <span class="badge">LIVE</span>
+            <div class="tool-emoji">🧠</div>
+            <div class="tool-info">
+                <div class="tool-name">보안 상식 퀴즈</div>
+                <div class="tool-sub">일반인 보안 상식 20문제 · 점수 · 등급 · 해설</div>
+            </div>
+            <span class="tool-arrow">→</span>
+        </a>
+
+        <a href="tools/hacker-type.html" class="tool-card" style="position:relative;">
+            <span class="badge">LIVE</span>
+            <div class="tool-emoji">🎭</div>
+            <div class="tool-info">
+                <div class="tool-name">해커 유형 테스트</div>
+                <div class="tool-sub">나는 어떤 해커 타입? · 성격 기반 보안 유형 분석</div>
+            </div>
+            <span class="tool-arrow">→</span>
+        </a>
+
+        <a href="tools/cyber-crime-quiz.html" class="tool-card" style="position:relative;">
+            <span class="badge">LIVE</span>
+            <div class="tool-emoji">⚖️</div>
+            <div class="tool-info">
+                <div class="tool-name">사이버 범죄 퀴즈</div>
+                <div class="tool-sub">"이거 불법일까?" · 사이버 법률 상식 테스트</div>
+            </div>
+            <span class="tool-arrow">→</span>
+        </a>
+
+        <a href="tools/digital-footprint.html" class="tool-card" style="position:relative;">
+            <span class="badge">LIVE</span>
+            <div class="tool-emoji">👣</div>
+            <div class="tool-info">
+                <div class="tool-name">디지털 발자국 점수</div>
+                <div class="tool-sub">온라인 노출도 자가진단 · 개인정보 흔적 · 줄이는 법</div>
+            </div>
+            <span class="tool-arrow">→</span>
+        </a>
+
+        <a href="tools/social-engineering.html" class="tool-card" style="position:relative;">
+            <span class="badge">LIVE</span>
+            <div class="tool-emoji">🎭</div>
+            <div class="tool-info">
+                <div class="tool-name">소셜 엔지니어링 체험</div>
+                <div class="tool-sub">해커가 나를 속이는 방법 체험 · 속는지 테스트</div>
+            </div>
+            <span class="tool-arrow">→</span>
+        </a>
+
+        <a href="tools/2fa-guide.html" class="tool-card" style="position:relative;">
+            <span class="badge">LIVE</span>
+            <div class="tool-emoji">🔑</div>
+            <div class="tool-info">
+                <div class="tool-name">2단계 인증 설정 가이드</div>
+                <div class="tool-sub">구글 · 애플 · 카카오 · 네이버 2FA 설정법</div>
+            </div>
+            <span class="tool-arrow">→</span>
+        </a>
+
+        <a href="tools/ransomware-guide.html" class="tool-card" style="position:relative;">
+            <span class="badge">LIVE</span>
+            <div class="tool-emoji">🦠</div>
+            <div class="tool-info">
+                <div class="tool-name">랜섬웨어 예방 가이드</div>
+                <div class="tool-sub">감염 경로 · 예방 체크리스트 · 대처법</div>
+            </div>
+            <span class="tool-arrow">→</span>
+        </a>
+
+        <a href="tools/hacked-guide.html" class="tool-card" style="position:relative;">
+            <span class="badge">LIVE</span>
+            <div class="tool-emoji">🚨</div>
+            <div class="tool-info">
+                <div class="tool-name">해킹 당했을 때 대처법</div>
+                <div class="tool-sub">계정 · 이메일 · 폰 · PC 상황별 긴급 대처 가이드</div>
+            </div>
+            <span class="tool-arrow">→</span>
+        </a>
+
+        <a href="tools/family-security.html" class="tool-card" style="position:relative;">
+            <span class="badge">LIVE</span>
+            <div class="tool-emoji">👨‍👩‍👧</div>
+            <div class="tool-info">
+                <div class="tool-name">아이/부모님 보안 설정</div>
+                <div class="tool-sub">가족을 위한 기기별 보안 설정 가이드</div>
+            </div>
+            <span class="tool-arrow">→</span>
+        </a>
+
+        <a href="tools/url-check.html" class="tool-card" style="position:relative;">
+            <span class="badge">LIVE</span>
+            <div class="tool-emoji">🔗</div>
+            <div class="tool-info">
+                <div class="tool-name">피싱 URL 판별법</div>
+                <div class="tool-sub">가짜 URL 구별하는 법 · 실전 예제 · 체크 포인트</div>
+            </div>
+            <span class="tool-arrow">→</span>
+        </a>
+
+        <a href="tools/safe-password-guide.html" class="tool-card" style="position:relative;">
+            <span class="badge">LIVE</span>
+            <div class="tool-emoji">🔒</div>
+            <div class="tool-info">
+                <div class="tool-name">안전한 비밀번호 만드는 법</div>
+                <div class="tool-sub">비밀번호 규칙 · 기억하기 쉬운 강력한 비밀번호 만들기</div>
+            </div>
+            <span class="tool-arrow">→</span>
+        </a>
+
+        <a href="tools/security-terms.html" class="tool-card" style="position:relative;">
+            <span class="badge">LIVE</span>
+            <div class="tool-emoji">📖</div>
+            <div class="tool-info">
+                <div class="tool-name">보안 용어 사전</div>
+                <div class="tool-sub">피싱 · 랜섬웨어 · VPN · 방화벽 · 100+ 용어 쉬운 설명</div>
+            </div>
+            <span class="tool-arrow">→</span>
+        </a>
+
+    </div>
+
+    <div class="bottom-links">
+        <a href="https://mogutool.com" target="_blank" style="background:linear-gradient(135deg,#1a2a4a,#0f1a30);border:1px solid #2a3a5a;color:#4fc3f7;">
+            🛠️ MOGU Tools — 95+ 무료 온라인 도구 →
+        </a>
+        <a href="https://mogumoon.com" target="_blank" style="background:linear-gradient(135deg,#1a0d2e,#2a1540);border:1px solid #3a2550;color:#c9a84c;">
+            🔮 MOGU Moon — 무료 타로 · 사주 · 점성술 →
+        </a>
+    </div>
+</div>
+
+<div style="text-align:center;padding:20px 0;border-top:1px solid #1a3a30;margin-top:30px;">
+    <span style="font-size:13px;color:#888;margin-right:8px;">공유:</span>
+    <a href="" onclick="window.open('https://twitter.com/intent/tweet?url='+encodeURIComponent(location.href)+'&text='+encodeURIComponent(document.title),'_blank','width=600,height=400');return false" style="display:inline-block;padding:6px 12px;background:#1da1f2;color:#fff;border-radius:6px;text-decoration:none;font-size:12px;margin:4px;">Twitter</a>
+    <a href="" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),'_blank','width=600,height=400');return false" style="display:inline-block;padding:6px 12px;background:#1877f2;color:#fff;border-radius:6px;text-decoration:none;font-size:12px;margin:4px;">Facebook</a>
+    <a href="" onclick="window.open('https://api.whatsapp.com/send?text='+encodeURIComponent(document.title+' '+location.href),'_blank');return false" style="display:inline-block;padding:6px 12px;background:#25d366;color:#fff;border-radius:6px;text-decoration:none;font-size:12px;margin:4px;">WhatsApp</a>
+    <a href="" onclick="navigator.clipboard.writeText(location.href);this.textContent='Copied!';return false" style="display:inline-block;padding:6px 12px;background:#666;color:#fff;border-radius:6px;text-decoration:none;font-size:12px;margin:4px;">URL 복사</a>
+</div>
+
+<footer>
+    &copy; 2025 MOGU Guard
+</footer>
+
+</body>
+</html>
