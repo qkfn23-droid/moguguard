@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛡️</text></svg>">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SNS 개인정보 노출 진단 - 인스타·페북·트위터 | MOGU Guard</title>
+    <meta name="description" content="SNS에서 내 개인정보가 얼마나 노출되어 있는지 진단하세요. 인스타그램, 페이스북, 트위터 보안 설정 체크.">
+    <link rel="canonical" href="https://moguguard.com/tools/privacy-check.html">
+    <meta property="og:title" content="SNS 개인정보 노출 진단 | MOGU Guard">
+    <meta property="og:description" content="SNS에서 내 개인정보 노출도를 확인하세요.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://moguguard.com/tools/privacy-check.html">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&display=swap');
+        *{margin:0;padding:0;box-sizing:border-box}body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#0a0a0a;color:#e0e0e0;min-height:100vh}
+        header{background:#111;border-bottom:1px solid #1a3a1a;padding:16px 20px;text-align:center}header a{text-decoration:none;font-size:20px;color:#00ff41;letter-spacing:2px;font-weight:700;font-family:'Fira Code',monospace}
+        .container{max-width:700px;margin:20px auto 40px;padding:0 20px}
+        .page-title{text-align:center;margin-bottom:30px}.page-title h2{font-size:28px;color:#00ff41;margin-bottom:8px}.page-title p{color:#666;font-size:14px}
+        .checklist{background:#111;border:1px solid #00ff4130;border-radius:8px;padding:24px;margin-bottom:24px}
+        .section-label{font-size:14px;color:#00ff41;font-weight:700;margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid #1a3a1a}
+        .check-item{display:flex;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid #0f0f0f;cursor:pointer}
+        .check-item:last-child{border-bottom:none}.check-item:hover{background:rgba(0,255,65,0.03)}
+        .check-item input{width:20px;height:20px;accent-color:#00ff41;cursor:pointer}
+        .check-item label{flex:1;cursor:pointer;font-size:14px;line-height:1.5}.check-item label strong{color:#00ff41}
+        .risk{font-size:11px;padding:2px 8px;border-radius:3px}.risk-high{background:rgba(255,82,82,0.15);color:#ff5252}.risk-mid{background:rgba(255,152,0,0.15);color:#ff9800}.risk-low{background:rgba(0,255,65,0.15);color:#00ff41}
+        .result-box{display:none;text-align:center;background:#111;border:1px solid #00ff4130;border-radius:8px;padding:30px;margin-bottom:20px}
+        .score-num{font-size:64px;font-weight:900;font-family:'Fira Code',monospace}.score-grade{font-size:20px;margin-top:8px}
+        .score-bar{height:12px;background:#1a1a1a;border-radius:6px;overflow:hidden;margin:16px 0}.score-fill{height:100%;border-radius:6px;transition:width .5s}
+        .tips{background:#111;border:1px solid #00ff4130;border-radius:8px;padding:20px;margin-top:16px;display:none}
+        .tips-title{font-size:16px;color:#00ff41;font-weight:600;margin-bottom:10px}
+        .tips-text{font-size:14px;color:#888;line-height:1.8}.tips-text strong{color:#ff5252}
+        .calc-btn{width:100%;padding:14px;background:#00ff41;color:#0a0a0a;border:none;border-radius:8px;font-size:16px;font-weight:700;cursor:pointer;font-family:'Fira Code',monospace}
+        footer{text-align:center;padding:30px;color:#333;font-size:11px}
+    </style>
+</head>
+<body>
+<header><a href="../index.html">MOGU <span style="color:#00ff41;">Guard</span></a></header>
+<div class="container">
+    <div class="page-title">
+        <h2>👤 SNS 개인정보 노출 진단</h2>
+        <p>"아니요"에 해당하면 체크하세요 (보안 설정을 했다면 체크)</p>
+    </div>
+
+    <div class="checklist">
+        <div class="section-label">📸 인스타그램 / SNS 공통</div>
+        <div class="check-item"><input type="checkbox" id="c1"><label for="c1">계정을 <strong>비공개</strong>로 설정했다</label><span class="risk risk-high">필수</span></div>
+        <div class="check-item"><input type="checkbox" id="c2"><label for="c2">프로필에 <strong>전화번호/이메일</strong>을 공개하지 않았다</label><span class="risk risk-high">필수</span></div>
+        <div class="check-item"><input type="checkbox" id="c3"><label for="c3">게시물에 <strong>위치 태그</strong>를 사용하지 않는다</label><span class="risk risk-mid">중요</span></div>
+        <div class="check-item"><input type="checkbox" id="c4"><label for="c4"><strong>생년월일</strong>을 공개하지 않았다</label><span class="risk risk-mid">중요</span></div>
+        <div class="check-item"><input type="checkbox" id="c5"><label for="c5">집/학교/직장 <strong>근처 사진</strong>을 올리지 않는다</label><span class="risk risk-high">필수</span></div>
+        <div class="check-item"><input type="checkbox" id="c6"><label for="c6"><strong>본명</strong> 대신 닉네임을 사용한다</label><span class="risk risk-low">권장</span></div>
+
+        <div class="section-label" style="margin-top:20px">💬 메신저 / 채팅</div>
+        <div class="check-item"><input type="checkbox" id="c7"><label for="c7">모르는 사람의 <strong>친구 요청</strong>을 거절한다</label><span class="risk risk-mid">중요</span></div>
+        <div class="check-item"><input type="checkbox" id="c8"><label for="c8">프로필 사진을 <strong>모르는 사람에게 비공개</strong>로 설정했다</label><span class="risk risk-low">권장</span></div>
+        <div class="check-item"><input type="checkbox" id="c9"><label for="c9"><strong>읽음 표시/접속 시간</strong>을 숨겼다</label><span class="risk risk-low">권장</span></div>
+
+        <div class="section-label" style="margin-top:20px">🔐 계정 보안</div>
+        <div class="check-item"><input type="checkbox" id="c10"><label for="c10">SNS 계정에 <strong>2단계 인증</strong>을 설정했다</label><span class="risk risk-high">필수</span></div>
+        <div class="check-item"><input type="checkbox" id="c11"><label for="c11">SNS마다 <strong>다른 비밀번호</strong>를 사용한다</label><span class="risk risk-high">필수</span></div>
+        <div class="check-item"><input type="checkbox" id="c12"><label for="c12"><strong>로그인 알림</strong>을 활성화했다</label><span class="risk risk-mid">중요</span></div>
+        <div class="check-item"><input type="checkbox" id="c13"><label for="c13">사용하지 않는 <strong>연동 앱</strong>을 해제했다</label><span class="risk risk-mid">중요</span></div>
+        <div class="check-item"><input type="checkbox" id="c14"><label for="c14">정기적으로 <strong>로그인 기록</strong>을 확인한다</label><span class="risk risk-low">권장</span></div>
+    </div>
+
+    <button class="calc-btn" onclick="showResult()">👤 노출 점수 확인</button>
+
+    <div class="result-box" id="resultBox">
+        <div class="score-num" id="scoreNum">0</div>
+        <div class="score-bar"><div class="score-fill" id="scoreFill"></div></div>
+        <div class="score-grade" id="scoreGrade"></div>
+    </div>
+    <div class="tips" id="tips"><div class="tips-title">⚠️ 노출 위험 항목</div><div class="tips-text" id="tipsText"></div></div>
+</div>
+<div style="text-align:center;padding:20px 0;border-top:1px solid #1a3a1a;margin-top:30px;"><span style="font-size:12px;color:#333;margin-right:8px;">공유:</span><a href="" onclick="window.open('https://twitter.com/intent/tweet?url='+encodeURIComponent(location.href)+'&text='+encodeURIComponent(document.title),'_blank','width=600,height=400');return false" style="display:inline-block;padding:5px 10px;background:#1da1f2;color:#fff;border-radius:4px;text-decoration:none;font-size:11px;margin:3px;">Twitter</a><a href="" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),'_blank','width=600,height=400');return false" style="display:inline-block;padding:5px 10px;background:#1877f2;color:#fff;border-radius:4px;text-decoration:none;font-size:11px;margin:3px;">Facebook</a><a href="" onclick="navigator.clipboard.writeText(location.href);this.textContent='Copied!';return false" style="display:inline-block;padding:5px 10px;background:#333;color:#0f0;border-radius:4px;text-decoration:none;font-size:11px;margin:3px;font-family:monospace;">URL 복사</a></div>
+<footer>© 2025 MOGU Guard</footer>
+<script>
+const labels=["계정 비공개 설정","전화번호/이메일 비공개","위치 태그 미사용","생년월일 비공개","집/학교/직장 근처 사진 미공개","닉네임 사용","모르는 사람 친구요청 거절","프로필 사진 비공개","읽음/접속시간 숨김","2단계 인증 설정","SNS마다 다른 비밀번호","로그인 알림 활성화","사용안하는 연동앱 해제","로그인 기록 확인"];
+function showResult(){
+    let checked=0,unchecked=[];
+    for(let i=1;i<=14;i++){if(document.getElementById('c'+i).checked)checked++;else unchecked.push(labels[i-1]);}
+    const score=Math.round((checked/14)*100);
+    let grade,color;
+    if(score>=90){grade='🟢 프라이버시 마스터! 개인정보가 잘 보호되고 있습니다.';color='#00ff41';}
+    else if(score>=70){grade='🟡 양호. 몇 가지만 보강하면 안전합니다.';color='#ffeb3b';}
+    else if(score>=50){grade='🟠 주의! 개인정보가 상당히 노출되어 있습니다.';color='#ff9800';}
+    else{grade='🔴 위험! SNS에서 개인정보가 대량 노출 중입니다.';color='#ff5252';}
+    document.getElementById('scoreNum').textContent=score+'점';document.getElementById('scoreNum').style.color=color;
+    document.getElementById('scoreFill').style.width=score+'%';document.getElementById('scoreFill').style.background=color;
+    document.getElementById('scoreGrade').textContent=grade;document.getElementById('scoreGrade').style.color=color;
+    document.getElementById('resultBox').style.display='block';
+    if(unchecked.length>0){document.getElementById('tipsText').innerHTML=unchecked.map(t=>'• <strong>'+t+'</strong>').join('<br>');document.getElementById('tips').style.display='block';}
+    else document.getElementById('tips').style.display='none';
+    document.getElementById('resultBox').scrollIntoView({behavior:'smooth'});
+}
+</script>
+</body>
+</html>
